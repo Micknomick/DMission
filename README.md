@@ -91,3 +91,6 @@ SNSで拡散するだけでなく、所属会社、コミュニティなどを�
 | 開発環境 | Docker |
 | デプロイ | Vercel / Heroku |
 | API | Google Calendar API / Gmail API / Google Maps API|
+
+■ 画面遷移図
+Figma：https://www.figma.com/design/BWtX381uP7DbSyZO9cGE1n/Dmission?m=auto&t=Lrbz9hHPXVx0q8Lk-6
