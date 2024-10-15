@@ -111,14 +111,14 @@ erDiagram
         INT id PK "リレーションID"
         INT user_id FK "ユーザーID"
         INT team_id FK "チームID"
-        VARCHAR role "役割（例: admin, member）"
+        STRING role "役割（例: admin, member）"
         TIMESTAMP created_at "作成日"
         TIMESTAMP updated_at "更新日"
     }
 
     Missions {
         INT id PK "ミッションID"
-        VARCHAR name "ミッション名"
+        STRING name "ミッション名"
         TEXT description "ミッションの説明"
         ENUM owner_type "所有者のタイプ（user, team）"
         INT user_id FK "個人ミッションの場合のユーザーID"
@@ -130,7 +130,7 @@ erDiagram
 
     Tasks {
         INT id PK "タスクID"
-        VARCHAR title "タスクのタイトル"
+        STRING title "タスクのタイトル"
         TEXT description "タスクの説明"
         INT mission_id FK "ミッションID"
         INT created_by_user_id FK "タスク作成者のユーザーID"
