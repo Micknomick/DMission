@@ -7,7 +7,10 @@ RUN apt-get update -qq && apt-get install -y \
   libpq-dev \
   nodejs \
   postgresql-client \
-  yarn
+  curl \
+  && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+  && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
+  && apt-get update && apt-get install -y yarn
 
 # 作業ディレクトリを指定
 WORKDIR /app
@@ -24,13 +27,11 @@ RUN bundle install
 # JavaScript依存関係をコピーしてインストール（キャッシュ効率化のため）
 COPY package.json /app/package.json
 COPY yarn.lock /app/yarn.lock
-RUN yarn install --frozen-lockfile --network-timeout 600000
+# JavaScriptの依存関係をインストール（package.jsonに基づく）
+RUN yarn install
 
 # アプリケーションのソースコードをコピー
 COPY . /app
-
-# JavaScriptの依存関係をインストール（package.jsonに基づく）
-RUN yarn install
 
 # entrypoint.shをコンテナにコピーし、実行権限を与える
 COPY entrypoint.sh /usr/bin/

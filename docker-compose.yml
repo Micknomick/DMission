@@ -38,6 +38,8 @@ services:
       - "3000:3000"  # ホストの3000ポートをコンテナの3000ポートにマッピング
     networks:
       - dmission_network
+    env_file:
+    - ./back/.env  # ここで.envファイルを指定
 
 
   db:
@@ -57,6 +59,7 @@ services:
 volumes:
   postgres_data:  # PostgreSQL用の永続化ボリューム
   bundle_cache:  # Bundler用のキャッシュボリューム
+  node_modules:
 
 
 networks:
