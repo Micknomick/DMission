@@ -1,0 +1,67 @@
+version: '3.9'
+
+services:
+  front:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    volumes:
+      - ./front:/app
+    command: yarn dev -p 4000
+    ports:
+      - "4000:4000"
+    tty: true
+    stdin_open: true
+    networks:
+      - dmission_network
+
+  back:
+    build:
+      context: ./back  # backディレクトリのDockerfileを使ってビルド
+      dockerfile: Dockerfile
+    environment:
+      RAILS_ENV: development  # 開発環境として設定
+      POSTGRES_USER: mick  # DB接続に使うユーザー名
+      POSTGRES_PASSWORD: password  # DB接続に使うパスワード
+      POSTGRES_DB: dmission_development # DB名
+      POSTGRES_HOST: db  # PostgreSQLが動いているホスト（サービス名）
+      TZ: Asia/Tokyo  # タイムゾーンの設定
+    volumes:
+      - ./back:/app  # ホストのbackフォルダをコンテナ内の/appにマウント
+      - bundle_cache:/usr/local/bundle  # bundlerのキャッシュを保持
+    depends_on:
+      - db  # DBが起動してからバックエンドを起動
+    tty: true
+    stdin_open: true
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -b '0.0.0.0'"
+    ports:
+      - "3000:3000"  # ホストの3000ポートをコンテナの3000ポートにマッピング
+    networks:
+      - dmission_network
+    env_file:
+    - ./back/.env  # ここで.envファイルを指定
+
+
+  db:
+    image: postgres:16.2  # 使用するPostgreSQLのバージョン
+    environment:
+      POSTGRES_USER: mick  # DBユーザー名
+      POSTGRES_PASSWORD: password  # DBパスワード
+      POSTGRES_DB: dmission_development  # データベース名
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # データベースの永続化
+    ports:
+      - "5432:5432"  # ホストの5432ポートをコンテナの5432ポートにマッピング（PostgreSQLのデフォルトポート）
+    networks:
+      - dmission_network
+
+
+volumes:
+  postgres_data:  # PostgreSQL用の永続化ボリューム
+  bundle_cache:  # Bundler用のキャッシュボリューム
+  node_modules:
+
+
+networks:
+  dmission_network:  # ここでカスタムネットワークを定義
+    driver: bridge  # デフォルトのブリッジネットワークを使用
