@@ -33,7 +33,7 @@ services:
       - db  # DBが起動してからバックエンドを起動
     tty: true
     stdin_open: true
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -b '0.0.0.0'"
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -b '0.0.0.0' && bin/rails tailwindcss:watch[always]"
     ports:
       - "3000:3000"  # ホストの3000ポートをコンテナの3000ポートにマッピング
     networks:
