@@ -1,0 +1,33 @@
+<div class="flex flex-col justify-center items-center h-screen bg-black text-white">
+  <div class="text-center">
+    <div class="text-2xl font-bold">Dmission</div>
+    <h2 class="text-4xl mt-2">サインイン</h2>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "space-y-4" }) do |f| %>
+    <div class="field flex flex-col items-start w-full max-w-sm">
+      <%= f.label :email, class: "mb-2" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full px-4 py-2 bg-gray-200 rounded-lg focus:outline-none" %>
+    </div>
+
+    <div class="field flex flex-col items-start w-full max-w-sm">
+      <%= f.label :password, class: "mb-2" %>
+      <%= f.password_field :password, autocomplete: "current-password", class: "w-full px-4 py-2 bg-gray-200 rounded-lg focus:outline-none" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field flex items-center w-full max-w-sm">
+        <%= f.check_box :remember_me, class: "mr-2" %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+
+    <div class="actions w-full max-w-sm">
+      <%= f.submit "Log in", class: "w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600" %>
+    </div>
+  <% end %>
+
+  <div class="mt-4">
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
