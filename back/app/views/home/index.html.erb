@@ -1,8 +1,6 @@
 <!-- app/views/home/index.html.erb -->
 <div class="bg-black h-screen flex flex-col justify-between">
-  <!-- 上部の空きスペース -->
-  <div class="flex-grow"></div>
-
+  <%= render "shared/header"%>
   <!-- DMissionを上下左右の中央に配置 -->
   <div class="flex justify-center items-center">
     <h1 class="font-bold text-white" style="font-size: 12rem;">DMission</h1>
@@ -26,10 +24,5 @@
   </div>
 
   <!-- 最下部中央に配置するリンク -->
-  <div class="flex justify-center">
-    <div class="text-2xl text-white space-x-8">
-      <%= link_to "Privacy & Term", "/privacy", class: "px-4" %>
-      <%= link_to "Contact", "/contact", class: "px-4" %>
-    </div>
-  </div>
+  <%= render "shared/footer" %>
 </div>
