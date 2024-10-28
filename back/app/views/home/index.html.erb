@@ -14,9 +14,14 @@
       <p class="text-4xl mb-4">Complete Your Tasks.</p>
       <p class="text-4xl mb-4">Conquer Your Day.</p>
       <div class="flex space-x-4">
-        <button class="bg-white text-black px-4 py-2 rounded">Sign In</button>
-        <button class="bg-white text-black px-4 py-2 rounded">Sign Up</button>
-      </div>
+      <%= link_to new_user_session_path, class: 'bg-white text-black px-4 py-2 rounded' do %>
+        <button>Sign In</button>
+      <% end %>
+
+      <%= link_to new_user_registration_path, class: 'bg-white text-black px-4 py-2 rounded' do %>
+        <button>Sign Up</button>
+      <% end %>
+    </div>
     </div>
   </div>
 
