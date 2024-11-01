@@ -79,3 +79,14 @@ gem 'devise'
 
 #その他
 gem 'high_voltage'
+
+#mail
+gem 'mail_form'
+# メール確認用
+group :development do
+  gem 'letter_opener'
+  gem 'letter_opener_web'
+end
+
+#envファイルの設定
+gem 'dotenv-rails', groups: [:development, :test]
