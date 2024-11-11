@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  task: one
+  approved_by_user_id: 1
+  action: MyString
+  action_at: 2024-11-03 04:25:56
+  comment: MyText
+
+two:
+  task: two
+  approved_by_user_id: 1
+  action: MyString
+  action_at: 2024-11-03 04:25:56
+  comment: MyText

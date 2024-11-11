@@ -1,0 +1,76 @@
+<div class="bg-black text-white h-screen p-6">
+  <h1 class="text-3xl font-bold mb-4">Mission List</h1>
+
+  <!-- タブボタン -->
+  <div class="flex space-x-4 mb-4">
+    <button class="bg-gray-700 text-white py-2 px-4 rounded-lg focus:outline-none">Progress</button>
+    <button class="bg-gray-700 text-white py-2 px-4 rounded-lg focus:outline-none">Done</button>
+    <button class="bg-gray-700 text-white py-2 px-4 rounded-lg focus:outline-none">Deleted</button>
+  </div>
+
+  <!-- 検索フィルター -->
+  <div class="mb-4">
+    <input type="text" placeholder="Filter Missions ..." class="w-full p-2 bg-gray-700 text-white rounded-lg">
+  </div>
+
+  <!-- ミッション一覧テーブル -->
+  <div class="overflow-x-auto">
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="bg-gray-800 text-gray-400">
+          <th class="p-2 border-b border-gray-600">Title</th>
+          <th class="p-2 border-b border-gray-600">Content</th>
+          <th class="p-2 border-b border-gray-600">Team</th>
+          <th class="p-2 border-b border-gray-600">Progress</th>
+          <th class="p-2 border-b border-gray-600">Deadline</th>
+          <th class="p-2 border-b border-gray-600">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @personal_missions.each do |mission| %>
+          <tr class="bg-gray-700">
+            <!-- タイトル -->
+            <td class="p-2 border-b border-gray-600"><%= mission.name %></td>
+
+            <!-- コンテンツ -->
+            <td class="p-2 border-b border-gray-600"><%= mission.description %></td>
+
+            <!-- チーム名 -->
+            <td class="p-2 border-b border-gray-600"><%= mission.team.name if mission.team %></td>
+
+            <!-- 進捗バー -->
+            <td class="p-2 border-b border-gray-600">
+              <div class="flex items-center">
+                <div class="w-32 bg-gray-600 rounded-full h-2.5 mr-2">
+                  <div class="bg-red-500 h-2.5 rounded-full" style="width: <%= mission.progress_rate %>%"></div>
+                </div>
+                <span class="text-gray-300"><%= mission.progress_rate %>%</span>
+              </div>
+            </td>
+
+            <!-- 期日 -->
+            <td class="p-2 border-b border-gray-600"><%= mission.deadline.strftime('%Y-%m-%d') if mission.deadline %></td>
+
+            <!-- アクションボタン -->
+            <td class="p-2 border-b border-gray-600">
+              <div class="flex items-center space-x-2">
+                <!-- 詳細ボタン -->
+                <a href="<%= mission_path(mission) %>" class="text-gray-400 hover:text-gray-600">
+                  <i class="fas fa-info-circle"></i>
+                </a>
+                <!-- 編集ボタン -->
+                <a href="<%= edit_mission_path(mission) %>" class="text-blue-500 hover:text-blue-700">
+                  <i class="fas fa-edit"></i>
+                </a>
+                <!-- 削除ボタン -->
+                <%= link_to mission_path(mission), method: :delete, data: { confirm: 'Are you sure?' }, class: "text-red-500 hover:text-red-700" do %>
+                  <i class="fas fa-trash"></i>
+                <% end %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -90,3 +90,6 @@ end
 
 #envファイルの設定
 gem 'dotenv-rails', groups: [:development, :test]
+
+# スタイリング
+
