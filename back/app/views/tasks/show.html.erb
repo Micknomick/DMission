@@ -1,0 +1,22 @@
+<!-- app/views/tasks/show.html.erb -->
+
+<div class="flex items-center justify-center h-screen bg-black">
+  <div class="bg-gray-800 p-8 rounded-lg text-white shadow-lg max-w-lg w-full">
+    <h1 class="text-3xl font-bold mb-6 text-center border-b border-gray-600 pb-4">Task Details</h1>
+
+    <!-- タスクの詳細情報 -->
+    <div class="space-y-4 text-lg">
+      <p><strong class="text-gray-400">Title:</strong> <span class="text-white"><%= @task.title %></span></p>
+      <p><strong class="text-gray-400">Description:</strong> <span class="text-white"><%= @task.description %></span></p>
+      <p><strong class="text-gray-400">Mission:</strong> <span class="text-white"><%= @task.mission.name if @task.mission %></span></p>
+      <p><strong class="text-gray-400">Progress Rate:</strong> <span class="text-white"><%= @task.progress_rate %>%</span></p>
+      <p><strong class="text-gray-400">Created By:</strong> <span class="text-white"><%= @task.created_by_user.name if @task.created_by_user %></span></p>
+      <p><strong class="text-gray-400">Deadline:</strong> <span class="text-white"><%= @task.deadline.strftime('%Y-%m-%d') if @task.deadline %></span></p>
+    </div>
+
+    <!-- 戻るリンク -->
+    <div class="mt-6 text-center">
+      <%= link_to 'Back to Task List', tasks_path, class: 'text-blue-500 hover:text-blue-700 font-semibold text-lg' %>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 <!-- app/views/home/index.html.erb -->
 <div class="bg-black h-screen flex flex-col justify-between">
   <%= render "shared/header"%>
+
   <!-- DMissionを上下左右の中央に配置 -->
   <div class="flex justify-center items-center">
     <h1 class="font-bold text-white" style="font-size: 12rem;">DMission</h1>
@@ -12,14 +13,20 @@
       <p class="text-4xl mb-4">Complete Your Tasks.</p>
       <p class="text-4xl mb-4">Conquer Your Day.</p>
       <div class="flex space-x-4">
-      <%= link_to new_user_session_path, class: 'bg-white text-black px-4 py-2 rounded' do %>
-        <button>Sign In</button>
-      <% end %>
+        <% if user_signed_in? %>
+          <%= link_to destroy_user_session_path, method: :delete, class: 'bg-white text-black px-4 py-2 rounded' do %>
+            <button>Log Out</button>
+          <% end %>
+        <% else %>
+          <%= link_to new_user_session_path, class: 'bg-white text-black px-4 py-2 rounded' do %>
+            <button>Sign In</button>
+          <% end %>
 
-      <%= link_to new_user_registration_path, class: 'bg-white text-black px-4 py-2 rounded' do %>
-        <button>Sign Up</button>
-      <% end %>
-    </div>
+          <%= link_to new_user_registration_path, class: 'bg-white text-black px-4 py-2 rounded' do %>
+            <button>Sign Up</button>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 
