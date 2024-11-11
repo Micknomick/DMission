@@ -1,8 +1,40 @@
 <header class="bg-black text-white py-4">
-  <div class="container mx-auto flex justify-center items-center">
-    <!-- 中央にロゴまたはサイトタイトル -->
-    <h1 class="text-4xl font-bold">
+  <div class="container mx-auto flex items-center justify-between">
+    <!-- ハンバーガーメニューアイコン -->
+    <button id="hamburger-icon" class="flex flex-col gap-1.5 p-2 cursor-pointer">
+      <span class="w-8 h-0.5 bg-white"></span>
+      <span class="w-8 h-0.5 bg-white"></span>
+      <span class="w-8 h-0.5 bg-white"></span>
+    </button>
+
+    <!-- サイトタイトルを中央に配置 -->
+    <h1 class="text-4xl font-bold flex-1 text-center">
       <%= link_to "DMission", root_path, class: "text-white" %>
     </h1>
+    
+    <!-- 右側に空白を追加するためのダミー要素（オプション） -->
+    <div class="w-8"></div>
   </div>
 </header>
+
+<!-- メニューオーバーレイ -->
+<div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+
+<!-- ハンバーガーメニュー（左固定） -->
+<nav id="hamburger-dropdown" class="fixed top-0 left-0 h-screen w-64 bg-black shadow-lg p-6 transform -translate-x-full transition-transform duration-300 z-50">
+  <ul>
+    <li><%= link_to 'Dashboard', dashboard_path, class: 'block px-4 py-2 text-white hover:bg-gray-700' %></li>
+    <li><%= link_to 'Tasks', tasks_path, class: 'block px-4 py-2 text-white hover:bg-gray-700' %></li>
+    <li>
+      <button id="missions-menu" class="block w-full text-left px-4 py-2 text-white hover:bg-gray-700">
+        Missions
+      </button>
+      <div id="missions-dropdown" class="ml-4 mt-2 bg-black rounded-lg hidden">
+        <ul>
+          <li><%= link_to 'Create', new_mission_path, class: 'block px-4 py-2 text-white hover:bg-gray-700' %></li>
+          <li><%= link_to 'Index', missions_path, class: 'block px-4 py-2 text-white hover:bg-gray-700' %></li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</nav>
