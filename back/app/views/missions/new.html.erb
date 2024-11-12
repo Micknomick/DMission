@@ -1,0 +1,39 @@
+<!-- app/views/missions/new.html.erb -->
+<div class="bg-black text-white h-screen">
+  <%=%>
+  <h2 class="text-2xl font-semibold mb-6">Missionを作成する</h2>
+
+  <%= form_with(model: @mission, url: missions_path, local: true) do |f| %>
+  <%# 左側に配置するコンポーネント %>
+  <div class="grid grid-cols-2 gap-6">
+    <!-- Mission Name -->
+    <div class="mb-6">
+      <%= f.label :name, "Mission Name", class: "text-gray-300 text-sm font-medium mb-2" %>
+      <%= f.text_field :name, placeholder: "ミッションを入力してください", class: "w-full p-2 bg-gray-700 text-black rounded-lg" %>
+    </div>
+
+    <!-- Overview (Description) -->
+    <div class="mb-6">
+      <%= f.label :description, "Overview", class: "text-gray-300 text-sm font-medium mb-2" %>
+      <%= f.text_area :description, placeholder: "説明文を入力してください", class: "w-full p-2 bg-gray-700 text-black rounded-lg" %>
+    </div>
+
+    <!-- Select Team -->
+    <div class="mb-6">
+      <%= f.label :team_id, "Select Team", class: "block text-gray-300 text-sm font-medium mb-2" %>
+      <%= f.collection_select :team_id, current_user.teams, :id, :name, { prompt: "チームを選択してください" }, class: "w-full p-2 bg-gray-700 text-black rounded-lg" %>
+    </div>
+  </div>
+
+    <!-- Deadline -->
+    <div class="mb-6">
+      <%= f.label :deadline, "DeadLine", class: "block text-gray-300 text-sm font-medium mb-2" %>
+      <%= f.date_field :deadline, class: "w-full p-2 bg-gray-700 text-black rounded-lg" %>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="flex justify-center">
+      <%= f.submit "Create", class: "bg-blue-500 text-white px-4 py-2 rounded-lg" %>
+    </div>
+  <% end %>
+</div>

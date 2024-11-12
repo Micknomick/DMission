@@ -59,6 +59,8 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+  config.assets.debug = true
+
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
@@ -70,5 +72,19 @@ Rails.application.configure do
 
   # メール送信機能（パスワードリセット)
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  
+
+  # Contact用メール
+  # config.action_mailer.delivery_method = :smtp
+  #開発環境用で以下1行は後ほどコメントアウト
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.smtp_settings = {
+    address: ENV['SMTP_ADDRESS'],
+    port: ENV['SMTP_PORT'] || 587,
+    domain: ENV['SMTP_DOMAIN'],
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["SMTP_USERNAME"],
+    password: ENV["SMTP_PASSWORD"]
+  }
 end

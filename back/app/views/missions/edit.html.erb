@@ -1,0 +1,31 @@
+<div class="bg-black , h-screen">
+  <!-- app/views/missions/edit.html.erb -->
+  <h1 class="text-2xl font-bold mb-4 text-white">Edit Mission</h1>
+
+  <%= form_with(model: @mission, local: true) do |f| %>
+    <div class="mb-4">
+      <%= f.label :name, "Mission Name", class: "block text-gray-300 text-sm font-medium mb-1" %>
+      <%= f.text_field :name, class: "w-full p-2 bg-gray-700 text-white rounded-lg" %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.label :description, "Description", class: "block text-gray-300 text-sm font-medium mb-1" %>
+      <%= f.text_area :description, class: "w-full p-2 bg-gray-700 text-white rounded-lg" %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.label :deadline, "Deadline", class: "block text-gray-300 text-sm font-medium mb-1" %>
+      <%= f.date_select :deadline, class: "w-full p-2 bg-gray-700 text-white rounded-lg" %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.label :is_completed, "Completed", class: "block text-gray-300 text-sm font-medium mb-1" %>
+      <%= f.check_box :is_completed, class: "bg-gray-700 text-white" %>
+    </div>
+
+    <div class="mt-6">
+      <%= f.submit "Update", class: "px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-700" %>
+      <%= link_to 'Cancel', mission_path, class: "ml-4 text-gray-400 hover:text-gray-600" %>
+    </div>
+  <% end %>
+</div>

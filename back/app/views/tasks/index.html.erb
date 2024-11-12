@@ -1,0 +1,80 @@
+<div class="bg-black text-white h-screen p-6">
+  <h1 class="text-2xl font-bold mb-4">Task List</h1>
+
+  <!-- タブボタン -->
+  <div class="flex space-x-4 mb-4">
+    <button class="bg-gray-700 text-white py-2 px-4 rounded-lg focus:outline-none">Progress</button>
+    <button class="bg-gray-700 text-white py-2 px-4 rounded-lg focus:outline-none">Done</button>
+    <button class="bg-gray-700 text-white py-2 px-4 rounded-lg focus:outline-none">Deleted</button>
+  </div>
+
+  <!-- 検索フィルター -->
+  <div class="mb-4">
+    <input type="text" placeholder="Filter Tasks ..." class="w-full p-2 bg-gray-700 text-white rounded-lg">
+  </div>
+
+  <!-- タスク一覧テーブル -->
+  <div class="overflow-x-auto">
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="bg-gray-800 text-gray-400">
+          <th class="p-2 border-b border-gray-600">Title</th>
+          <th class="p-2 border-b border-gray-600">Content</th>
+          <th class="p-2 border-b border-gray-600">Missions</th>
+          <th class="p-2 border-b border-gray-600">Progress</th>
+          <th class="p-2 border-b border-gray-600">From</th>
+          <th class="p-2 border-b border-gray-600">Deadline</th>
+          <th class="p-2 border-b border-gray-600">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @tasks.each do |task| %>
+          <tr class="bg-gray-700">
+            <!-- タイトル -->
+            <td class="p-2 border-b border-gray-600"><%= task.title %></td>
+
+            <!-- コンテンツ -->
+            <td class="p-2 border-b border-gray-600"><%= task.description %></td>
+
+            <!-- ミッション名 -->
+            <td class="p-2 border-b border-gray-600"><%= task.mission.name if task.mission %></td>
+
+            <!-- 進捗バー -->
+            <td class="p-2 border-b border-gray-600">
+              <div class="flex items-center">
+                <div class="w-32 bg-gray-600 rounded-full h-2.5 mr-2">
+                  <div class="bg-red-500 h-2.5 rounded-full" style="width: <%= task.progress_rate %>%"></div>
+                </div>
+                <span class="text-gray-300"><%= task.progress_rate %>%</span>
+              </div>
+            </td>
+
+            <!-- 作成者 -->
+            <td class="p-2 border-b border-gray-600"><%= task.created_by_user.name if task.created_by_user %></td>
+
+            <!-- 期日 -->
+            <td class="p-2 border-b border-gray-600"><%= task.deadline.strftime('%Y-%m-%d') if task.deadline %></td>
+
+            <!-- アクションボタン -->
+            <td class="p-2 border-b border-gray-600">
+              <div class="flex items-center space-x-2">
+                <!-- 編集ボタン -->
+                <a href="<%= edit_task_path(task) %>" class="text-blue-500 hover:text-blue-700">
+                  <i class="fas fa-edit"></i>
+                </a>
+                <!-- 詳細ボタン -->
+                <a href="<%= task_path(task) %>" class="text-gray-400 hover:text-gray-600">
+                  <i class="fas fa-info-circle"></i>
+                </a>
+                <!-- 削除ボタン -->
+                <%= link_to task_path(task), method: :delete, data: { confirm: 'Are you sure?' }, class: "text-red-500 hover:text-red-700" do %>
+                  <i class="fas fa-trash"></i>
+                <% end %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

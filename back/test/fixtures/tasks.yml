@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  mission: one
+  created_by_user_id: 1
+  assigned_user_id: 1
+  team_id: 1
+  progress_rate: 1
+  status: MyString
+
+two:
+  title: MyString
+  description: MyText
+  mission: two
+  created_by_user_id: 1
+  assigned_user_id: 1
+  team_id: 1
+  progress_rate: 1
+  status: MyString
