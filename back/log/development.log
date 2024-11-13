@@ -28965,3 +28965,98 @@ Processing by DashboardController#show as HTML
 Completed 200 OK in 100ms (Views: 64.0ms | ActiveRecord: 8.9ms | Allocations: 14473)
 
 
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE DATABASE "app_development" ENCODING = 'utf8'[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE DATABASE "app_test" ENCODING = 'utf8'[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5277929974492897470)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(5277929974492897470)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/dashboard" for 192.168.65.1 at 2024-11-13 19:41:16 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DashboardController#show as HTML
+Completed 401 Unauthorized in 44ms (ActiveRecord: 0.0ms | Allocations: 5539)
+
+
+Started GET "/users/sign_in" for 192.168.65.1 at 2024-11-13 19:41:17 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 5.5ms | Allocations: 725)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 43.0ms | Allocations: 3680)
+  Rendered shared/_header.html.erb (Duration: 3.3ms | Allocations: 469)
+  Rendered shared/_footer.html.erb (Duration: 3.4ms | Allocations: 283)
+  Rendered layout layouts/application.html.erb (Duration: 2066.7ms | Allocations: 59881)
+Completed 200 OK in 2130ms (Views: 2094.7ms | ActiveRecord: 8.1ms | Allocations: 68578)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-13 19:41:25 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 660)
+  Rendered shared/_header.html.erb (Duration: 0.5ms | Allocations: 214)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 102)
+  Rendered layout layouts/application.html.erb (Duration: 60.2ms | Allocations: 6763)
+Completed 200 OK in 74ms (Views: 70.7ms | ActiveRecord: 0.0ms | Allocations: 7519)
+
+
+Started GET "/users/sign_in" for 192.168.65.1 at 2024-11-13 19:41:28 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 8.3ms | Allocations: 132)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 13.6ms | Allocations: 1279)
+  Rendered shared/_header.html.erb (Duration: 0.4ms | Allocations: 196)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 98)
+  Rendered layout layouts/application.html.erb (Duration: 67.3ms | Allocations: 7467)
+Completed 200 OK in 75ms (Views: 69.8ms | ActiveRecord: 0.0ms | Allocations: 8084)
+
+
+Started POST "/users/sign_in" for 192.168.65.1 at 2024-11-13 19:41:42 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test6@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test6@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/dashboard
+Completed 303 See Other in 720ms (ActiveRecord: 5.4ms | Allocations: 5621)
+
+
+Started GET "/dashboard" for 192.168.65.1 at 2024-11-13 19:41:43 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#show as TURBO_STREAM
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Count (9.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."created_by_user_id" = $1 AND "tasks"."team_id" IS NULL OR "tasks"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2)) AND "tasks"."progress_rate" = $3[0m  [["created_by_user_id", 6], ["user_id", 6], ["progress_rate", 100]]
+  ↳ app/controllers/dashboard_controller.rb:22:in `show'
+  [1m[36mTask Count (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."created_by_user_id" = $1 AND "tasks"."team_id" IS NULL OR "tasks"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["created_by_user_id", 6], ["user_id", 6]]
+  ↳ app/controllers/dashboard_controller.rb:23:in `show'
+  [1m[36mTeam Count (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/dashboard_controller.rb:26:in `show'
+  [1m[36mMission Count (5.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "missions" WHERE ("missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL OR "missions"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["user_id", 6], ["user_id", 6]]
+  ↳ app/controllers/dashboard_controller.rb:27:in `show'
+  [1m[36mCACHE Task Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."created_by_user_id" = $1 AND "tasks"."team_id" IS NULL OR "tasks"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["created_by_user_id", 6], ["user_id", 6]]
+  ↳ app/controllers/dashboard_controller.rb:28:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/show.html.erb within layouts/application
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE ("tasks"."created_by_user_id" = $1 AND "tasks"."team_id" IS NULL OR "tasks"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["created_by_user_id", 6], ["user_id", 6]]
+  ↳ app/views/dashboard/show.html.erb:8
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/dashboard/show.html.erb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/dashboard/show.html.erb:13
+  [1m[36mMission Load (1.3ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE ("missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL OR "missions"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["user_id", 6], ["user_id", 6]]
+  ↳ app/views/dashboard/show.html.erb:79
+  Rendered dashboard/show.html.erb within layouts/application (Duration: 127.1ms | Allocations: 16547)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 212)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 102)
+  Rendered layout layouts/application.html.erb (Duration: 175.3ms | Allocations: 22790)
+Completed 200 OK in 395ms (Views: 173.5ms | ActiveRecord: 38.8ms | Allocations: 43381)
+
+
