@@ -33,6 +33,9 @@ RUN yarn install
 # アプリケーションのソースコードをコピー
 COPY . /app
 
+# database.ymlファイルをコピー
+COPY ./back/config/database.yml /app/config/database.yml
+
 # entrypoint.shをコンテナにコピーし、実行権限を与える
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
