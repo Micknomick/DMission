@@ -31,10 +31,9 @@ COPY yarn.lock /app/yarn.lock
 RUN yarn install
 
 # アプリケーションのソースコードをコピー
-COPY . /app
-
-# database.ymlファイルをコピー
-COPY ./config/database.yml ./app/config/database.yml
+# backとfrontディレクトリをそれぞれ/appにコピー
+COPY back /app/back
+COPY front /app/front
 
 # entrypoint.shをコンテナにコピーし、実行権限を与える
 COPY entrypoint.sh /usr/bin/
