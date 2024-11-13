@@ -31,9 +31,7 @@ COPY yarn.lock /app/yarn.lock
 RUN yarn install
 
 # アプリケーションのソースコードをコピー
-# backとfrontディレクトリをそれぞれ/appにコピー
-COPY back ./app/back
-COPY front ./app/front
+COPY . /app
 
 # entrypoint.shをコンテナにコピーし、実行権限を与える
 COPY entrypoint.sh /usr/bin/
