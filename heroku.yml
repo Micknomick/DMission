@@ -1,0 +1,15 @@
+build:
+  docker:
+    web: ./back/Dockerfile  # `back`ディレクトリ内のDockerfileを指す
+  config:
+    RAILS_ENV: production
+  buildpacks:
+    - heroku/ruby
+    - heroku/nodejs
+  commands:
+    - bundle install
+    - yarn install --check-files
+    - RAILS_ENV=production bundle exec rake assets:precompile
+
+run:
+  web: bundle exec rails s -b '0.0.0.0' -p ${PORT}
