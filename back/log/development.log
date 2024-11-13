@@ -29940,3 +29940,167 @@ Processing by DashboardController#show as HTML
 Completed 200 OK in 188ms (Views: 128.0ms | ActiveRecord: 9.3ms | Allocations: 18584)
 
 
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE DATABASE "app_development" ENCODING = 'utf8'[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE DATABASE "app_test" ENCODING = 'utf8'[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5277929974492897470)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(5277929974492897470)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/dashboard" for 192.168.65.1 at 2024-11-13 23:57:37 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DashboardController#show as HTML
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Count (10.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."created_by_user_id" = $1 AND "tasks"."team_id" IS NULL OR "tasks"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2)) AND "tasks"."progress_rate" = $3[0m  [["created_by_user_id", 6], ["user_id", 6], ["progress_rate", 100]]
+  ↳ app/controllers/dashboard_controller.rb:22:in `show'
+  [1m[36mTask Count (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."created_by_user_id" = $1 AND "tasks"."team_id" IS NULL OR "tasks"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["created_by_user_id", 6], ["user_id", 6]]
+  ↳ app/controllers/dashboard_controller.rb:23:in `show'
+  [1m[36mTeam Count (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/dashboard_controller.rb:26:in `show'
+  [1m[36mMission Count (4.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "missions" WHERE ("missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL OR "missions"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["user_id", 6], ["user_id", 6]]
+  ↳ app/controllers/dashboard_controller.rb:27:in `show'
+  [1m[36mCACHE Task Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."created_by_user_id" = $1 AND "tasks"."team_id" IS NULL OR "tasks"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["created_by_user_id", 6], ["user_id", 6]]
+  ↳ app/controllers/dashboard_controller.rb:28:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/show.html.erb within layouts/application
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE ("tasks"."created_by_user_id" = $1 AND "tasks"."team_id" IS NULL OR "tasks"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["created_by_user_id", 6], ["user_id", 6]]
+  ↳ app/views/dashboard/show.html.erb:8
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/dashboard/show.html.erb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/dashboard/show.html.erb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/dashboard/show.html.erb:13
+  [1m[36mMission Load (0.9ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE ("missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL OR "missions"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["user_id", 6], ["user_id", 6]]
+  ↳ app/views/dashboard/show.html.erb:79
+  Rendered dashboard/show.html.erb within layouts/application (Duration: 86.5ms | Allocations: 17946)
+  Rendered layout layouts/application.html.erb (Duration: 103.3ms | Allocations: 21404)
+Completed 500 Internal Server Error in 388ms (ActiveRecord: 48.3ms | Allocations: 53854)
+
+
+  
+ActionView::Template::Error (The asset "builds/tailwind.css" is not present in the asset pipeline.
+):
+     5:     <meta name="viewport" content="width=device-width,initial-scale=1">
+     6:     <%= csrf_meta_tags %>
+     7:     <%= csp_meta_tag %>
+     8:     <%= stylesheet_link_tag "builds/tailwind", "inter-font", "data-turbo-track": "reload" %>
+     9:     <%= javascript_importmap_tags %>
+    10:     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    11:   </head>
+  
+app/views/layouts/application.html.erb:8
+Started GET "/dashboard" for 192.168.65.1 at 2024-11-13 23:57:38 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#show as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Count (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."created_by_user_id" = $1 AND "tasks"."team_id" IS NULL OR "tasks"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2)) AND "tasks"."progress_rate" = $3[0m  [["created_by_user_id", 6], ["user_id", 6], ["progress_rate", 100]]
+  ↳ app/controllers/dashboard_controller.rb:22:in `show'
+  [1m[36mTask Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."created_by_user_id" = $1 AND "tasks"."team_id" IS NULL OR "tasks"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["created_by_user_id", 6], ["user_id", 6]]
+  ↳ app/controllers/dashboard_controller.rb:23:in `show'
+  [1m[36mTeam Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/dashboard_controller.rb:26:in `show'
+  [1m[36mMission Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "missions" WHERE ("missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL OR "missions"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["user_id", 6], ["user_id", 6]]
+  ↳ app/controllers/dashboard_controller.rb:27:in `show'
+  [1m[36mCACHE Task Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."created_by_user_id" = $1 AND "tasks"."team_id" IS NULL OR "tasks"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["created_by_user_id", 6], ["user_id", 6]]
+  ↳ app/controllers/dashboard_controller.rb:28:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/show.html.erb within layouts/application
+  [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE ("tasks"."created_by_user_id" = $1 AND "tasks"."team_id" IS NULL OR "tasks"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["created_by_user_id", 6], ["user_id", 6]]
+  ↳ app/views/dashboard/show.html.erb:8
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/dashboard/show.html.erb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/dashboard/show.html.erb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/dashboard/show.html.erb:13
+  [1m[36mMission Load (1.3ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE ("missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL OR "missions"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["user_id", 6], ["user_id", 6]]
+  ↳ app/views/dashboard/show.html.erb:79
+  Rendered dashboard/show.html.erb within layouts/application (Duration: 30.8ms | Allocations: 4675)
+  Rendered layout layouts/application.html.erb (Duration: 41.1ms | Allocations: 7401)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 8.7ms | Allocations: 12705)
+
+
+  
+ActionView::Template::Error (The asset "builds/tailwind.css" is not present in the asset pipeline.
+):
+     5:     <meta name="viewport" content="width=device-width,initial-scale=1">
+     6:     <%= csrf_meta_tags %>
+     7:     <%= csp_meta_tag %>
+     8:     <%= stylesheet_link_tag "builds/tailwind", "inter-font", "data-turbo-track": "reload" %>
+     9:     <%= javascript_importmap_tags %>
+    10:     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    11:   </head>
+  
+app/views/layouts/application.html.erb:8
+Started GET "/dashboard" for 192.168.65.1 at 2024-11-13 23:57:57 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#show as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."created_by_user_id" = $1 AND "tasks"."team_id" IS NULL OR "tasks"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2)) AND "tasks"."progress_rate" = $3[0m  [["created_by_user_id", 6], ["user_id", 6], ["progress_rate", 100]]
+  ↳ app/controllers/dashboard_controller.rb:22:in `show'
+  [1m[36mTask Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."created_by_user_id" = $1 AND "tasks"."team_id" IS NULL OR "tasks"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["created_by_user_id", 6], ["user_id", 6]]
+  ↳ app/controllers/dashboard_controller.rb:23:in `show'
+  [1m[36mTeam Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/dashboard_controller.rb:26:in `show'
+  [1m[36mMission Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "missions" WHERE ("missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL OR "missions"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["user_id", 6], ["user_id", 6]]
+  ↳ app/controllers/dashboard_controller.rb:27:in `show'
+  [1m[36mCACHE Task Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."created_by_user_id" = $1 AND "tasks"."team_id" IS NULL OR "tasks"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["created_by_user_id", 6], ["user_id", 6]]
+  ↳ app/controllers/dashboard_controller.rb:28:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/show.html.erb within layouts/application
+  [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE ("tasks"."created_by_user_id" = $1 AND "tasks"."team_id" IS NULL OR "tasks"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["created_by_user_id", 6], ["user_id", 6]]
+  ↳ app/views/dashboard/show.html.erb:8
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/dashboard/show.html.erb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/dashboard/show.html.erb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/dashboard/show.html.erb:13
+  [1m[36mMission Load (1.0ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE ("missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL OR "missions"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["user_id", 6], ["user_id", 6]]
+  ↳ app/views/dashboard/show.html.erb:79
+  Rendered dashboard/show.html.erb within layouts/application (Duration: 25.4ms | Allocations: 5481)
+  Rendered shared/_header.html.erb (Duration: 3.5ms | Allocations: 458)
+  Rendered shared/_footer.html.erb (Duration: 3.4ms | Allocations: 284)
+  Rendered layout layouts/application.html.erb (Duration: 1442.5ms | Allocations: 65942)
+Completed 200 OK in 1482ms (Views: 1446.6ms | ActiveRecord: 7.0ms | Allocations: 71906)
+
+
+Started GET "/dashboard" for 192.168.65.1 at 2024-11-13 23:58:18 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Count (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."created_by_user_id" = $1 AND "tasks"."team_id" IS NULL OR "tasks"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2)) AND "tasks"."progress_rate" = $3[0m  [["created_by_user_id", 6], ["user_id", 6], ["progress_rate", 100]]
+  ↳ app/controllers/dashboard_controller.rb:22:in `show'
+  [1m[36mTask Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."created_by_user_id" = $1 AND "tasks"."team_id" IS NULL OR "tasks"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["created_by_user_id", 6], ["user_id", 6]]
+  ↳ app/controllers/dashboard_controller.rb:23:in `show'
+  [1m[36mTeam Count (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/dashboard_controller.rb:26:in `show'
+  [1m[36mMission Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "missions" WHERE ("missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL OR "missions"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["user_id", 6], ["user_id", 6]]
+  ↳ app/controllers/dashboard_controller.rb:27:in `show'
+  [1m[36mCACHE Task Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."created_by_user_id" = $1 AND "tasks"."team_id" IS NULL OR "tasks"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["created_by_user_id", 6], ["user_id", 6]]
+  ↳ app/controllers/dashboard_controller.rb:28:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/show.html.erb within layouts/application
+  [1m[36mTask Load (1.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE ("tasks"."created_by_user_id" = $1 AND "tasks"."team_id" IS NULL OR "tasks"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["created_by_user_id", 6], ["user_id", 6]]
+  ↳ app/views/dashboard/show.html.erb:8
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/dashboard/show.html.erb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/dashboard/show.html.erb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/dashboard/show.html.erb:13
+  [1m[36mMission Load (1.6ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE ("missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL OR "missions"."team_id" IN (SELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $2))[0m  [["user_id", 6], ["user_id", 6]]
+  ↳ app/views/dashboard/show.html.erb:79
+  Rendered dashboard/show.html.erb within layouts/application (Duration: 29.1ms | Allocations: 4675)
+  Rendered shared/_header.html.erb (Duration: 0.5ms | Allocations: 197)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 98)
+  Rendered layout layouts/application.html.erb (Duration: 70.1ms | Allocations: 10748)
+Completed 200 OK in 103ms (Views: 68.9ms | ActiveRecord: 8.9ms | Allocations: 16076)
+
+
+[dotenv] Loaded [33m.env[0m
