@@ -1,6 +1,6 @@
 build:
   docker:
-    web: ./back  # backディレクトリのDockerfileを使用
+    web: back  # `back`ディレクトリのDockerfileを指定（パスを再確認）
 
 run:
   web: bundle exec rails s -b '0.0.0.0' -p ${PORT}
