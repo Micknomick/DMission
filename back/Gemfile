@@ -28,7 +28,6 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # tailwindcssの導入
-gem "tailwindcss-rails"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -92,3 +91,4 @@ end
 gem 'dotenv-rails', groups: [:development, :test]
 
 # スタイリング
+gem "cssbundling-rails"

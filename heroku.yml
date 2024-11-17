@@ -1,9 +1,12 @@
 build:
   docker:
-    web: ./back/Dockerfile  # `back`ディレクトリ内のDockerfileを指す
+    web: ./back/Dockerfile  # backディレクトリ内のDockerfileを指す
   config:
     RAILS_ENV: production
- 
 
 run:
   web: bundle exec rails s -b '0.0.0.0' -p ${PORT}
+
+release:
+  command:
+    - bundle exec rails db:migrate

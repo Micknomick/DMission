@@ -30,6 +30,9 @@ COPY yarn.lock /app/yarn.lock
 # JavaScriptの依存関係をインストール（package.jsonに基づく）
 RUN yarn install
 
+# Tailwind CSSをビルド
+RUN yarn build:css
+
 # アプリケーションのソースコードをコピー
 COPY . /app
 

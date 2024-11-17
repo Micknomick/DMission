@@ -34,3 +34,5 @@ back/config/master.key
 !/app/assets/builds/.keep
 
 /tmp/cache/
+
+/node_modules
