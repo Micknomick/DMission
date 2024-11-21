@@ -6,6 +6,7 @@ RUN apt-get update -qq && apt-get install -y \
   build-essential \
   libpq-dev \
   nodejs \
+  npm \
   postgresql-client \
   curl \
   && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
