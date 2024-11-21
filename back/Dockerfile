@@ -6,6 +6,7 @@ RUN apt-get update -qq && apt-get install -y \
   build-essential \
   libpq-dev \
   nodejs \
+  npm \
   postgresql-client \
   curl \
   && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
@@ -29,9 +30,6 @@ COPY package.json /app/package.json
 COPY yarn.lock /app/yarn.lock
 # JavaScriptの依存関係をインストール（package.jsonに基づく）
 RUN yarn install
-
-# Tailwind CSSをビルド
-RUN yarn build:css
 
 # アプリケーションのソースコードをコピー
 COPY . /app
