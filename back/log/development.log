@@ -31715,3 +31715,35 @@ Completed 200 OK in 1512ms (Views: 1075.7ms | ActiveRecord: 231.2ms | Allocation
 Completed 200 OK in 1336ms (Views: 736.2ms | ActiveRecord: 203.1ms | Allocations: 33314)
 
 
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE DATABASE "app_development" ENCODING = 'unicode'[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE DATABASE "app_test" ENCODING = 'unicode'[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5277929974492897470)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(5277929974492897470)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 192.168.65.1 at 2024-12-11 18:11:54 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1065)
+  Rendered layout layouts/application.html.erb (Duration: 552.1ms | Allocations: 38323)
+Completed 500 Internal Server Error in 643ms (ActiveRecord: 0.0ms | Allocations: 43716)
+
+
+  
+ActionView::Template::Error (undefined method `flash' for #<ActionDispatch::Request GET "http://localhost:3000/" for 192.168.65.1>):
+    12: 
+    13:   <body>
+    14:     <main>
+    15:       <p class="notice"><%= notice %></p>
+    16:       <p class="alert"><%= alert %></p>
+    17:       <%= render 'shared/header' %>
+    18:       <%= yield %>
+  
+app/views/layouts/application.html.erb:15
