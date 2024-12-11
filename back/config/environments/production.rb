@@ -91,4 +91,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  # デプロイ用
+  config.hosts << "dmission-808839a564de.herokuapp.com"
 end

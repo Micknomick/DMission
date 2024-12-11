@@ -90,3 +90,6 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 #スタイリング
 gem "cssbundling-rails"
+
+#corsの設定
+gem "rack-cors"
