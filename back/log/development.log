@@ -31747,3 +31747,68 @@ ActionView::Template::Error (undefined method `flash' for #<ActionDispatch::Requ
     18:       <%= yield %>
   
 app/views/layouts/application.html.erb:15
+Started GET "/" for 192.168.65.1 at 2024-12-11 22:59:23 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 47.7ms | Allocations: 564)
+  Rendered shared/_header.html.erb (Duration: 11.4ms | Allocations: 1398)
+  Rendered layout layouts/application.html.erb (Duration: 115.4ms | Allocations: 3735)
+Completed 500 Internal Server Error in 207ms (ActiveRecord: 0.0ms | Allocations: 4578)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_mission_path' for #<ActionView::Base:0x0000000000dd40>):
+    31:       </button>
+    32:       <div id="missions-dropdown" class="ml-4 mt-2 bg-black rounded-lg hidden">
+    33:         <ul>
+    34:           <li><%= link_to 'Create', new_mission_path, class: 'block px-4 py-2 text-white hover:bg-gray-700' %></li>
+    35:           <li><%= link_to 'Index', missions_path, class: 'block px-4 py-2 text-white hover:bg-gray-700' %></li>
+    36:         </ul>
+    37:       </div>
+  
+app/views/shared/_header.html.erb:34
+app/views/layouts/application.html.erb:15
+Started GET "/" for 192.168.65.1 at 2024-12-11 23:17:57 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 564)
+  Rendered layout layouts/application.html.erb (Duration: 26.6ms | Allocations: 3152)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.0ms | Allocations: 3994)
+
+
+  
+ActionView::Template::Error (undefined method `flash' for #<ActionDispatch::Request GET "http://localhost:3000/" for 192.168.65.1>):
+    12: 
+    13:   <body>
+    14:     <main>
+    15:       <p class="notice"><%= notice %></p>
+    16:       <p class="alert"><%= alert %></p>
+    17:       <%= render 'shared/header' %>
+    18:       <%= yield %>
+  
+app/views/layouts/application.html.erb:15
+Started GET "/" for 192.168.65.1 at 2024-12-11 23:23:24 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 247)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 2510)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 2765)
+
+
+  
+ActionView::Template::Error (undefined method `flash' for #<ActionDispatch::Request GET "http://localhost:3000/" for 192.168.65.1>):
+    12: 
+    13:   <body>
+    14:     <main>
+    15:       <p class="notice"><%= notice %></p>
+    16:       <p class="alert"><%= alert %></p>
+    17:       <%= render 'shared/header' %>
+    18:       <%= yield %>
+  
+app/views/layouts/application.html.erb:15
