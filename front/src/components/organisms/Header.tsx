@@ -1,7 +1,7 @@
 export default function Header() {
   return(
-    <div>
-      <header>Dmission</header>
+    <div className="flex items-center justify-center">
+      <header className="text-2xl font-bold">Dmisson</header>
     </div>
   );
 }
