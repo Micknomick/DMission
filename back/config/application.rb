@@ -12,6 +12,11 @@ module App
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    config.api_only = true
+    # タイムゾーンを日本時間に設定
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
+
     # Herokuのホスト名を許可
     config.hosts << "dmission-a0c003887d75.herokuapp.com"
 
