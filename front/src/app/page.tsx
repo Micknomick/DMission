@@ -23,20 +23,22 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="bg-black h-screen flex flex-col justify-between">
+    <div className="bg-black flex flex-col h-screen">
       {/* DMissionを中央に配置 */}
       <div className="flex justify-center items-center">
-        <h1 className="font-bold text-white" style={{ fontSize: "12rem" }}>
+        <h1 className="font-bold text-white text-8xl sm:text-8xl md:text-9xl lg:text-[14rem]">
           DMission
         </h1>
       </div>
 
       {/* 左下に配置する要素 */}
-      <div className="flex justify-start items-end w-full p-8">
-        <div className="text-white text-left">
-          <p className="text-4xl mb-4">Complete Your Tasks.</p>
-          <p className="text-4xl mb-4">Conquer Your Day.</p>
-          <div className="flex space-x-4">
+      <div className="w-full p-8">
+        <div className="text-white">
+          <div className="text-center md:text-left">
+          <p className="text-4xl mb-2">Complete Your Tasks.</p>
+          <p className="text-4xl mb-6">Conquer Your Day.</p>
+          </div>
+          <div className="flex space-x-4 justify-center md:justify-start">
             {isLoggedIn ? (
               <>
                 {/* ログアウトボタン */}

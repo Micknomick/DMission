@@ -31812,3 +31812,264 @@ ActionView::Template::Error (undefined method `flash' for #<ActionDispatch::Requ
     18:       <%= yield %>
   
 app/views/layouts/application.html.erb:15
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 22:19:32 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 22:19:32 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 22:19:32 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/users/sign_in" for 192.168.65.1 at 2024-12-12 22:19:40 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 6.8ms | Allocations: 716)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 95.0ms | Allocations: 3689)
+  Rendered layout layouts/application.html.erb (Duration: 122.8ms | Allocations: 6023)
+Completed 500 Internal Server Error in 534ms (ActiveRecord: 85.4ms | Allocations: 16088)
+
+
+  
+ActionView::Template::Error (undefined method `flash' for #<ActionDispatch::Request GET "http://localhost:3000/users/sign_in" for 192.168.65.1>):
+    12: 
+    13:   <body>
+    14:     <main>
+    15:       <p class="notice"><%= notice %></p>
+    16:       <p class="alert"><%= alert %></p>
+    17:       <%= render 'shared/header' %>
+    18:       <%= yield %>
+  
+app/views/layouts/application.html.erb:15
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 22:19:50 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 22:19:50 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 22:19:50 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:23:20 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:23:20 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:23:20 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:40:05 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:40:05 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:40:05 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:40:18 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:40:18 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:40:18 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:41:11 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:41:11 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:41:11 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:44:45 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:44:45 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:44:45 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:46:22 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:46:22 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:46:22 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:47:21 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:47:21 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:47:21 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:49:46 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:49:46 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:49:46 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/users/sign_in" for 192.168.65.1 at 2024-12-12 23:49:54 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 132)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1190)
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | Allocations: 3510)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.0ms | Allocations: 4027)
+
+
+  
+ActionView::Template::Error (undefined method `flash' for #<ActionDispatch::Request GET "http://localhost:3000/users/sign_in" for 192.168.65.1>):
+    12: 
+    13:   <body>
+    14:     <main>
+    15:       <p class="notice"><%= notice %></p>
+    16:       <p class="alert"><%= alert %></p>
+    17:       <%= render 'shared/header' %>
+    18:       <%= yield %>
+  
+app/views/layouts/application.html.erb:15
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:49:57 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:49:57 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-12 23:49:57 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/users/sign_in" for 192.168.65.1 at 2024-12-13 13:17:22 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.2ms | Allocations: 132)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 40.3ms | Allocations: 1190)
+  Rendered layout layouts/application.html.erb (Duration: 97.8ms | Allocations: 3510)
+Completed 500 Internal Server Error in 162ms (ActiveRecord: 0.0ms | Allocations: 4026)
+
+
+  
+ActionView::Template::Error (undefined method `flash' for #<ActionDispatch::Request GET "http://localhost:3000/users/sign_in" for 192.168.65.1>):
+    12: 
+    13:   <body>
+    14:     <main>
+    15:       <p class="notice"><%= notice %></p>
+    16:       <p class="alert"><%= alert %></p>
+    17:       <%= render 'shared/header' %>
+    18:       <%= yield %>
+  
+app/views/layouts/application.html.erb:15
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-13 13:17:28 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-13 13:17:28 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-13 13:17:28 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-13 13:25:13 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-13 13:25:13 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
+Started GET "/api/v1/auth_status" for 192.168.65.1 at 2024-12-13 13:25:14 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auth_status"):
+  
