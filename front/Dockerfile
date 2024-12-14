@@ -1,11 +1,15 @@
 FROM node:21.5.0
 
+ENV TZ Asia/Tokyo
+
 WORKDIR /app
 
-COPY package.json yarn.lock ./
-RUN yarn install
-COPY . .
-RUN yarn build
-# RUN yarn global add next
-EXPOSE 3000
-CMD sh -c 'serve -s build -l tcp://0.0.0.0:$PORT'
+COPY package.json package-lock.json /app/
+
+RUN npm install
+
+COPY . /app
+
+RUN npm run build
+# CMD ["npm", "run", "dev", "-p", "4000"]に変更
+CMD ["sh", "-c", "while :; do npm run dev -p 4000; done"]
