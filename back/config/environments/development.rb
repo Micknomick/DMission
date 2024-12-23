@@ -87,4 +87,5 @@ Rails.application.configure do
     user_name: ENV["SMTP_USERNAME"],
     password: ENV["SMTP_PASSWORD"]
   }
+  config.debug_exception_response_format = :api
 end
