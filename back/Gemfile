@@ -73,6 +73,9 @@ end
 
 #認証
 gem 'devise'
+# トークンベース認証
+gem 'devise_token_auth'
+gem 'omniauth', '~> 1.9'
 
 #その他
 gem 'high_voltage'
