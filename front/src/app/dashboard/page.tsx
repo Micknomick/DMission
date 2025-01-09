@@ -39,7 +39,6 @@ export default function Dashboard() {
     fetchUser();
   }, [router]);
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   if (loading) return <p>Loading...</p>;
 
