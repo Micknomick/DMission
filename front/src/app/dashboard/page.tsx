@@ -1,9 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
+
 import api from "../../utils/api";
+import { Task } from "../../lib/type";
 import { useRouter } from "next/navigation";
 import { User } from "../../lib/type";
+
+
+import TasksList from "../components/layout/TaskList";
+import ProgressCircle from "../components/layout/ProgressCircle";
+
 
 export default function Dashboard() {
   const [user, setUser] = useState<User | null>(null);
@@ -32,13 +39,43 @@ export default function Dashboard() {
     fetchUser();
   }, [router]);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   if (loading) return <p>Loading...</p>;
+
+
+
+  const tasks : Task[] = [
+    {
+      title: "Task 1",
+      description: "text content",
+      createdBy: "Mick",
+      deadline: "2024.12.31",
+      progressRate: 73,
+    },
+    {
+      title: "Task 2",
+      description: "text content",
+      createdBy: "John",
+      deadline: "2024.12.31",
+      progressRate: 60,
+    },
+    {
+      title: "Task 3",
+      description: "text content",
+      createdBy: "Jack",
+      deadline: "2024.12.31",
+      progressRate: 0,
+    },
+  ];
 
   return (
     <div>
       <h1>Welcome to your Dashboard, {user?.name}!</h1>
-      <p>Email: {user?.email}</p>
-      <p>This page is private.</p>
+      <div className="flex bg-primary text-white min-h-screen p-6 space-x-8">
+      <TasksList tasks={tasks} />
+      <ProgressCircle completedTasks={17} totalTasks={30} />
+    </div>
     </div>
   );
 }
