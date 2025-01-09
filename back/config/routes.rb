@@ -1,6 +1,26 @@
 Rails.application.routes.draw do
+
   # deviseの導入
-  devise_for :users
+  # devise_for :users, path: 'users', controllers: {
+  #   sessions: 'users/sessions',
+  #   registrations: 'users/registrations',
+  #   passwords: 'users/passwords'
+  # }
+
+
+  # API用のDevise Token Auth
+  namespace :api do
+    namespace :v1 do
+      resources :test, only: %i[index]
+      mount_devise_token_auth_for 'User', at: 'auth',
+      controllers: {
+        sessions: 'api/v1/auth/sessions',
+        registrations: 'api/v1/auth/registrations',
+        passwords: 'api/v1/auth/passwords'
+      }
+    end
+  end
+
   # home
   get 'home/index'
   root to: 'home#index'

@@ -27,5 +27,14 @@ module App
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # # セッションとCookieの設定
+    config.session_store :cookie_store, key: '_interslice_session'
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use config.session_store, config.session_options
+
+    # CORSとCookie関連の設定
+    config.action_dispatch.cookies_same_site_protection = :none
+    config.action_controller.forgery_protection_origin_check = false
   end
 end
