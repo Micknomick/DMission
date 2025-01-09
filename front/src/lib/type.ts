@@ -25,3 +25,12 @@ export interface User {
   created_at: Date
   updated_at: Date
 }
+
+// タスク
+export type Task = {
+  title: string;
+  description: string;
+  createdBy: string;
+  deadline: string;
+  progressRate: number;
+};
