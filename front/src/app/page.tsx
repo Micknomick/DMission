@@ -46,40 +46,34 @@ export default function HomePage() {
 
   return (
     <div className="bg-gradient-to-b from-gray-900 to-black flex flex-col min-h-screen">
-      {/* ヘッダーセクション */}
-      <div className="flex justify-center items-center flex-grow">
+      {/* メインセクション */}
+      <div className="flex flex-col justify-center items-center flex-grow text-center">
         <h1 className="font-extrabold text-white text-8xl sm:text-8xl md:text-9xl lg:text-[14rem]">
           DMission
         </h1>
-      </div>
-
-      {/* フッターセクション */}
-      <div className="w-full p-8 max-w-screen-lg mx-auto">
-        <div className="text-white">
-          <div className="text-center md:text-left">
-            <p className="text-4xl font-light italic mb-2">Complete Your Tasks.</p>
-            <p className="text-4xl font-light italic text-gray-400">Conquer Your Day.</p>
-          </div>
-          <div className="flex space-x-4 justify-center md:justify-start mt-6">
-            {isLoggedIn ? (
-              <a
-                href="#"
-                className="bg-white text-black px-4 py-2 rounded shadow hover:bg-gray-300"
-                onClick={handleLogout}
-              >
-                Log Out
-              </a>
-            ) : (
-              <>
-                <Link href="/components/pages/auth/signin">
-                  <Button variant="secondary">Sign In</Button>
-                </Link>
-                <Link href="/components/pages/auth/signup">
-                  <Button variant="secondary">Sign Up</Button>
-                </Link>
-              </>
-            )}
-          </div>
+        <div className="mt-4">
+          <p className="text-4xl font-light italic mb-2 text-white">Complete Your Tasks.</p>
+          <p className="text-4xl font-light italic text-gray-400">Conquer Your Day.</p>
+        </div>
+        <div className="flex space-x-4 justify-center mt-6">
+          {isLoggedIn ? (
+            <a
+              href="#"
+              className="bg-white text-black px-4 py-2 rounded shadow hover:bg-gray-300"
+              onClick={handleLogout}
+            >
+              Log Out
+            </a>
+          ) : (
+            <>
+              <Link href="/signin">
+                <Button>Sign In</Button>
+              </Link>
+              <Link href="/signup">
+                <Button>Sign Up</Button>
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>

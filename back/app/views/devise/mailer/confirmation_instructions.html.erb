@@ -1,5 +1,6 @@
-<p>Welcome <%= @email %>!</p>
+<p>Welcome <%= @resource.name || @resource.email %>!</p>
+<p>Click the link below to confirm your account:</p>
 
-<p>You can confirm your account email through the link below:</p>
-
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p>
+  <a href="<%= "#{Rails.application.config.confirm_success_url}?confirmation_token=#{@token}" %>">Confirm my account</a>
+</p>
