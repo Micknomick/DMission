@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import api from "@/utils/api";
 import { Mission } from "@/lib/type";
-import { AxiosError } from "axios";
 
 // API レスポンスの型を定義
 type MissionResponse = {
@@ -22,7 +21,7 @@ const MissionList = () => {
         const response = await api.get<MissionResponse>("/missions");
         setPersonalMissions(response.data.personal_missions);
         setTeamMissions(response.data.team_missions);
-      } catch (err: unknown) {
+      } catch {
         setError("データの取得に失敗しました。");
       }
     };
