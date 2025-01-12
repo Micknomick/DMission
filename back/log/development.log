@@ -38505,3 +38505,68 @@ Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
 Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 140)
 
 
+Started POST "/api/v1/missions" for 192.168.65.1 at 2025-01-13 00:21:34 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#create as JSON
+  Parameters: {"name"=>"d", "description"=>"d", "deadline"=>"2025-01-21", "isCompleted"=>false, "mission"=>{"name"=>"d", "description"=>"d", "deadline"=>"2025-01-21"}}
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+Params received: #<ActionController::Parameters {"name"=>"d", "description"=>"d", "deadline"=>"2025-01-21", "isCompleted"=>false, "controller"=>"api/v1/missions", "action"=>"create", "mission"=>{"name"=>"d", "description"=>"d", "deadline"=>"2025-01-21"}} permitted: false>
+Current user: #<User id: 13, email: "mick24@gmail.com", name: "mick24", created_at: "2025-01-09 00:03:28.611497000 +0900", updated_at: "2025-01-12 09:43:36.423316000 +0900", provider: "email", uid: "mick24@gmail.com", allow_password_change: [FILTERED], nickname: nil, image: nil>
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/missions_controller.rb:44:in `create'
+  [1m[36mMission Create (5.0ms)[0m  [1m[32mINSERT INTO "missions" ("name", "description", "owner_type", "user_id", "team_id", "is_completed", "created_at", "updated_at", "deadline") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "d"], ["description", "d"], ["owner_type", nil], ["user_id", 13], ["team_id", nil], ["is_completed", nil], ["created_at", "2025-01-13 00:21:34.616739"], ["updated_at", "2025-01-13 00:21:34.616739"], ["deadline", "2025-01-21"]]
+  ↳ app/controllers/api/v1/missions_controller.rb:44:in `create'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/missions_controller.rb:44:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 201 Created in 93ms (Views: 0.8ms | ActiveRecord: 22.9ms | Allocations: 7655)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-13 00:21:34 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeam Pluck (0.7ms)[0m  [1m[34mSELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:13:in `index'
+  [1m[36mMission Load (0.5ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:16:in `index'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 26ms (Views: 0.6ms | ActiveRecord: 2.5ms | Allocations: 4455)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-13 00:21:34 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeam Pluck (0.7ms)[0m  [1m[34mSELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:13:in `index'
+  [1m[36mMission Load (0.6ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:16:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 0.2ms | ActiveRecord: 2.3ms | Allocations: 4409)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-13 00:35:37 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeam Pluck (1.5ms)[0m  [1m[34mSELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:13:in `index'
+  [1m[36mMission Load (1.2ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:16:in `index'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 82ms (Views: 0.2ms | ActiveRecord: 13.1ms | Allocations: 7360)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-13 00:35:37 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeam Pluck (0.7ms)[0m  [1m[34mSELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:13:in `index'
+  [1m[36mMission Load (0.6ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:16:in `index'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 3.0ms | Allocations: 4409)
+
+
