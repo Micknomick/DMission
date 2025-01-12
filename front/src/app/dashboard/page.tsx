@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { User } from "../../lib/type";
 
 
-import TasksList from "../components/layout/TaskList";
+import TasksList from "../components/layout/TaskListSmall";
 import ProgressCircle from "../components/layout/ProgressCircle";
 
 
@@ -44,27 +44,51 @@ export default function Dashboard() {
 
 
 
-  const tasks : Task[] = [
+  const tasks: Task[] = [
     {
+      id: 1,
       title: "Task 1",
       description: "text content",
-      createdBy: "Mick",
-      deadline: "2024.12.31",
+      missionId: 1,
+      createdByUserId: 1,
+      assignedUserId: 2,
+      teamId: 1,
       progressRate: 73,
+      status: "in_progress",
+      createdBy: "Mick",
+      createdAt: "2024-01-01T10:00:00Z",
+      updatedAt: "2024-01-05T15:00:00Z",
+      deadline: "2024-12-31",
     },
     {
+      id: 2,
       title: "Task 2",
       description: "text content",
-      createdBy: "John",
-      deadline: "2024.12.31",
+      missionId: 1,
+      createdByUserId: 2,
+      assignedUserId: 3,
+      teamId: 1,
       progressRate: 60,
+      status: "in_progress",
+      createdBy: "John",
+      createdAt: "2024-01-02T11:00:00Z",
+      updatedAt: "2024-01-06T16:00:00Z",
+      deadline: "2024-12-31",
     },
     {
+      id: 3,
       title: "Task 3",
       description: "text content",
-      createdBy: "Jack",
-      deadline: "2024.12.31",
+      missionId: 2,
+      createdByUserId: 3,
+      assignedUserId: 4,
+      teamId: 2,
       progressRate: 0,
+      status: "not_started",
+      createdBy: "Jack",
+      createdAt: "2024-01-03T12:00:00Z",
+      updatedAt: "2024-01-07T17:00:00Z",
+      deadline: "2024-12-31",
     },
   ];
 

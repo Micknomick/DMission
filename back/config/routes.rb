@@ -18,15 +18,19 @@ Rails.application.routes.draw do
         registrations: 'api/v1/auth/registrations',
         passwords: 'api/v1/auth/passwords'
       }
+      resources :tasks, only: [:index, :show, :create, :update, :destroy]
+      resources :missions, only: [:index, :show, :create, :update, :destroy]
     end
   end
 
+
+  ## Railsのみ場合に適用
   # home
-  get 'home/index'
-  root to: 'home#index'
+  # get 'home/index'
+  # root to: 'home#index'
   # privacy & term
-  get '/privacy', to: 'high_voltage/pages#show', id: 'privacy'
-  get '/term', to: 'high_voltage/pages#show', id: 'term'
+  # get '/privacy', to: 'high_voltage/pages#show', id: 'privacy'
+  # get '/term', to: 'high_voltage/pages#show', id: 'term'
   # contact
   resources :contacts, only: [:new, :create]
   # メール確認用
@@ -34,8 +38,8 @@ Rails.application.routes.draw do
   #   mount LetterOpenerWeb::Engine, at: "/letter_opener"
   # end
 
-  resources :missions
-  resources :tasks
+  # resources :missions
+  # resources :tasks
   # dashboard
-  get 'dashboard', to: 'dashboard#show', as: :dashboard
+  # get 'dashboard', to: 'dashboard#show', as: :dashboard
 end

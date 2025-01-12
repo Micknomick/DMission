@@ -37513,3 +37513,1132 @@ Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
 Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 2516)
 
 
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 14:17:50 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 60ms (Views: 0.3ms | ActiveRecord: 1.9ms | Allocations: 2517)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 14:17:50 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 14ms (Views: 3.6ms | ActiveRecord: 1.7ms | Allocations: 2516)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 14:50:25 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+Completed 401 Unauthorized in 9ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 140)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 14:50:25 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 140)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 15:55:15 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 77ms (Views: 0.3ms | ActiveRecord: 23.0ms | Allocations: 5437)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 15:55:15 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 2.2ms | Allocations: 2516)
+
+
+[dotenv] Loaded [33m.env[0m
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 16:55:21 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 307ms (Views: 0.3ms | ActiveRecord: 21.8ms | Allocations: 10132)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 16:55:23 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 4.6ms | Allocations: 2518)
+
+
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 17:33:33 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 111ms (Views: 0.2ms | ActiveRecord: 9.9ms | Allocations: 10126)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 17:33:33 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 2516)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 17:33:46 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 2516)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 17:33:46 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 12ms (Views: 0.9ms | ActiveRecord: 1.1ms | Allocations: 2516)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 17:34:16 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 2517)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 17:34:16 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 1.8ms | Allocations: 2516)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 17:34:25 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 2516)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 17:34:25 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2516)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 17:38:39 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 2.1ms | Allocations: 2516)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 17:38:40 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 0.4ms | ActiveRecord: 1.7ms | Allocations: 2516)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 17:39:38 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2516)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 17:39:38 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 2.1ms | Allocations: 2516)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 17:40:22 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 2518)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 17:40:22 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 2516)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 17:40:39 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 1.6ms | Allocations: 2516)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 17:40:39 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 2516)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 18:10:18 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 53ms (Views: 1.4ms | ActiveRecord: 12.9ms | Allocations: 5437)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 18:10:18 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 2516)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 18:11:45 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 2516)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 18:11:45 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 0.9ms | ActiveRecord: 1.0ms | Allocations: 2516)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 18:12:03 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 0.8ms | ActiveRecord: 1.2ms | Allocations: 2518)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 18:12:03 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 2516)
+
+
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE DATABASE "app_development" ENCODING = 'unicode'[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE DATABASE "app_test" ENCODING = 'unicode'[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5277929974492897470)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5277929974492897470)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 20:24:49 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (9.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 147ms (Views: 1.8ms | ActiveRecord: 21.3ms | Allocations: 16023)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 20:24:49 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 0.5ms | ActiveRecord: 2.3ms | Allocations: 2517)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 20:25:04 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2529)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-09 20:25:04 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 1.5ms | Allocations: 2516)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-11 09:28:53 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+Completed 401 Unauthorized in 73ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 3052)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-11 09:28:53 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 140)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-11 09:31:30 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+Completed 401 Unauthorized in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 140)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-11 09:31:30 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 140)
+
+
+Started POST "/api/v1/auth/sign_in" for 192.168.65.1 at 2025-01-11 09:31:42 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::Auth::SessionsController#create as */*
+  Parameters: {"email"=>"mick24@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"mick24@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mick24@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/auth/sessions_controller.rb:9:in `create'
+  [1m[36mUser Update (18.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2025-01-11 09:31:43.593340"], ["tokens", "[FILTERED]"], ["id", 13]]
+  ↳ app/controllers/api/v1/auth/sessions_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/auth/sessions_controller.rb:9:in `create'
+Generated Token: {"access-token"=>"iEy3l8ZodC5CKDavWryPIg", "token-type"=>"Bearer", "client"=>"oNtwj9QXr6nNmhpSJDQcPQ", "expiry"=>"1737765103", "uid"=>"mick24@gmail.com", "Authorization"=>"Bearer eyJhY2Nlc3MtdG9rZW4iOiJpRXkzbDhab2RDNUNLRGF2V3J5UElnIiwidG9rZW4tdHlwZSI6IkJlYXJlciIsImNsaWVudCI6Im9OdHdqOVFYcjZuTm1ocFNKRFFjUFEiLCJleHBpcnkiOiIxNzM3NzY1MTAzIiwidWlkIjoibWljazI0QGdtYWlsLmNvbSJ9"}
+Response Data: {"id":13,"email":"mick24@gmail.com","name":"mick24"}
+Completed 200 OK in 689ms (Views: 0.2ms | ActiveRecord: 63.8ms | Allocations: 12788)
+
+
+Started POST "/api/v1/auth/sign_in" for 192.168.65.1 at 2025-01-11 09:31:44 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-11 09:31:44 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::Auth::SessionsController#create as */*
+  Parameters: {"email"=>"mick24@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"mick24@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mick24@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth/sessions_controller.rb:7:in `create'
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 120ms (Views: 0.2ms | ActiveRecord: 8.4ms | Allocations: 5631)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-11 09:31:44 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 63ms (Views: 0.3ms | ActiveRecord: 5.4ms | Allocations: 2516)
+
+
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/auth/sessions_controller.rb:9:in `create'
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2025-01-11 09:31:44.893463"], ["tokens", "[FILTERED]"], ["id", 13]]
+  ↳ app/controllers/api/v1/auth/sessions_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/auth/sessions_controller.rb:9:in `create'
+Generated Token: {"access-token"=>"F5wtqigTy-jqJuwDDZBqNw", "token-type"=>"Bearer", "client"=>"TBnBlEtU01TO8JnLvtozqw", "expiry"=>"1737765104", "uid"=>"mick24@gmail.com", "Authorization"=>"Bearer eyJhY2Nlc3MtdG9rZW4iOiJGNXd0cWlnVHktanFKdXdERFpCcU53IiwidG9rZW4tdHlwZSI6IkJlYXJlciIsImNsaWVudCI6IlRCbkJsRXRVMDFUTzhKbkx2dG96cXciLCJleHBpcnkiOiIxNzM3NzY1MTA0IiwidWlkIjoibWljazI0QGdtYWlsLmNvbSJ9"}
+Response Data: {"id":13,"email":"mick24@gmail.com","name":"mick24"}
+Completed 200 OK in 392ms (Views: 0.3ms | ActiveRecord: 4.0ms | Allocations: 16528)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-11 09:31:54 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 140)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-11 09:31:54 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 140)
+
+
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE DATABASE "app_development" ENCODING = 'unicode'[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE DATABASE "app_test" ENCODING = 'unicode'[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5277929974492897470)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5277929974492897470)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-11 09:38:32 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 96ms (Views: 0.3ms | ActiveRecord: 6.3ms | Allocations: 16017)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-11 09:38:32 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 1.7ms | Allocations: 2517)
+
+
+Started GET "/" for 192.168.65.1 at 2025-01-11 09:51:27 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.8.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.8.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.9ms | Allocations: 488)
+Completed 200 OK in 87ms (Views: 20.2ms | ActiveRecord: 0.0ms | Allocations: 6208)
+
+
+Started GET "/" for 192.168.65.1 at 2025-01-11 09:51:38 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.8.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.8.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 272)
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 980)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-11 10:40:59 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 1140)
+
+
+  
+NoMethodError (undefined method `authenticate_user!' for #<Api::V1::MissionsController:0x00000000016288>):
+  
+activesupport (7.0.8.5) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.8.5) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.8.5) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.8.5) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.8.5) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.8.5) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.8.5) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.8.5) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+turbo-rails (2.0.11) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.11) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.0.8.5) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8.5) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8.5) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8.5) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8.5) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8.5) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.5) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.5) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8.5) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8.5) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8.5) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8.5) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8.5) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8.5) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.5) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.5) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.5) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.10) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.10) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.10) lib/rack/etag.rb:27:in `call'
+rack (2.2.10) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.10) lib/rack/head.rb:12:in `call'
+activerecord (7.0.8.5) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.5) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.5) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.5) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.5) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.5) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.5) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.5) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.10) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.10) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (7.0.8.5) lib/rails/engine.rb:530:in `call'
+puma (5.6.9) lib/puma/configuration.rb:252:in `call'
+puma (5.6.9) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.9) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.9) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.9) lib/puma/server.rb:443:in `process_client'
+puma (5.6.9) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-11 10:41:00 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 426)
+
+
+  
+NoMethodError (undefined method `authenticate_user!' for #<Api::V1::MissionsController:0x00000000016300>):
+  
+activesupport (7.0.8.5) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.8.5) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.8.5) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.8.5) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.8.5) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.8.5) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.8.5) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.8.5) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+turbo-rails (2.0.11) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.11) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.0.8.5) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8.5) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8.5) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8.5) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8.5) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8.5) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.5) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.5) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8.5) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8.5) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8.5) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8.5) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8.5) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8.5) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.5) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.5) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.5) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.10) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.10) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.10) lib/rack/etag.rb:27:in `call'
+rack (2.2.10) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.10) lib/rack/head.rb:12:in `call'
+activerecord (7.0.8.5) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.5) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.5) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.5) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.5) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.5) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.5) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.5) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.10) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.10) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (7.0.8.5) lib/rails/engine.rb:530:in `call'
+puma (5.6.9) lib/puma/configuration.rb:252:in `call'
+puma (5.6.9) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.9) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.9) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.9) lib/puma/server.rb:443:in `process_client'
+puma (5.6.9) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE DATABASE "app_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE "app_test" ENCODING = 'unicode'[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5277929974492897470)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(5277929974492897470)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-12 06:28:00 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::MissionsController#index as JSON
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 52ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 4099)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-12 06:28:00 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 141)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-12 06:32:00 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 141)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-12 06:32:00 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 141)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-12 06:32:02 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 141)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-12 06:32:02 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 141)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-12 06:32:26 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 141)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-12 06:32:26 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 141)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-12 09:43:00 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+Completed 401 Unauthorized in 5ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 443)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-12 09:43:01 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 140)
+
+
+Started POST "/api/v1/auth/sign_in" for 192.168.65.1 at 2025-01-12 09:43:31 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::Auth::SessionsController#create as */*
+  Parameters: {"email"=>"mick24@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"mick24@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mick24@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/auth/sessions_controller.rb:9:in `create'
+  [1m[36mUser Update (6.9ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2025-01-12 09:43:32.317559"], ["tokens", "[FILTERED]"], ["id", 13]]
+  ↳ app/controllers/api/v1/auth/sessions_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/auth/sessions_controller.rb:9:in `create'
+Generated Token: {"access-token"=>"9dorRPIj1pN7tgv8UBI4Bw", "token-type"=>"Bearer", "client"=>"3H7l76OPrSVKmWCQ3pdxqw", "expiry"=>"1737852212", "uid"=>"mick24@gmail.com", "Authorization"=>"Bearer eyJhY2Nlc3MtdG9rZW4iOiI5ZG9yUlBJajFwTjd0Z3Y4VUJJNEJ3IiwidG9rZW4tdHlwZSI6IkJlYXJlciIsImNsaWVudCI6IjNIN2w3Nk9QclNWS21XQ1EzcGR4cXciLCJleHBpcnkiOiIxNzM3ODUyMjEyIiwidWlkIjoibWljazI0QGdtYWlsLmNvbSJ9"}
+Response Data: {"id":13,"email":"mick24@gmail.com","name":"mick24"}
+Completed 200 OK in 455ms (Views: 0.3ms | ActiveRecord: 48.4ms | Allocations: 20810)
+
+
+Started POST "/api/v1/auth/sign_in" for 192.168.65.1 at 2025-01-12 09:43:36 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::Auth::SessionsController#create as */*
+  Parameters: {"email"=>"mick24@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"mick24@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mick24@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/auth/sessions_controller.rb:9:in `create'
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "tokens" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2025-01-12 09:43:36.423316"], ["tokens", "[FILTERED]"], ["id", 13]]
+  ↳ app/controllers/api/v1/auth/sessions_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/auth/sessions_controller.rb:9:in `create'
+Generated Token: {"access-token"=>"U22S2lPKtgx2KSGfbShjDw", "token-type"=>"Bearer", "client"=>"JRBQzXAC-iNgOuV-r-_h0g", "expiry"=>"1737852216", "uid"=>"mick24@gmail.com", "Authorization"=>"Bearer eyJhY2Nlc3MtdG9rZW4iOiJVMjJTMmxQS3RneDJLU0dmYlNoakR3IiwidG9rZW4tdHlwZSI6IkJlYXJlciIsImNsaWVudCI6IkpSQlF6WEFDLWlOZ091Vi1yLV9oMGciLCJleHBpcnkiOiIxNzM3ODUyMjE2IiwidWlkIjoibWljazI0QGdtYWlsLmNvbSJ9"}
+Response Data: {"id":13,"email":"mick24@gmail.com","name":"mick24"}
+Completed 200 OK in 404ms (Views: 0.3ms | ActiveRecord: 5.3ms | Allocations: 3632)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-12 09:43:41 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 84ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 2983)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-12 09:43:41 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 2516)
+
+
+Started POST "/api/v1/missions" for 192.168.65.1 at 2025-01-12 09:52:56 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#create as JSON
+  Parameters: {"name"=>"a", "description"=>"a", "deadline"=>"2025-01-13", "is_completed"=>false, "mission"=>{"name"=>"a", "description"=>"a", "is_completed"=>false, "deadline"=>"2025-01-13"}}
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 8.3ms | Allocations: 273)
+
+
+Started POST "/api/v1/missions" for 192.168.65.1 at 2025-01-12 10:36:27 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#create as JSON
+  Parameters: {"name"=>"a", "description"=>"a", "deadline"=>"2025-01-13", "is_completed"=>false, "mission"=>{"name"=>"a", "description"=>"a", "is_completed"=>false, "deadline"=>"2025-01-13"}}
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 141)
+
+
+Started POST "/api/v1/missions" for 192.168.65.1 at 2025-01-12 10:36:37 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#create as JSON
+  Parameters: {"name"=>"a", "description"=>"a", "deadline"=>"2025-01-22", "is_completed"=>false, "mission"=>{"name"=>"a", "description"=>"a", "is_completed"=>false, "deadline"=>"2025-01-22"}}
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 141)
+
+
+Started POST "/api/v1/missions" for 192.168.65.1 at 2025-01-12 10:36:38 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#create as JSON
+  Parameters: {"name"=>"a", "description"=>"a", "deadline"=>"2025-01-22", "is_completed"=>false, "mission"=>{"name"=>"a", "description"=>"a", "is_completed"=>false, "deadline"=>"2025-01-22"}}
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 141)
+
+
+Started POST "/api/v1/missions" for 192.168.65.1 at 2025-01-12 10:36:38 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#create as JSON
+  Parameters: {"name"=>"a", "description"=>"a", "deadline"=>"2025-01-22", "is_completed"=>false, "mission"=>{"name"=>"a", "description"=>"a", "is_completed"=>false, "deadline"=>"2025-01-22"}}
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 141)
+
+
+Started POST "/api/v1/missions" for 192.168.65.1 at 2025-01-12 10:36:38 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#create as JSON
+  Parameters: {"name"=>"a", "description"=>"a", "deadline"=>"2025-01-22", "is_completed"=>false, "mission"=>{"name"=>"a", "description"=>"a", "is_completed"=>false, "deadline"=>"2025-01-22"}}
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 141)
+
+
+Started POST "/api/v1/missions" for 192.168.65.1 at 2025-01-12 10:36:53 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#create as JSON
+  Parameters: {"name"=>"a", "description"=>"a", "deadline"=>"2025-01-22", "is_completed"=>false, "mission"=>{"name"=>"a", "description"=>"a", "is_completed"=>false, "deadline"=>"2025-01-22"}}
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 141)
+
+
+Started POST "/api/v1/missions" for 192.168.65.1 at 2025-01-12 10:36:53 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#create as JSON
+  Parameters: {"name"=>"a", "description"=>"a", "deadline"=>"2025-01-22", "is_completed"=>false, "mission"=>{"name"=>"a", "description"=>"a", "is_completed"=>false, "deadline"=>"2025-01-22"}}
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 141)
+
+
+Started POST "/api/v1/missions" for 192.168.65.1 at 2025-01-12 10:36:53 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#create as JSON
+  Parameters: {"name"=>"a", "description"=>"a", "deadline"=>"2025-01-22", "is_completed"=>false, "mission"=>{"name"=>"a", "description"=>"a", "is_completed"=>false, "deadline"=>"2025-01-22"}}
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 141)
+
+
+Started POST "/api/v1/missions" for 192.168.65.1 at 2025-01-12 10:36:54 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#create as JSON
+  Parameters: {"name"=>"a", "description"=>"a", "deadline"=>"2025-01-22", "is_completed"=>false, "mission"=>{"name"=>"a", "description"=>"a", "is_completed"=>false, "deadline"=>"2025-01-22"}}
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 141)
+
+
+Started POST "/api/v1/missions" for 192.168.65.1 at 2025-01-12 10:36:59 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#create as JSON
+  Parameters: {"name"=>"a", "description"=>"a", "deadline"=>"2025-01-29", "is_completed"=>false, "mission"=>{"name"=>"a", "description"=>"a", "is_completed"=>false, "deadline"=>"2025-01-29"}}
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 141)
+
+
+Started POST "/api/v1/missions" for 192.168.65.1 at 2025-01-12 20:08:24 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#create as JSON
+  Parameters: {"name"=>"a", "description"=>"a", "deadline"=>"2025-01-14", "is_completed"=>false, "mission"=>{"name"=>"a", "description"=>"a", "is_completed"=>false, "deadline"=>"2025-01-14"}}
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 9ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 141)
+
+
+Started POST "/api/v1/missions" for 192.168.65.1 at 2025-01-12 20:48:32 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#create as JSON
+  Parameters: {"name"=>"a", "description"=>"a", "deadline"=>"2025-01-15", "isCompleted"=>false, "mission"=>{"name"=>"a", "description"=>"a", "deadline"=>"2025-01-15"}}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+Params received: #<ActionController::Parameters {"name"=>"a", "description"=>"a", "deadline"=>"2025-01-15", "isCompleted"=>false, "controller"=>"api/v1/missions", "action"=>"create", "mission"=>{"name"=>"a", "description"=>"a", "deadline"=>"2025-01-15"}} permitted: false>
+Current user: #<User id: 13, email: "mick24@gmail.com", name: "mick24", created_at: "2025-01-09 00:03:28.611497000 +0900", updated_at: "2025-01-12 09:43:36.423316000 +0900", provider: "email", uid: "mick24@gmail.com", allow_password_change: [FILTERED], nickname: nil, image: nil>
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/missions_controller.rb:44:in `create'
+  [1m[36mMission Create (24.2ms)[0m  [1m[32mINSERT INTO "missions" ("name", "description", "owner_type", "user_id", "team_id", "is_completed", "created_at", "updated_at", "deadline") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "a"], ["description", "a"], ["owner_type", nil], ["user_id", 13], ["team_id", nil], ["is_completed", nil], ["created_at", "2025-01-12 20:48:33.021250"], ["updated_at", "2025-01-12 20:48:33.021250"], ["deadline", "2025-01-15"]]
+  ↳ app/controllers/api/v1/missions_controller.rb:44:in `create'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/missions_controller.rb:44:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 201 Created in 301ms (Views: 0.5ms | ActiveRecord: 58.0ms | Allocations: 17831)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-12 20:48:33 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeam Pluck (6.4ms)[0m  [1m[34mSELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:13:in `index'
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 16.6ms | Allocations: 9819)
+
+
+  
+NameError (uninitialized constant Api::V1::MissionsController::ActiveModelSerializers):
+  
+app/controllers/api/v1/missions_controller.rb:16:in `index'
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-12 20:48:33 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeam Pluck (0.7ms)[0m  [1m[34mSELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:13:in `index'
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.4ms | Allocations: 2532)
+
+
+  
+NameError (uninitialized constant Api::V1::MissionsController::ActiveModelSerializers):
+  
+app/controllers/api/v1/missions_controller.rb:16:in `index'
+Started POST "/api/v1/missions" for 192.168.65.1 at 2025-01-12 20:48:48 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#create as JSON
+  Parameters: {"name"=>"a", "description"=>"a", "deadline"=>"2025-01-22", "isCompleted"=>false, "mission"=>{"name"=>"a", "description"=>"a", "deadline"=>"2025-01-22"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+Params received: #<ActionController::Parameters {"name"=>"a", "description"=>"a", "deadline"=>"2025-01-22", "isCompleted"=>false, "controller"=>"api/v1/missions", "action"=>"create", "mission"=>{"name"=>"a", "description"=>"a", "deadline"=>"2025-01-22"}} permitted: false>
+Current user: #<User id: 13, email: "mick24@gmail.com", name: "mick24", created_at: "2025-01-09 00:03:28.611497000 +0900", updated_at: "2025-01-12 09:43:36.423316000 +0900", provider: "email", uid: "mick24@gmail.com", allow_password_change: [FILTERED], nickname: nil, image: nil>
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/missions_controller.rb:44:in `create'
+  [1m[36mMission Create (0.8ms)[0m  [1m[32mINSERT INTO "missions" ("name", "description", "owner_type", "user_id", "team_id", "is_completed", "created_at", "updated_at", "deadline") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "a"], ["description", "a"], ["owner_type", nil], ["user_id", 13], ["team_id", nil], ["is_completed", nil], ["created_at", "2025-01-12 20:48:49.004729"], ["updated_at", "2025-01-12 20:48:49.004729"], ["deadline", "2025-01-22"]]
+  ↳ app/controllers/api/v1/missions_controller.rb:44:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/missions_controller.rb:44:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 201 Created in 24ms (Views: 0.4ms | ActiveRecord: 3.8ms | Allocations: 4791)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-12 20:48:49 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeam Pluck (0.6ms)[0m  [1m[34mSELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:13:in `index'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.1ms | Allocations: 2519)
+
+
+  
+NameError (uninitialized constant Api::V1::MissionsController::ActiveModelSerializers):
+  
+app/controllers/api/v1/missions_controller.rb:16:in `index'
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-12 20:48:49 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeam Pluck (0.7ms)[0m  [1m[34mSELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:13:in `index'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.4ms | Allocations: 2521)
+
+
+  
+NameError (uninitialized constant Api::V1::MissionsController::ActiveModelSerializers):
+  
+app/controllers/api/v1/missions_controller.rb:16:in `index'
+Started POST "/api/v1/missions" for 192.168.65.1 at 2025-01-12 21:09:52 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#create as JSON
+  Parameters: {"name"=>"b", "description"=>"b", "deadline"=>"2025-01-15", "isCompleted"=>true, "mission"=>{"name"=>"b", "description"=>"b", "deadline"=>"2025-01-15"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+Params received: #<ActionController::Parameters {"name"=>"b", "description"=>"b", "deadline"=>"2025-01-15", "isCompleted"=>true, "controller"=>"api/v1/missions", "action"=>"create", "mission"=>{"name"=>"b", "description"=>"b", "deadline"=>"2025-01-15"}} permitted: false>
+Current user: #<User id: 13, email: "mick24@gmail.com", name: "mick24", created_at: "2025-01-09 00:03:28.611497000 +0900", updated_at: "2025-01-12 09:43:36.423316000 +0900", provider: "email", uid: "mick24@gmail.com", allow_password_change: [FILTERED], nickname: nil, image: nil>
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/missions_controller.rb:44:in `create'
+  [1m[36mMission Create (2.9ms)[0m  [1m[32mINSERT INTO "missions" ("name", "description", "owner_type", "user_id", "team_id", "is_completed", "created_at", "updated_at", "deadline") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "b"], ["description", "b"], ["owner_type", nil], ["user_id", 13], ["team_id", nil], ["is_completed", nil], ["created_at", "2025-01-12 21:09:52.589474"], ["updated_at", "2025-01-12 21:09:52.589474"], ["deadline", "2025-01-15"]]
+  ↳ app/controllers/api/v1/missions_controller.rb:44:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/missions_controller.rb:44:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 201 Created in 63ms (Views: 0.6ms | ActiveRecord: 14.7ms | Allocations: 7708)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-12 21:09:52 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeam Pluck (0.8ms)[0m  [1m[34mSELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:13:in `index'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.3ms | Allocations: 2522)
+
+
+  
+NameError (uninitialized constant Api::V1::MissionsController::ActiveModelSerializers):
+  
+app/controllers/api/v1/missions_controller.rb:16:in `index'
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-12 21:09:52 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeam Pluck (2.3ms)[0m  [1m[34mSELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:13:in `index'
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 3.3ms | Allocations: 2521)
+
+
+  
+NameError (uninitialized constant Api::V1::MissionsController::ActiveModelSerializers):
+  
+app/controllers/api/v1/missions_controller.rb:16:in `index'
+Started POST "/api/v1/missions" for 192.168.65.1 at 2025-01-12 21:55:51 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#create as JSON
+  Parameters: {"name"=>"c", "description"=>"c", "deadline"=>"2025-01-22", "isCompleted"=>true, "mission"=>{"name"=>"c", "description"=>"c", "deadline"=>"2025-01-22"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+Params received: #<ActionController::Parameters {"name"=>"c", "description"=>"c", "deadline"=>"2025-01-22", "isCompleted"=>true, "controller"=>"api/v1/missions", "action"=>"create", "mission"=>{"name"=>"c", "description"=>"c", "deadline"=>"2025-01-22"}} permitted: false>
+Current user: #<User id: 13, email: "mick24@gmail.com", name: "mick24", created_at: "2025-01-09 00:03:28.611497000 +0900", updated_at: "2025-01-12 09:43:36.423316000 +0900", provider: "email", uid: "mick24@gmail.com", allow_password_change: [FILTERED], nickname: nil, image: nil>
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/missions_controller.rb:44:in `create'
+  [1m[36mMission Create (3.0ms)[0m  [1m[32mINSERT INTO "missions" ("name", "description", "owner_type", "user_id", "team_id", "is_completed", "created_at", "updated_at", "deadline") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "c"], ["description", "c"], ["owner_type", nil], ["user_id", 13], ["team_id", nil], ["is_completed", nil], ["created_at", "2025-01-12 21:55:52.182874"], ["updated_at", "2025-01-12 21:55:52.182874"], ["deadline", "2025-01-22"]]
+  ↳ app/controllers/api/v1/missions_controller.rb:44:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/missions_controller.rb:44:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 201 Created in 116ms (Views: 0.2ms | ActiveRecord: 11.5ms | Allocations: 13296)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-12 21:55:52 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeam Pluck (0.8ms)[0m  [1m[34mSELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:13:in `index'
+  [1m[36mMission Load (2.6ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:16:in `index'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 51ms (Views: 0.2ms | ActiveRecord: 4.8ms | Allocations: 9863)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-12 21:55:52 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeam Pluck (0.7ms)[0m  [1m[34mSELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:13:in `index'
+  [1m[36mMission Load (0.7ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:16:in `index'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 4317)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-12 22:25:00 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+Completed 401 Unauthorized in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 279)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-12 22:25:00 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 140)
+
+
+Started POST "/api/v1/missions" for 192.168.65.1 at 2025-01-13 00:21:34 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#create as JSON
+  Parameters: {"name"=>"d", "description"=>"d", "deadline"=>"2025-01-21", "isCompleted"=>false, "mission"=>{"name"=>"d", "description"=>"d", "deadline"=>"2025-01-21"}}
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+Params received: #<ActionController::Parameters {"name"=>"d", "description"=>"d", "deadline"=>"2025-01-21", "isCompleted"=>false, "controller"=>"api/v1/missions", "action"=>"create", "mission"=>{"name"=>"d", "description"=>"d", "deadline"=>"2025-01-21"}} permitted: false>
+Current user: #<User id: 13, email: "mick24@gmail.com", name: "mick24", created_at: "2025-01-09 00:03:28.611497000 +0900", updated_at: "2025-01-12 09:43:36.423316000 +0900", provider: "email", uid: "mick24@gmail.com", allow_password_change: [FILTERED], nickname: nil, image: nil>
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/missions_controller.rb:44:in `create'
+  [1m[36mMission Create (5.0ms)[0m  [1m[32mINSERT INTO "missions" ("name", "description", "owner_type", "user_id", "team_id", "is_completed", "created_at", "updated_at", "deadline") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "d"], ["description", "d"], ["owner_type", nil], ["user_id", 13], ["team_id", nil], ["is_completed", nil], ["created_at", "2025-01-13 00:21:34.616739"], ["updated_at", "2025-01-13 00:21:34.616739"], ["deadline", "2025-01-21"]]
+  ↳ app/controllers/api/v1/missions_controller.rb:44:in `create'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/missions_controller.rb:44:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 201 Created in 93ms (Views: 0.8ms | ActiveRecord: 22.9ms | Allocations: 7655)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-13 00:21:34 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeam Pluck (0.7ms)[0m  [1m[34mSELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:13:in `index'
+  [1m[36mMission Load (0.5ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:16:in `index'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 26ms (Views: 0.6ms | ActiveRecord: 2.5ms | Allocations: 4455)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-13 00:21:34 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeam Pluck (0.7ms)[0m  [1m[34mSELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:13:in `index'
+  [1m[36mMission Load (0.6ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:16:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 0.2ms | ActiveRecord: 2.3ms | Allocations: 4409)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-13 00:35:37 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeam Pluck (1.5ms)[0m  [1m[34mSELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:13:in `index'
+  [1m[36mMission Load (1.2ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:16:in `index'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 82ms (Views: 0.2ms | ActiveRecord: 13.1ms | Allocations: 7360)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-13 00:35:37 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeam Pluck (0.7ms)[0m  [1m[34mSELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:13:in `index'
+  [1m[36mMission Load (0.6ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:16:in `index'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 3.0ms | Allocations: 4409)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-13 00:45:54 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeam Pluck (1.0ms)[0m  [1m[34mSELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:13:in `index'
+  [1m[36mMission Load (0.8ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:16:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 45ms (Views: 0.3ms | ActiveRecord: 9.7ms | Allocations: 7340)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-13 00:45:55 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeam Pluck (0.6ms)[0m  [1m[34mSELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:13:in `index'
+  [1m[36mMission Load (0.6ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:16:in `index'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 2.4ms | Allocations: 4409)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-13 00:55:08 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeam Pluck (1.4ms)[0m  [1m[34mSELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:13:in `index'
+  [1m[36mMission Load (0.6ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:16:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 56ms (Views: 0.2ms | ActiveRecord: 11.3ms | Allocations: 7340)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-13 00:55:08 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeam Pluck (0.7ms)[0m  [1m[34mSELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:13:in `index'
+  [1m[36mMission Load (0.7ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:16:in `index'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 27ms (Views: 0.3ms | ActiveRecord: 2.9ms | Allocations: 4409)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-13 02:07:00 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeam Pluck (2.2ms)[0m  [1m[34mSELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:13:in `index'
+  [1m[36mMission Load (0.6ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:16:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 67ms (Views: 0.4ms | ActiveRecord: 17.7ms | Allocations: 7378)
+
+
+Started GET "/api/v1/missions" for 192.168.65.1 at 2025-01-13 02:07:00 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::MissionsController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeam Pluck (0.6ms)[0m  [1m[34mSELECT "teams"."id" FROM "teams" INNER JOIN "user_team_relations" ON "teams"."id" = "user_team_relations"."team_id" WHERE "user_team_relations"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:13:in `index'
+  [1m[36mMission Load (0.5ms)[0m  [1m[34mSELECT "missions".* FROM "missions" WHERE "missions"."user_id" = $1 AND "missions"."user_id" IS NOT NULL AND "missions"."team_id" IS NULL[0m  [["user_id", 13]]
+  ↳ app/controllers/api/v1/missions_controller.rb:16:in `index'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 2.2ms | Allocations: 4409)
+
+
