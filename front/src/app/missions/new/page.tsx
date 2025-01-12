@@ -34,9 +34,9 @@ const NewMissionPage = () => {
       },
     );
     router.push('/missions/index');
-  } catch (err: any) {
+  } catch (err) {
     console.error(err);
-    setError(err.response?.data?.error || 'ミッションの作成に失敗しました。');
+    setError('ミッションの作成に失敗しました。');
   }
 };
 
