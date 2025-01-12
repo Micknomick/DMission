@@ -1,113 +1,87 @@
+"use client";
+
 import React, { useState } from "react";
-
-import { Task } from "@/lib/type"; // Task型をインポート
-import TaskModal from "./TaskModal";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/app/components/ui/tooltip";
+import { Tabs, TabsList, TabsTrigger } from "@/app/components/ui/tabs";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/app/components/ui/table";
+import { Input } from "@/app/components/ui/input";
 import { Button } from "@/app/components/ui/button";
-import { Progress } from "@/app/components/ui/progress";
-
+import { Task } from "@/lib/type";
 import { FaEdit } from "react-icons/fa";
 import { FaCircleInfo } from "react-icons/fa6";
 import { FaTrash } from "react-icons/fa";
 
-type TasksListProps = {
-  tasks: Task[];
-};
+// TaskList コンポーネントを別ファイルに分離
+export function TaskList({ tasks = [] }: { tasks: Task[] }) {
+  const [activeTab, setActiveTab] = useState("progress");
 
-export default function TasksList({ tasks }: TasksListProps) {
-  const [isModalOpen, setIsModalOpen] = useState(false); // モーダルの開閉状態を管理
-
-  // モーダルを開く関数
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  // モーダルを閉じる関数
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  const filteredTasks = tasks.filter((task) => {
+    if (activeTab === "progress") return task.progressRate !== null && task.progressRate < 100;
+    if (activeTab === "done") return task.progressRate === 100;
+    if (activeTab === "deleted") return false;
+    return true;
+  });
 
   return (
-    <div className="w-2/3 p-6 rounded-lg">
-      <h2 className="text-xl font-semibold mb-6 text-white">Tasks</h2>
-      <div className="space-y-4">
-        {tasks.map((task: Task, index: number) => (
-          <div
-            key={index}
-            className="bg-gray-700 p-4 rounded-lg flex justify-between items-center text-white"
-          >
-            <div>
-              <p className="font-semibold text-lg">{task.title}</p>
-              <p className="text-gray-400">{task.description}</p>
-              <p className="text-sm text-gray-500">
-                from {task.createdBy} - Deadline: {task.deadline}
-              </p>
-            </div>
-            <div className="flex flex-col items-end">
-              <Progress
-                value={task.progressRate}
-                className="w-24 bg-gray-600 rounded-full h-2.5 mb-1"
-              />
-              <span className="text-gray-300">{task.progressRate}%</span>
-            </div>
-            <div className="flex space-x-2">
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="ghost" size="icon" className="text-blue-400 hover:text-blue-600">
-                      <FaEdit />
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>Edit Task</TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="text-gray-200 hover:text-gray-600"
-                    >
-                      <FaCircleInfo />
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>Task Info</TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="text-red-400 hover:text-red-600"
-                    >
-                      <FaTrash />
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>Delete Task</TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-            </div>
-          </div>
-        ))}
-      </div>
-      {/* モーダルを開くボタン */}
-      <Button
-        className="mt-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg"
-        onClick={openModal} // クリックでモーダルを開く
-      >
-        + Add Task
-      </Button>
-
-      {/* モーダルコンポーネント */}
-      <TaskModal isOpen={isModalOpen} onClose={closeModal} />
-      <div className="mt-6 bg-gray-900 p-4 rounded-lg text-center">
-        <p className="font-semibold">Team 3 Mission 17 Tasks 30</p>
-      </div>
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-4 text-white">Dmission</h1>
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-4">
+        <TabsList>
+          <TabsTrigger value="progress">Progress</TabsTrigger>
+          <TabsTrigger value="done">Done</TabsTrigger>
+          <TabsTrigger value="deleted">Deleted</TabsTrigger>
+        </TabsList>
+      </Tabs>
+      <Input
+        type="text"
+        placeholder={`Filter ${activeTab === "progress" ? "Tasks" : "Missions"} ...`}
+        className="mb-4"
+      />
+      <Table className="bg-gray-800 text-white rounded-lg">
+        <TableHeader>
+          <TableRow>
+            <TableHead>Title</TableHead>
+            <TableHead>Description</TableHead>
+            <TableHead>Created By</TableHead>
+            <TableHead>Progress</TableHead>
+            <TableHead>Deadline</TableHead>
+            <TableHead>Actions</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {filteredTasks.map((task) => (
+            <TableRow key={task.id}>
+              <TableCell>{task.title}</TableCell>
+              <TableCell>{task.description || "No description"}</TableCell>
+              <TableCell>{task.createdBy}</TableCell>
+              <TableCell>
+                <div className="flex items-center space-x-2">
+                  <div className="relative w-24 h-2 bg-gray-600 rounded-full">
+                    <div
+                      className="absolute h-2 bg-blue-500 rounded-full"
+                      style={{ width: `${task.progressRate ?? 0}%` }}
+                    />
+                  </div>
+                  <span>{task.progressRate ?? 0}%</span>
+                </div>
+              </TableCell>
+              <TableCell>{task.deadline}</TableCell>
+              <TableCell>
+                <div className="flex space-x-2">
+                  <Button variant="ghost" size="sm">
+                    <FaEdit />
+                  </Button>
+                  <Button variant="ghost" size="sm">
+                    <FaCircleInfo />
+                  </Button>
+                  <Button variant="ghost" size="sm" className="text-red-500">
+                    <FaTrash />
+                  </Button>
+                </div>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
     </div>
   );
 }
