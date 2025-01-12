@@ -7,9 +7,8 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Input } from "@/app/components/ui/input";
 import { Button } from "@/app/components/ui/button";
 
-import { FaEdit } from "react-icons/fa";
+import { FaEdit, FaTrash } from "react-icons/fa";
 import { FaCircleInfo } from "react-icons/fa6";
-import { FaTrash } from "react-icons/fa";
 
 type Task = {
   id: number;
@@ -22,18 +21,26 @@ type Task = {
 };
 
 type TaskListProps = {
-  tasks?: Task[]; // tasks をオプショナルに変更
+  tasks: Task[]; // 必須に変更
 };
 
-export default function TaskList({ tasks = [] }: TaskListProps) { // デフォルト値として空配列を設定
+export default function TaskList({ tasks }: TaskListProps) {
   const [activeTab, setActiveTab] = useState("progress");
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredTasks = tasks.filter((task) => {
-    if (activeTab === "progress") return task.progress < 100;
-    if (activeTab === "done") return task.progress === 100;
-    if (activeTab === "deleted") return false; // 削除済みタスクのロジックを追加
-    return true;
-  });
+  const filteredTasks = tasks?.filter((task) => {
+    const matchesQuery = task.title.toLowerCase().includes(searchQuery.toLowerCase());
+    switch (activeTab) {
+      case "progress":
+        return task.progress < 100 && matchesQuery;
+      case "done":
+        return task.progress === 100 && matchesQuery;
+      case "deleted":
+        return false && matchesQuery;
+      default:
+        return matchesQuery;
+    }
+  }) || [];
 
   return (
     <div className="p-6">
@@ -49,6 +56,8 @@ export default function TaskList({ tasks = [] }: TaskListProps) { // デフォ�
         type="text"
         placeholder={`Filter ${activeTab === "progress" ? "Tasks" : "Missions"} ...`}
         className="mb-4"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
       />
       <Table className="bg-gray-800 text-white rounded-lg">
         <TableHeader>
