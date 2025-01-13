@@ -8,3 +8,4 @@ export default async function TasksPage() {
 
   return <TaskList tasks={tasks} />;
 }
+
