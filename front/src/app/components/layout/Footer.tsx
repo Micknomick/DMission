@@ -4,7 +4,7 @@ type FooterProps = {
 };
 
 export default function Footer({
-  backgroundColor = "bg-black",
+  backgroundColor = "bg-primary",
   textColor = "text-white",
 }: FooterProps) {
   return (
