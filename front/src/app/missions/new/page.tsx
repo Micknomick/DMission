@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createMission } from "@/utils/api"; // API関数をインポート
-import Footer from '@/app/components/layout/Footer';
 
 const NewMissionPage = () => {
   const [name, setName] = useState('');
