@@ -87,6 +87,15 @@ const NewMissionPage = () => {
               className="w-full border border-gray-600 bg-gray-700 p-2 rounded"
             />
           </div>
+          <div>
+          <label htmlFor="isCompleted">完了状態</label>
+          <input
+            type="checkbox"
+            id="isCompleted"
+            checked={isCompleted}
+            onChange={(e) => setIsCompleted(e.target.checked)}
+          />
+          </div>
           <div className="col-span-2 text-center mt-4">
             <button
               type="submit"
