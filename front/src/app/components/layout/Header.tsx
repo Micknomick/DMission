@@ -1,11 +1,33 @@
-type HeaderProps = {
-  backgroundColor?: string; //背景色
-};
+'use client'
+import styles from '@/app/styles/header.module.scss'
+import { useEffect, useState } from 'react';
+import NavBar from '@/app/components/layout/nav/NavBar';
+import { AnimatePresence } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
-export default function Header({ backgroundColor = "bg-black" }: HeaderProps) {
+export default function Home() {
+
+  const [isActive, setIsActive] = useState(false);
+  const pathname = usePathname();
+
+  useEffect( () => {
+    if(isActive) setIsActive(false)
+  }, [pathname])
+
   return (
-    <div className={`flex items-center justify-center ${backgroundColor} text-white`}>
-      <header className="text-2xl font-bold">Dmission</header>
+    <>
+    <div className={styles.main}>
+
+      <div className={styles.header}>
+        <div onClick={() => {setIsActive(!isActive)}} className={styles.button}>
+          <div className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}></div>
+        </div>
+      </div>
+
     </div>
-  );
+    <AnimatePresence mode="wait">
+      {isActive && <NavBar />}
+    </AnimatePresence>
+    </>
+  )
 }
