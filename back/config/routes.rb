@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       }
       resources :tasks, only: [:index, :show, :create, :update, :destroy]
       resources :missions, only: [:index, :show, :create, :update, :destroy]
+      resources :contacts, only: [:create]
     end
   end
 
@@ -32,7 +33,7 @@ Rails.application.routes.draw do
   # get '/privacy', to: 'high_voltage/pages#show', id: 'privacy'
   # get '/term', to: 'high_voltage/pages#show', id: 'term'
   # contact
-  resources :contacts, only: [:new, :create]
+  # resources :contacts, only: [:new, :create]
   # メール確認用
   # if Rails.env.development?
   #   mount LetterOpenerWeb::Engine, at: "/letter_opener"
