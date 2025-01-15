@@ -48,17 +48,23 @@ export interface Mission {
   id?: number; // データベースから取得後に存在する
   name: string;
   description?: string;
-  ownerType: string;
-  userId: number;
-  teamId: number;
+  progress: number;
+  deadline: string;
+  deleted_at: string | null;
+  ownerType: 'Personal' | 'Team';
+  user: number;
+  team: number;
   isCompleted: boolean;
   createdAt?: string; // Railsで自動生成されるためオプショナル
   updatedAt?: string; // Railsで自動生成されるためオプショナル
 }
 
 export interface MissionInput {
-  name: string;
-  description?: string;
-  deadline: string;
-  isCompleted: boolean;
-}
+  mission: {
+    name: string;
+    description: string;
+    deadline: string;
+    is_completed: boolean;
+    progress: number;
+  };
+};
