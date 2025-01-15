@@ -1,13 +1,16 @@
 class Mission < ApplicationRecord
   #個人ミッション
-  belongs_to :user, optional: true
+  belongs_to :user, optional: true, class_name: "Team"
   #チームミッション
-  belongs_to :team, optional: true
+  belongs_to :team, optional: true, class_name: "User"
   # Missionに紐づくタスク（Missionが削除されたらタスクも削除
   has_many :tasks, dependent: :destroy
   # スコープ：個人ミッションとチームミッションを区別
   scope :personal, -> { where.not(user_id: nil).where(team_id: nil) }
   scope :team, -> { where.not(team_id: nil).where(user_id: nil) }
+
+  # 論理削除を有効化
+  acts_as_paranoid
 
   # 進捗率を計算するメソッド
   def progress_rate

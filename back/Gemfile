@@ -96,3 +96,6 @@ gem "cssbundling-rails"
 
 #corsの設定
 gem "rack-cors"
+
+#論理削除
+gem 'paranoia', '~> 2.4'
