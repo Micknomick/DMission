@@ -41787,3 +41787,416 @@ Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
 Completed 200 OK in 23ms (Views: 0.7ms | ActiveRecord: 2.1ms | Allocations: 2518)
 
 
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-15 21:46:20 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 92ms (Views: 1.9ms | ActiveRecord: 17.1ms | Allocations: 5432)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-15 21:46:20 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 39ms (Views: 0.3ms | ActiveRecord: 1.6ms | Allocations: 2516)
+
+
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5277929974492897470)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5277929974492897470)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE DATABASE "app_development" ENCODING = 'unicode'[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE DATABASE "app_test" ENCODING = 'unicode'[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5277929974492897470)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(5277929974492897470)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/api/v1/contacts" for 192.168.65.1 at 2025-01-15 23:35:19 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+Zeitwerk::NameError (expected file /app/app/controllers/api/v1/contacts_controller.rb to define constant Api::V1::ContactsController, but didn't):
+  
+zeitwerk (2.7.1) lib/zeitwerk/loader/callbacks.rb:33:in `on_file_autoloaded'
+zeitwerk (2.7.1) lib/zeitwerk/core_ext/kernel.rb:27:in `require'
+activesupport (7.0.8.5) lib/active_support/inflector/methods.rb:278:in `const_get'
+activesupport (7.0.8.5) lib/active_support/inflector/methods.rb:278:in `constantize'
+activesupport (7.0.8.5) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (7.0.8.5) lib/action_dispatch/http/request.rb:90:in `controller_class_for'
+actionpack (7.0.8.5) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (7.0.8.5) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (7.0.8.5) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (7.0.8.5) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (7.0.8.5) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (7.0.8.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.5) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.10) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.10) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.10) lib/rack/etag.rb:27:in `call'
+rack (2.2.10) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.10) lib/rack/head.rb:12:in `call'
+activerecord (7.0.8.5) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.5) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.5) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.5) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.5) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.5) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.5) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.5) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.10) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.10) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (7.0.8.5) lib/rails/engine.rb:530:in `call'
+puma (5.6.9) lib/puma/configuration.rb:252:in `call'
+puma (5.6.9) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.9) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.9) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.9) lib/puma/server.rb:443:in `process_client'
+puma (5.6.9) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/api/v1/contacts" for 192.168.65.1 at 2025-01-15 23:41:26 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+Zeitwerk::NameError (expected file /app/app/controllers/api/v1/contacts_controller.rb to define constant Api::V1::ContactsController, but didn't):
+  
+zeitwerk (2.7.1) lib/zeitwerk/loader/callbacks.rb:33:in `on_file_autoloaded'
+zeitwerk (2.7.1) lib/zeitwerk/core_ext/kernel.rb:27:in `require'
+activesupport (7.0.8.5) lib/active_support/inflector/methods.rb:278:in `const_get'
+activesupport (7.0.8.5) lib/active_support/inflector/methods.rb:278:in `constantize'
+activesupport (7.0.8.5) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (7.0.8.5) lib/action_dispatch/http/request.rb:90:in `controller_class_for'
+actionpack (7.0.8.5) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (7.0.8.5) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (7.0.8.5) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (7.0.8.5) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (7.0.8.5) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (7.0.8.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.5) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.10) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.10) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.10) lib/rack/etag.rb:27:in `call'
+rack (2.2.10) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.10) lib/rack/head.rb:12:in `call'
+activerecord (7.0.8.5) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.5) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.5) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.5) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.5) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.5) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.5) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.5) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.10) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.10) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.5) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (7.0.8.5) lib/rails/engine.rb:530:in `call'
+puma (5.6.9) lib/puma/configuration.rb:252:in `call'
+puma (5.6.9) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.9) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.9) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.9) lib/puma/server.rb:443:in `process_client'
+puma (5.6.9) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/api/v1/contacts" for 192.168.65.1 at 2025-01-15 23:41:27 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (uninitialized constant Api::V1::ContactsController):
+  
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-15 23:46:17 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (8.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 303ms (Views: 0.7ms | ActiveRecord: 54.5ms | Allocations: 18802)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-15 23:46:18 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 2517)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-15 23:46:25 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 0.5ms | ActiveRecord: 4.4ms | Allocations: 2535)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-15 23:46:25 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 0.4ms | ActiveRecord: 2.3ms | Allocations: 2516)
+
+
+Started POST "/api/v1/contacts" for 192.168.65.1 at 2025-01-15 23:48:12 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (uninitialized constant Api::V1::ContactsController):
+  
+Started POST "/api/v1/contacts" for 192.168.65.1 at 2025-01-15 23:49:24 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::ContactsController#create as */*
+  Parameters: {"name"=>"テスト", "email"=>"test@gmail.com", "message"=>"a", "contact"=>{"name"=>"テスト", "email"=>"test@gmail.com", "message"=>"a"}}
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 10.0ms | Allocations: 1762)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "contacts" does not exist
+LINE 9:  WHERE a.attrelid = '"contacts"'::regclass
+                            ^
+):
+  
+app/controllers/api/v1/contacts_controller.rb:5:in `create'
+Started POST "/api/v1/contacts" for 192.168.65.1 at 2025-01-15 23:49:27 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::ContactsController#create as */*
+  Parameters: {"name"=>"テスト", "email"=>"test@gmail.com", "message"=>"a", "contact"=>{"name"=>"テスト", "email"=>"test@gmail.com", "message"=>"a"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 1.0ms | Allocations: 954)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "contacts" does not exist
+LINE 9:  WHERE a.attrelid = '"contacts"'::regclass
+                            ^
+):
+  
+app/controllers/api/v1/contacts_controller.rb:5:in `create'
+Started POST "/api/v1/contacts" for 192.168.65.1 at 2025-01-15 23:49:46 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::ContactsController#create as */*
+  Parameters: {"name"=>"テスト", "email"=>"test@gmail.com", "message"=>"test", "contact"=>{"name"=>"テスト", "email"=>"test@gmail.com", "message"=>"test"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 1.0ms | Allocations: 954)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "contacts" does not exist
+LINE 9:  WHERE a.attrelid = '"contacts"'::regclass
+                            ^
+):
+  
+app/controllers/api/v1/contacts_controller.rb:5:in `create'
+Started POST "/api/v1/contacts" for 192.168.65.1 at 2025-01-15 23:51:37 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::ContactsController#create as */*
+  Parameters: {"name"=>"テスト", "email"=>"test@gmail.com", "message"=>"test", "contact"=>{"name"=>"テスト", "email"=>"test@gmail.com", "message"=>"test"}}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 2.1ms | Allocations: 1646)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "contacts" does not exist
+LINE 9:  WHERE a.attrelid = '"contacts"'::regclass
+                            ^
+):
+  
+app/controllers/api/v1/contacts_controller.rb:5:in `create'
+Started POST "/api/v1/contacts" for 192.168.65.1 at 2025-01-15 23:51:47 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::ContactsController#create as */*
+  Parameters: {"name"=>"a", "email"=>"test@gmail.com", "message"=>"test", "contact"=>{"name"=>"a", "email"=>"test@gmail.com", "message"=>"test"}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 1.6ms | Allocations: 954)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "contacts" does not exist
+LINE 9:  WHERE a.attrelid = '"contacts"'::regclass
+                            ^
+):
+  
+app/controllers/api/v1/contacts_controller.rb:5:in `create'
+[dotenv] Loaded [33m.env[0m
+Started POST "/api/v1/contacts" for 192.168.65.1 at 2025-01-16 00:06:13 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::ContactsController#create as */*
+  Parameters: {"name"=>"a", "email"=>"test@gmail.com", "message"=>"test", "contact"=>{"name"=>"a", "email"=>"test@gmail.com", "message"=>"test"}}
+Received params: #<ActionController::Parameters {"name"=>"a", "email"=>"test@gmail.com", "message"=>"test", "controller"=>"api/v1/contacts", "action"=>"create", "contact"=>{"name"=>"a", "email"=>"test@gmail.com", "message"=>"test"}} permitted: false>
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 21.2ms | Allocations: 1681)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "contacts" does not exist
+LINE 9:  WHERE a.attrelid = '"contacts"'::regclass
+                            ^
+):
+  
+app/controllers/api/v1/contacts_controller.rb:6:in `create'
+Started POST "/api/v1/contacts" for 192.168.65.1 at 2025-01-16 00:06:17 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::ContactsController#create as */*
+  Parameters: {"name"=>"a", "email"=>"test@gmail.com", "message"=>"test１", "contact"=>{"name"=>"a", "email"=>"test@gmail.com", "message"=>"test１"}}
+Received params: #<ActionController::Parameters {"name"=>"a", "email"=>"test@gmail.com", "message"=>"test１", "controller"=>"api/v1/contacts", "action"=>"create", "contact"=>{"name"=>"a", "email"=>"test@gmail.com", "message"=>"test１"}} permitted: false>
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.8ms | Allocations: 984)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "contacts" does not exist
+LINE 9:  WHERE a.attrelid = '"contacts"'::regclass
+                            ^
+):
+  
+app/controllers/api/v1/contacts_controller.rb:6:in `create'
+Started POST "/api/v1/contacts" for 192.168.65.1 at 2025-01-16 00:06:19 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::ContactsController#create as */*
+  Parameters: {"name"=>"a", "email"=>"test@gmail.com", "message"=>"test１", "contact"=>{"name"=>"a", "email"=>"test@gmail.com", "message"=>"test１"}}
+Received params: #<ActionController::Parameters {"name"=>"a", "email"=>"test@gmail.com", "message"=>"test１", "controller"=>"api/v1/contacts", "action"=>"create", "contact"=>{"name"=>"a", "email"=>"test@gmail.com", "message"=>"test１"}} permitted: false>
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.5ms | Allocations: 984)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "contacts" does not exist
+LINE 9:  WHERE a.attrelid = '"contacts"'::regclass
+                            ^
+):
+  
+app/controllers/api/v1/contacts_controller.rb:6:in `create'
+Started POST "/api/v1/contacts" for 192.168.65.1 at 2025-01-16 00:07:00 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::ContactsController#create as */*
+  Parameters: {"name"=>"a", "email"=>"test@gmail.com", "message"=>"test2", "contact"=>{"name"=>"a", "email"=>"test@gmail.com", "message"=>"test2"}}
+Received params: #<ActionController::Parameters {"name"=>"a", "email"=>"test@gmail.com", "message"=>"test2", "controller"=>"api/v1/contacts", "action"=>"create", "contact"=>{"name"=>"a", "email"=>"test@gmail.com", "message"=>"test2"}} permitted: false>
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 1.1ms | Allocations: 984)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "contacts" does not exist
+LINE 9:  WHERE a.attrelid = '"contacts"'::regclass
+                            ^
+):
+  
+app/controllers/api/v1/contacts_controller.rb:6:in `create'
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5277929974492897470)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateContacts (20250115151000)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (202.1ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" bigserial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "message" text NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (8.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20250115151000"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(5277929974492897470)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/api/v1/contacts" for 192.168.65.1 at 2025-01-16 00:11:42 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ContactsController#create as */*
+  Parameters: {"name"=>"a", "email"=>"test@gmail.com", "message"=>"test3", "contact"=>{"name"=>"a", "email"=>"test@gmail.com", "message"=>"test3"}}
+Received params: #<ActionController::Parameters {"name"=>"a", "email"=>"test@gmail.com", "message"=>"test3", "controller"=>"api/v1/contacts", "action"=>"create", "contact"=>{"name"=>"a", "email"=>"test@gmail.com", "message"=>"test3"}} permitted: false>
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/contacts_controller.rb:7:in `create'
+  [1m[36mContact Create (21.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "a"], ["email", "test@gmail.com"], ["message", "test3"], ["created_at", "2025-01-16 00:11:42.989416"], ["updated_at", "2025-01-16 00:11:42.989416"]]
+  ↳ app/controllers/api/v1/contacts_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/contacts_controller.rb:7:in `create'
+Contact created successfully: #<Contact id: 1, name: "a", email: "test@gmail.com", message: "test3", created_at: "2025-01-16 00:11:42.989416000 +0900", updated_at: "2025-01-16 00:11:42.989416000 +0900">
+Completed 201 Created in 100ms (Views: 0.4ms | ActiveRecord: 28.9ms | Allocations: 6111)
+
+
+Started POST "/api/v1/contacts" for 192.168.65.1 at 2025-01-16 00:26:28 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::ContactsController#create as */*
+  Parameters: {"name"=>"a", "email"=>"a@a", "message"=>"a", "contact"=>{"name"=>"a", "email"=>"a@a", "message"=>"a"}}
+Received params: #<ActionController::Parameters {"name"=>"a", "email"=>"a@a", "message"=>"a", "controller"=>"api/v1/contacts", "action"=>"create", "contact"=>{"name"=>"a", "email"=>"a@a", "message"=>"a"}} permitted: false>
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/contacts_controller.rb:7:in `create'
+  [1m[36mContact Create (3.0ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "a"], ["email", "a@a"], ["message", "a"], ["created_at", "2025-01-16 00:26:29.050397"], ["updated_at", "2025-01-16 00:26:29.050397"]]
+  ↳ app/controllers/api/v1/contacts_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/contacts_controller.rb:7:in `create'
+Contact created successfully: #<Contact id: 2, name: "a", email: "a@a", message: "a", created_at: "2025-01-16 00:26:29.050397000 +0900", updated_at: "2025-01-16 00:26:29.050397000 +0900">
+Completed 201 Created in 50ms (Views: 0.3ms | ActiveRecord: 13.0ms | Allocations: 4875)
+
+
+Started POST "/api/v1/contacts" for 192.168.65.1 at 2025-01-16 00:32:46 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::ContactsController#create as */*
+  Parameters: {"name"=>"c", "email"=>"c@c", "message"=>"c", "contact"=>{"name"=>"c", "email"=>"c@c", "message"=>"c"}}
+Received params: #<ActionController::Parameters {"name"=>"c", "email"=>"c@c", "message"=>"c", "controller"=>"api/v1/contacts", "action"=>"create", "contact"=>{"name"=>"c", "email"=>"c@c", "message"=>"c"}} permitted: false>
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/contacts_controller.rb:7:in `create'
+  [1m[36mContact Create (3.5ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "c"], ["email", "c@c"], ["message", "c"], ["created_at", "2025-01-16 00:32:47.050469"], ["updated_at", "2025-01-16 00:32:47.050469"]]
+  ↳ app/controllers/api/v1/contacts_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/contacts_controller.rb:7:in `create'
+Contact created successfully: #<Contact id: 3, name: "c", email: "c@c", message: "c", created_at: "2025-01-16 00:32:47.050469000 +0900", updated_at: "2025-01-16 00:32:47.050469000 +0900">
+Completed 201 Created in 138ms (Views: 0.3ms | ActiveRecord: 54.4ms | Allocations: 4841)
+
+
+Started POST "/api/v1/contacts" for 192.168.65.1 at 2025-01-16 00:34:09 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::ContactsController#create as */*
+  Parameters: {"name"=>"c", "email"=>"c@c", "message"=>"c", "contact"=>{"name"=>"c", "email"=>"c@c", "message"=>"c"}}
+Received params: #<ActionController::Parameters {"name"=>"c", "email"=>"c@c", "message"=>"c", "controller"=>"api/v1/contacts", "action"=>"create", "contact"=>{"name"=>"c", "email"=>"c@c", "message"=>"c"}} permitted: false>
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/contacts_controller.rb:7:in `create'
+  [1m[36mContact Create (2.3ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "c"], ["email", "c@c"], ["message", "c"], ["created_at", "2025-01-16 00:34:09.633953"], ["updated_at", "2025-01-16 00:34:09.633953"]]
+  ↳ app/controllers/api/v1/contacts_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/contacts_controller.rb:7:in `create'
+Contact created successfully: #<Contact id: 4, name: "c", email: "c@c", message: "c", created_at: "2025-01-16 00:34:09.633953000 +0900", updated_at: "2025-01-16 00:34:09.633953000 +0900">
+Completed 201 Created in 18ms (Views: 0.2ms | ActiveRecord: 5.5ms | Allocations: 2081)
+
+
