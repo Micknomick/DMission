@@ -5,7 +5,6 @@ import { SuccessModal } from "@/app/components/layout/contacts/FormModal";
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [responseMessage, setResponseMessage] = useState("");
   const [showModal, setShowModal] = useState(false);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -25,16 +24,13 @@ export default function Contact() {
 
       const data = await response.json();
       if (response.ok) {
-        setResponseMessage("送信に成功しました: " + data.message);
         setFormData({ name: "", email: "", message: "" });
         setShowModal(true); // モーダルを表示
       } else {
         console.error("サーバーエラー:", data.errors);
-        setResponseMessage("サーバーエラー: " + data.errors.join(", "));
       }
     } catch (error) {
       console.error("ネットワークエラー:", error);
-      setResponseMessage("ネットワークエラー: サーバーに接続できませんでした。");
     }
   };
 

@@ -42200,3 +42200,34 @@ Contact created successfully: #<Contact id: 4, name: "c", email: "c@c", message:
 Completed 201 Created in 18ms (Views: 0.2ms | ActiveRecord: 5.5ms | Allocations: 2081)
 
 
+Started POST "/api/v1/contacts" for 192.168.65.1 at 2025-01-16 06:37:41 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::ContactsController#create as */*
+  Parameters: {"name"=>"c", "email"=>"c@c", "message"=>"c", "contact"=>{"name"=>"c", "email"=>"c@c", "message"=>"c"}}
+Received params: #<ActionController::Parameters {"name"=>"c", "email"=>"c@c", "message"=>"c", "controller"=>"api/v1/contacts", "action"=>"create", "contact"=>{"name"=>"c", "email"=>"c@c", "message"=>"c"}} permitted: false>
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/contacts_controller.rb:7:in `create'
+  [1m[36mContact Create (3.9ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "c"], ["email", "c@c"], ["message", "c"], ["created_at", "2025-01-16 06:37:41.132862"], ["updated_at", "2025-01-16 06:37:41.132862"]]
+  ↳ app/controllers/api/v1/contacts_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/contacts_controller.rb:7:in `create'
+Contact created successfully: #<Contact id: 5, name: "c", email: "c@c", message: "c", created_at: "2025-01-16 06:37:41.132862000 +0900", updated_at: "2025-01-16 06:37:41.132862000 +0900">
+Completed 201 Created in 97ms (Views: 0.3ms | ActiveRecord: 28.5ms | Allocations: 4875)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-16 06:37:58 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 183ms (Views: 1.0ms | ActiveRecord: 52.2ms | Allocations: 8091)
+
+
+Started GET "/api/v1/auth/validate_token" for 192.168.65.1 at 2025-01-16 06:37:58 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "mick24@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 35ms (Views: 0.7ms | ActiveRecord: 1.7ms | Allocations: 2516)
+
+
