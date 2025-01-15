@@ -21,7 +21,7 @@ const config: Config = {
         second: "#423F50",
         third: "#FDFBF2",
         accent: {
-          DEFAULT: "#EAB648",
+          DEFAULT: "#F56F5E",
           hover: "#FFFFFF",
         },
       },
