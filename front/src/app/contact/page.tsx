@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, ChangeEvent, FormEvent } from "react";
-import { SuccessModal } from "@/app/components/layout/contacts/FormModal";
+import { SuccessModal } from "@/components/layout/contacts/FormModal";
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });

@@ -31,21 +31,38 @@ export type Task = {
   id: number;
   title: string;
   description: string | null;
-  missionId: number;
+  progress_rate: number;
+  priority: string;
+  start_date: string | null;
+  reminder_at: string | null;
+  recurring: boolean | null;
   createdByUserId: number | null;
   assignedUserId: number | null;
   teamId: number | null;
-  progressRate: number | null;
-  status: string | null;
-  createdBy: string;
   createdAt: string;
   updatedAt: string;
   deadline: string;
+  user: User;
+  mission: Mission;
 };
+
+// タスク
+export interface TaskInput {
+  title: string;
+  description: string;
+  priority: string;
+  progress_rate: number;
+  deadline: string;
+  start_date: string;
+  reminder_at: string;
+  recurring: boolean;
+  mission_id: string;
+  team_id: string;
+}
 
 // ミッション
 export interface Mission {
-  id?: number; // データベースから取得後に存在する
+  id: number; // データベースから取得後に存在する
   name: string;
   description?: string;
   progress: number;
@@ -68,3 +85,8 @@ export interface MissionInput {
     progress: number;
   };
 };
+
+export interface Team {
+  id: number;
+  name: string;
+}

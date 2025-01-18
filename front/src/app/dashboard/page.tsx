@@ -1,24 +1,28 @@
 "use client";
 
-import { useEffect, useState } from "react"
-
+import { useEffect, useState } from "react";
 import api from "../../utils/api";
-import { Task } from "../../lib/type";
+import { Task, Mission, Team } from "../../lib/type";
 import { useRouter } from "next/navigation";
 import { User } from "../../lib/type";
 
-
-import TasksList from "../components/layout/TaskListSmall";
-import ProgressCircle from "../components/layout/ProgressCircle";
-
+import TaskList from "@/components/layout/dashboard/TaskList";
+import ProgressCircle from "../../components/layout/dashboard/ProgressCircle";
 
 export default function Dashboard() {
   const [user, setUser] = useState<User | null>(null);
+  const [tasks, setTasks] = useState<Task[]>([]);
+  const [missions, setMissions] = useState<Mission[]>([]);
+  const [teams, setTeams] = useState<Team[]>([]);
+  const [completedTasks, setCompletedTasks] = useState(0);
+  const [totalTasks, setTotalTasks] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const router = useRouter();
 
   useEffect(() => {
-    const fetchUser = async () => {
+    const fetchData = async () => {
       const tokenHeaders = {
         "access-token": localStorage.getItem("access-token"),
         client: localStorage.getItem("client"),
@@ -26,79 +30,86 @@ export default function Dashboard() {
       };
 
       try {
-        const response = await api.get("/auth/validate_token", { headers: tokenHeaders });
-        setUser(response.data.data);
+        // ユーザー情報を取得
+        const userResponse = await api.get("/auth/validate_token", {
+          headers: tokenHeaders,
+        });
+        setUser(userResponse.data.data);
+
+        // タスク、ミッション、チームを取得
+        const [tasksResponse, missionsResponse, teamsResponse] = await Promise.all([
+          api.get("/tasks"),
+          api.get("/missions"),
+          api.get("/teams"),
+        ]);
+
+        setTasks(tasksResponse.data);
+        setMissions(Array.isArray(missionsResponse.data) ? missionsResponse.data : []);
+        setTeams(Array.isArray(teamsResponse.data) ? teamsResponse.data : []);
+
+        // ProgressCircle のデータを計算
+        const completed = tasksResponse.data.filter(
+          (task: Task) => task.progress_rate === 100
+        ).length;
+        setCompletedTasks(completed);
+        setTotalTasks(tasksResponse.data.length);
       } catch (err) {
-        console.error("Failed to fetch user:", err);
+        console.error("Failed to fetch user or data:", err);
         router.push("/signin"); // 認証失敗時にサインインページへリダイレクト
       } finally {
         setLoading(false);
       }
     };
 
-    fetchUser();
+    fetchData();
   }, [router]);
 
+  const handleAddTask = async (newTask: {
+    title: string;
+    description: string;
+    priority: string;
+    progress_rate: number;
+    deadline: string;
+    start_date: string;
+    reminder_at: string;
+    recurring: boolean;
+    mission_id: string;
+    team_id: string;
+  }) => {
+    try {
+      const response = await api.post("/tasks", newTask);
+      const createdTask: Task = response.data;
+
+      // タスク一覧を更新
+      setTasks((prevTasks) => [...prevTasks, createdTask]);
+      setTotalTasks((prevTotal) => prevTotal + 1);
+      if (createdTask.progress_rate === 100) {
+        setCompletedTasks((prevCompleted) => prevCompleted + 1);
+      }
+    } catch (error) {
+      console.error("Failed to add task:", error);
+      alert("タスクの追加に失敗しました。");
+    }
+  };
 
   if (loading) return <p>Loading...</p>;
 
-
-
-  const tasks: Task[] = [
-    {
-      id: 1,
-      title: "Task 1",
-      description: "text content",
-      missionId: 1,
-      createdByUserId: 1,
-      assignedUserId: 2,
-      teamId: 1,
-      progressRate: 73,
-      status: "in_progress",
-      createdBy: "Mick",
-      createdAt: "2024-01-01T10:00:00Z",
-      updatedAt: "2024-01-05T15:00:00Z",
-      deadline: "2024-12-31",
-    },
-    {
-      id: 2,
-      title: "Task 2",
-      description: "text content",
-      missionId: 1,
-      createdByUserId: 2,
-      assignedUserId: 3,
-      teamId: 1,
-      progressRate: 60,
-      status: "in_progress",
-      createdBy: "John",
-      createdAt: "2024-01-02T11:00:00Z",
-      updatedAt: "2024-01-06T16:00:00Z",
-      deadline: "2024-12-31",
-    },
-    {
-      id: 3,
-      title: "Task 3",
-      description: "text content",
-      missionId: 2,
-      createdByUserId: 3,
-      assignedUserId: 4,
-      teamId: 2,
-      progressRate: 0,
-      status: "not_started",
-      createdBy: "Jack",
-      createdAt: "2024-01-03T12:00:00Z",
-      updatedAt: "2024-01-07T17:00:00Z",
-      deadline: "2024-12-31",
-    },
-  ];
-
   return (
     <div>
-      <h1>Welcome to your Dashboard, {user?.name}!</h1>
       <div className="flex bg-primary text-white min-h-screen p-6 space-x-8">
-      <TasksList tasks={tasks} />
-      <ProgressCircle completedTasks={17} totalTasks={30} />
-    </div>
+        {/* タスク一覧 */}
+        <TaskList tasks={tasks} userName={user?.name || "User"} />
+        {/* 進捗円 */}
+        <ProgressCircle completedTasks={completedTasks} totalTasks={totalTasks} />
+      </div>
+      {/* タスク追加モーダル */}
+
+      <button
+        className="fixed bottom-6 right-6 bg-blue-500 text-white rounded-full w-16 h-16 text-2xl shadow-lg"
+        onClick={() => setIsModalOpen(true)}
+      >
+        ＋
+      </button>
     </div>
   );
 }

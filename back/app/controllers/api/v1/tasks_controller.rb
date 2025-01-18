@@ -1,54 +1,97 @@
-module Api
-  module V1
-    class TasksController < ApplicationController
-      before_action :authenticate_user!
-      before_action :set_task, only: [:show, :update, :destroy]
+class Api::V1::TasksController < ApplicationController
+  before_action :authenticate_api_v1_user!
+  before_action :set_task, only: [:show, :update, :destroy]
 
-      # タスク一覧
-      def index
-        @tasks = current_user.tasks.includes(:mission, :created_by_user).order(created_at: :desc)
-        render json: @tasks, include: { mission: { only: :name }, created_by_user: { only: :name } }
-      end
+  alias_method :current_user, :current_api_v1_user
 
-      # タスク詳細
-      def show
-        render json: @task, include: { mission: { only: :name }, created_by_user: { only: :name } }
-      end
+  # タスク一覧
+  def index
+    @tasks = current_user.tasks.includes(:mission, :user, :assigned_user).order(priority: :desc, deadline: :asc)
 
-      # タスク作成
-      def create
-        @task = current_user.tasks.new(task_params)
-        if @task.save
-          render json: @task, status: :created
-        else
-          render json: { errors: @task.errors.full_messages }, status: :unprocessable_entity
-        end
-      end
+    if params[:filter].present?
+      @tasks = apply_filters(@tasks, params[:filter])
+    end
 
-      # タスク更新
-      def update
-        if @task.update(task_params)
-          render json: @task, status: :ok
-        else
-          render json: { errors: @task.errors.full_messages }, status: :unprocessable_entity
-        end
-      end
+    render json: @tasks, include: task_includes, status: :ok
+  end
 
-      # タスク削除
-      def destroy
-        @task.destroy
-        render json: { message: 'タスクが削除されました。' }, status: :ok
-      end
+  # タスク詳細
+  def show
+    Rails.logger.info "リクエストのパラメータ: #{params.inspect}"
+    Rails.logger.info "現在のユーザー: #{current_user.inspect}"
+    if @task.present?
+      render json: @task, include: task_includes, status: :ok
+    else
+      render json: { error: "タスクが見つかりません。" }, status: :not_found
+    end
+  end
 
-      private
+  # タスク作成
+  def create
+    @task = current_user.tasks.new(task_params)
+    if @task.save
+      render json: @task, include: task_includes, status: :created
+    else
+      render_error(@task.errors.full_messages)
+    end
+  end
 
-      def set_task
-        @task = current_user.tasks.find(params[:id])
-      end
+  # タスク更新
+  def update
+    if @task.update(task_params)
+      render json: @task, include: task_includes, status: :ok
+    else
+      render_error(@task.errors.full_messages)
+    end
+  end
 
-      def task_params
-        params.require(:task).permit(:title, :description, :mission_id, :assigned_user_id, :progress_rate, :status, :deadline)
+  # タスク削除
+  def destroy
+    @task.destroy
+    render json: { message: 'タスクが削除されました。' }, status: :ok
+  end
+
+  private
+
+  # タスクを取得
+  def set_task
+    @task = current_user.tasks.find(params[:id])
+  end
+
+  # タスク作成・更新時のパラメータ
+  def task_params
+    params.require(:task).permit(
+      :title, :description, :mission_id, :assigned_user_id, :priority,
+      :progress_rate, :deadline, :start_date, :completed_at, :recurring, :reminder_at
+    )
+  end
+
+  # JSONレスポンスに含める関連データ
+  def task_includes
+    {
+      mission: { only: :name },
+      user: { only: [:id, :name, :email] },
+      assigned_user: { only: [:id, :name] }
+    }
+  end
+
+  # エラー応答のフォーマット
+  def render_error(errors, status = :unprocessable_entity)
+    render json: { errors: errors }, status: status
+  end
+
+  # フィルターの適用
+  def apply_filters(tasks, filters)
+    filters.each do |key, value|
+      case key
+      when 'priority'
+        tasks = tasks.where(priority: value)
+      when 'upcoming'
+        tasks = tasks.where("deadline >= ?", Date.today)
+      when 'assigned_user_id'
+        tasks = tasks.where(assigned_user_id: value)
       end
     end
+    tasks
   end
 end
