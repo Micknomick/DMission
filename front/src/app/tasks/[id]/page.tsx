@@ -5,7 +5,6 @@ import { useParams, useRouter } from "next/navigation";
 import { fetchTaskById, updateTask } from "@/utils/api";
 import { Task } from "@/lib/type";
 import { motion } from "framer-motion";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";

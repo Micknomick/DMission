@@ -102,6 +102,22 @@ export default function NewTaskPage() {
           />
         </div>
 
+        {/* 優先度 */}
+        <div>
+          <Label htmlFor="priority">優先度</Label>
+          <Select onValueChange={(value) => setPriority(value)} defaultValue="low">
+            <SelectTrigger id="priority">
+              <SelectValue placeholder="優先度を選択してください" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="low">Low</SelectItem>
+              <SelectItem value="medium">Medium</SelectItem>
+              <SelectItem value="high">High</SelectItem>
+              <SelectItem value="urgent">Urgent</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
         {/* 進捗率 */}
         <ProgressSlider
           progressRate={progressRate}

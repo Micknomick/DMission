@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import api from "../../utils/api";
-import { Task, Mission, Team } from "../../lib/type";
+import { Task } from "../../lib/type";
 import { useRouter } from "next/navigation";
 import { User } from "../../lib/type";
 
@@ -12,8 +12,6 @@ import ProgressCircle from "../../components/layout/dashboard/ProgressCircle";
 export default function Dashboard() {
   const [user, setUser] = useState<User | null>(null);
   const [tasks, setTasks] = useState<Task[]>([]);
-  const [missions, setMissions] = useState<Mission[]>([]);
-  const [teams, setTeams] = useState<Team[]>([]);
   const [completedTasks, setCompletedTasks] = useState(0);
   const [totalTasks, setTotalTasks] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -36,16 +34,9 @@ export default function Dashboard() {
         });
         setUser(userResponse.data.data);
 
-        // タスク、ミッション、チームを取得
-        const [tasksResponse, missionsResponse, teamsResponse] = await Promise.all([
-          api.get("/tasks"),
-          api.get("/missions"),
-          api.get("/teams"),
-        ]);
-
+        // タスクを取得
+        const tasksResponse = await api.get("/tasks");
         setTasks(tasksResponse.data);
-        setMissions(Array.isArray(missionsResponse.data) ? missionsResponse.data : []);
-        setTeams(Array.isArray(teamsResponse.data) ? teamsResponse.data : []);
 
         // ProgressCircle のデータを計算
         const completed = tasksResponse.data.filter(
@@ -102,7 +93,43 @@ export default function Dashboard() {
         {/* 進捗円 */}
         <ProgressCircle completedTasks={completedTasks} totalTasks={totalTasks} />
       </div>
+
       {/* タスク追加モーダル */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h2 className="text-xl font-bold mb-4">タスクを追加</h2>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleAddTask({
+                  title: "新しいタスク",
+                  description: "タスクの説明",
+                  priority: "medium",
+                  progress_rate: 0,
+                  deadline: "2025-01-31",
+                  start_date: "2025-01-18",
+                  reminder_at: "",
+                  recurring: false,
+                  mission_id: "1", // 適切な ID に置き換え
+                  team_id: "1", // 適切な ID に置き換え
+                });
+                setIsModalOpen(false);
+              }}
+            >
+              <button type="submit" className="bg-green-500 text-white py-2 px-4 rounded">
+                タスクを追加
+              </button>
+            </form>
+            <button
+              className="mt-4 bg-red-500 text-white py-2 px-4 rounded"
+              onClick={() => setIsModalOpen(false)}
+            >
+              閉じる
+            </button>
+          </div>
+        </div>
+      )}
 
       <button
         className="fixed bottom-6 right-6 bg-blue-500 text-white rounded-full w-16 h-16 text-2xl shadow-lg"
