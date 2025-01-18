@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       }
       resources :tasks, only: [:index, :show, :create, :update, :destroy]
       resources :missions, only: [:index, :show, :create, :update, :destroy]
+      resources :teams, only: [:index, :show, :create, :update, :destroy]
       resources :contacts, only: [:create]
     end
   end
