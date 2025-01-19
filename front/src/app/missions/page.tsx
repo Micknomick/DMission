@@ -40,9 +40,9 @@ const MissionList = () => {
 
   // タブの状態に応じたフィルタリング
   const filteredMissions = missions.filter((mission) => {
-    if (activeTab === "Progress") return mission.progress_rate >= 0 && mission.progress_rate < 100;
+    if (activeTab === "Todo") return mission.progress_rate === 0;
+    if (activeTab === "Progress") return mission.progress_rate > 0 && mission.progress_rate < 100;
     if (activeTab === "Done") return mission.progress_rate === 100;
-    if (activeTab === "Deleted") return mission.deleted_at; // 削除フラグでフィルタリング
     return true;
   });
 
@@ -65,9 +65,9 @@ const MissionList = () => {
   }
 
   return (
-    <div className="bg-gray-900 text-white h-screen p-8">
+    <div className="bg-black text-white h-screen p-8">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-2xl font-bold mb-6">チームMission画面</h1>
+        <h1 className="text-2xl font-bold mb-6">Mission一覧</h1>
         {/* タブ切り替え */}
         <MissionTabs activeTab={activeTab} setActiveTab={setActiveTab} />
         {/* 検索フィールド */}
