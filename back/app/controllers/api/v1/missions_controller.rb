@@ -9,11 +9,10 @@ module Api
 
       # ミッション一覧
       def index
-        personal_missions = current_api_v1_user.missions.personal
+        personal_missions = current_api_v1_user.missions.personal.includes(:tasks).where(deleted_at: nil)
         team_ids = current_api_v1_user.teams.pluck(:id)
-        team_missions = Mission.joins(:team).where(teams: { id: team_ids })
+        team_missions = Mission.joins(:team).where(teams: { id: team_ids }).includes(:tasks).where(deleted_at: nil)
 
-        # 修正: progress_rate をレスポンスに含める
         render json: {
           personal_missions: personal_missions.map { |mission| serialize_mission_with_progress(mission) },
           team_missions: team_missions.map { |mission| serialize_mission_with_progress(mission) }
@@ -22,7 +21,14 @@ module Api
 
       # ミッション詳細
       def show
-        render json: serialize_mission_with_progress(@mission), status: :ok
+        tasks = @mission.tasks.includes(:user) # 関連タスクとユーザー情報をロード
+        render json: {
+          mission: serialize_mission_with_progress(@mission),
+          tasks: tasks.as_json(
+            only: [:id, :title, :description, :progress_rate, :priority, :start_date, :reminder_at, :recurring, :created_at, :updated_at],
+            include: { user: { only: [:id, :name, :email] } } # タスク作成者情報を含む
+          )
+        }, status: :ok
       end
 
       # ミッション作成
@@ -55,16 +61,15 @@ module Api
         end
       end
 
-      # ミッション削除（論理削除）
+      # ミッション削除（
       def destroy
-        if @mission.deleted_at.nil?
-          @mission.update(deleted_at: Time.current)
-          render json: { message: 'ミッションが論理削除されました。' }, status: :ok
-        else
-          @mission.destroy
+        if @mission.destroy
           render json: { message: 'ミッションが完全に削除されました。' }, status: :ok
+        else
+          render json: { message: 'ミッションの削除に失敗しました。' }, status: :unprocessable_entity
         end
       end
+
 
       private
 

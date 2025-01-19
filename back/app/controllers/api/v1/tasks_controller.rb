@@ -66,7 +66,7 @@ class Api::V1::TasksController < ApplicationController
   def task_params
     params.require(:task).permit(
       :title, :description, :mission_id, :assigned_user_id, :priority,
-      :progress_rate, :deadline, :start_date, :completed_at, :recurring, :reminder_at
+      :progress_rate, :deadline, :start_date, :completed_at, :recurring, :reminder_at,:created_at,:updated_at
     )
   end
 

@@ -31,7 +31,7 @@ const NewMissionPage = () => {
           deadline,
         },
       });
-      router.push('/missions/index');
+      router.push('/missions/');
     } catch (err) {
       console.error(err);
       setError('ミッションの作成に失敗しました。');
