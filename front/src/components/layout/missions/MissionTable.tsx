@@ -46,11 +46,11 @@ const MissionTable = ({ missions, onUpdate }: MissionTableProps) => {
             <td className="px-4 py-2">{mission.team}</td>
             <td className="px-4 py-2">
               <div className="flex items-center">
-                <span className="mr-2">{mission.progress}%</span>
+                <span className="mr-2">{mission.progress_rate}%</span>
                 <div className="w-full bg-gray-600 rounded-full h-2">
                   <div
                     className="bg-blue-500 h-2 rounded-full"
-                    style={{ width: `${mission.progress}%` }}
+                    style={{ width: `${mission.progress_rate}%` }}
                   />
                 </div>
               </div>

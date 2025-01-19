@@ -9,21 +9,20 @@ module Api
 
       # ミッション一覧
       def index
-        tab = params[:tab] || 'Progress'
-
-        personal_missions = filter_missions(current_api_v1_user.missions.personal, tab)
+        personal_missions = current_api_v1_user.missions.personal
         team_ids = current_api_v1_user.teams.pluck(:id)
-        team_missions = filter_missions(Mission.joins(:team).where(teams: { id: team_ids }), tab)
+        team_missions = Mission.joins(:team).where(teams: { id: team_ids })
 
+        # 修正: progress_rate をレスポンスに含める
         render json: {
-          personal_missions: personal_missions.as_json(only: [:id, :name, :description, :deadline, :is_completed, :progress, :deleted_at]),
-          team_missions: team_missions.as_json(only: [:id, :name, :description, :deadline, :is_completed, :progress, :deleted_at])
+          personal_missions: personal_missions.map { |mission| serialize_mission_with_progress(mission) },
+          team_missions: team_missions.map { |mission| serialize_mission_with_progress(mission) }
         }, status: :ok
       end
 
       # ミッション詳細
       def show
-        render json: @mission.as_json(only: [:id, :name, :description, :deadline, :is_completed, :progress]), status: :ok
+        render json: serialize_mission_with_progress(@mission), status: :ok
       end
 
       # ミッション作成
@@ -41,7 +40,7 @@ module Api
         end
 
         if @mission.save
-          render json: @mission.as_json(only: [:id, :name, :description, :deadline, :is_completed, :progress]), status: :created
+          render json: serialize_mission_with_progress(@mission), status: :created
         else
           render json: { errors: @mission.errors.full_messages }, status: :unprocessable_entity
         end
@@ -50,7 +49,7 @@ module Api
       # ミッション更新
       def update
         if @mission.update(mission_params)
-          render json: @mission.as_json(only: [:id, :name, :description, :deadline, :is_completed, :progress]), status: :ok
+          render json: serialize_mission_with_progress(@mission), status: :ok
         else
           render json: { errors: @mission.errors.full_messages }, status: :unprocessable_entity
         end
@@ -59,31 +58,15 @@ module Api
       # ミッション削除（論理削除）
       def destroy
         if @mission.deleted_at.nil?
-          # 論理削除
           @mission.update(deleted_at: Time.current)
           render json: { message: 'ミッションが論理削除されました。' }, status: :ok
         else
-          # 完全削除
           @mission.destroy
           render json: { message: 'ミッションが完全に削除されました。' }, status: :ok
         end
       end
 
       private
-
-      # ミッションをタブに応じてフィルタリング
-      def filter_missions(missions, tab)
-        case tab
-        when 'Progress'
-          missions.where('progress < 100').where(deleted_at: nil)
-        when 'Done'
-          missions.where(progress: 100).where(deleted_at: nil)
-        when 'Deleted'
-          missions.where.not(deleted_at: nil)
-        else
-          missions
-        end
-      end
 
       def set_mission
         @mission = Mission.find(params[:id])
@@ -94,11 +77,24 @@ module Api
       end
 
       def mission_params
-        params.require(:mission).permit(:name, :description, :is_completed, :deadline, :progress)
+        params.require(:mission).permit(:name, :description, :is_completed, :deadline)
       end
 
       def render_not_found
         render json: { message: 'リソースが見つかりません。' }, status: :not_found
+      end
+
+      # 修正: progress_rate を含めたミッションのシリアライズメソッド
+      def serialize_mission_with_progress(mission)
+        {
+          id: mission.id,
+          name: mission.name,
+          description: mission.description,
+          deadline: mission.deadline,
+          is_completed: mission.is_completed,
+          progress_rate: mission.calculate_progress_rate, # サーバー側で進捗率を計算
+          deleted_at: mission.deleted_at
+        }
       end
     end
   end
