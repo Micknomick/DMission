@@ -11,17 +11,20 @@ const MissionPagination = ({
   onNextPage,
   onPrevPage,
 }: MissionPaginationProps) => {
+  // totalPagesが0の場合の表示を考慮
+  const isPaginationDisabled = totalPages === 0;
+
   return (
     <div className="flex justify-between items-center mt-4 text-sm text-gray-400">
       <span>
-        Page {currentPage} of {totalPages}
+        Page {isPaginationDisabled ? 0 : currentPage} of {totalPages}
       </span>
       <div className="flex space-x-2">
         <button
           onClick={onPrevPage}
-          disabled={currentPage === 1}
+          disabled={currentPage === 1 || isPaginationDisabled}
           className={`px-2 py-1 rounded ${
-            currentPage === 1
+            currentPage === 1 || isPaginationDisabled
               ? "bg-gray-600 cursor-not-allowed"
               : "bg-gray-700 hover:bg-gray-600"
           }`}
@@ -30,9 +33,9 @@ const MissionPagination = ({
         </button>
         <button
           onClick={onNextPage}
-          disabled={currentPage === totalPages}
+          disabled={currentPage === totalPages || isPaginationDisabled}
           className={`px-2 py-1 rounded ${
-            currentPage === totalPages
+            currentPage === totalPages || isPaginationDisabled
               ? "bg-gray-600 cursor-not-allowed"
               : "bg-gray-700 hover:bg-gray-600"
           }`}

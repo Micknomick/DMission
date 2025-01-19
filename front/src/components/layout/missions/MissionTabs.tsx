@@ -6,15 +6,15 @@ type MissionTabsProps = {
 const MissionTabs = ({ activeTab, setActiveTab }: MissionTabsProps) => {
   return (
     <div className="flex justify-between items-center mb-6">
-      <div className="flex bg-gray-800 rounded p-1">
-        {["Progress", "Done", "Deleted"].map((tab) => (
+      <div className="flex bg-white rounded p-1">
+        {["Todo", "Progress", "Done"].map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
             className={`px-6 py-2 rounded-md font-medium ${
               activeTab === tab
-                ? "bg-black text-white" // アクティブなタブ
-                : "bg-transparent text-gray-400 hover:text-white" // 非アクティブなタブ
+                ? "bg-primary text-white" // アクティブなタブ
+                : "bg-transparent text-gray-400 hover:text-black" // 非アクティブなタブ
             }`}
           >
             {tab}

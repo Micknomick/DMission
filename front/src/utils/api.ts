@@ -1,4 +1,4 @@
-import { SignUpParams, MissionInput, TaskInput, Task } from "@/lib/type";
+import { SignUpParams, MissionInput, TaskInput, Task, Mission } from "@/lib/type";
 import axios from "axios";
 
 const api = axios.create({
@@ -32,6 +32,17 @@ export const signUp = (data: SignUpParams) => api.post("/auth", data);
 // ミッション関連
 export const fetchMissions = () => api.get("/missions");
 export const createMission = (data: MissionInput) => api.post("/missions", data);
+export const fetchMissionById = (missionId: number) => api.get(`/missions/${missionId}`);
+export const deleteMission = async (missionId: number, isSoftDelete: boolean) => {
+  if (isSoftDelete) {
+    return await api.delete(`/missions/${missionId}`);
+  } else {
+    return await api.delete(`/missions/${missionId}?hard_delete=true`);
+  }
+};
+export const updateMission = async (missionId: number, data: Partial<Mission>) => {
+  return await api.put(`/missions/${missionId}`, data); // APIリクエストを送信
+};
 
 //チーム関連
 export const fetchTeams = () => api.get("/teams");
@@ -44,7 +55,7 @@ export const updateTask = async (taskId: number, data: Partial<Task>) => {
   return response.data;
 };
 export async function fetchTaskById(taskId: number) {
-  return await api.get(`/tasks/${taskId}`); 
+  return await api.get(`/tasks/${taskId}`);
 }
 
 export default api;
