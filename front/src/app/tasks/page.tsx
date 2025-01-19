@@ -172,7 +172,7 @@ export default function TasksPage() {
             {/* Edit Dialog */}
             {editTask && (
               <Dialog open={!!editTask} onOpenChange={() => setEditTask(null)}>
-                <DialogContent>
+                <DialogContent className="bg-white text-black">
                   <DialogTitle>タスクを編集</DialogTitle>
                   <DialogDescription>
                     タスク情報を更新してください。

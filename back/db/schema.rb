@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_01_16_223426) do
+ActiveRecord::Schema[7.0].define(version: 2025_01_19_095951) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -67,7 +67,9 @@ ActiveRecord::Schema[7.0].define(version: 2025_01_16_223426) do
     t.datetime "reminder_at"
     t.boolean "recurring", default: false, null: false
     t.bigint "updated_by_user_id"
+    t.datetime "deleted_at"
     t.index ["completed_at"], name: "index_tasks_on_completed_at"
+    t.index ["deleted_at"], name: "index_tasks_on_deleted_at"
     t.index ["mission_id"], name: "index_tasks_on_mission_id"
     t.index ["priority"], name: "index_tasks_on_priority"
     t.index ["start_date"], name: "index_tasks_on_start_date"

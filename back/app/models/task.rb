@@ -1,4 +1,7 @@
 class Task < ApplicationRecord
+  # paranoiaを有効化
+  acts_as_paranoid
+
   # Enum定義
   enum priority: { low: 0, medium: 1, high: 2, urgent: 3 }
 
