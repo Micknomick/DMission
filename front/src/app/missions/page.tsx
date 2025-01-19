@@ -40,8 +40,8 @@ const MissionList = () => {
 
   // タブの状態に応じたフィルタリング
   const filteredMissions = missions.filter((mission) => {
-    if (activeTab === "Progress") return mission.progress >= 0 && mission.progress < 100;
-    if (activeTab === "Done") return mission.progress === 100;
+    if (activeTab === "Progress") return mission.progress_rate >= 0 && mission.progress_rate < 100;
+    if (activeTab === "Done") return mission.progress_rate === 100;
     if (activeTab === "Deleted") return mission.deleted_at; // 削除フラグでフィルタリング
     return true;
   });

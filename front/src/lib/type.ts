@@ -65,7 +65,7 @@ export interface Mission {
   id: number; // データベースから取得後に存在する
   name: string;
   description?: string;
-  progress: number;
+  progress_rate: number;
   deadline: string;
   deleted_at: string | null;
   ownerType: 'Personal' | 'Team';
@@ -81,8 +81,6 @@ export interface MissionInput {
     name: string;
     description: string;
     deadline: string;
-    is_completed: boolean;
-    progress: number;
   };
 };
 

@@ -30,6 +30,7 @@ class Api::V1::TasksController < ApplicationController
   def create
     @task = current_user.tasks.new(task_params)
     if @task.save
+      update_mission_progress(@task.mission) # ミッションの進捗率を再計算
       render json: @task, include: task_includes, status: :created
     else
       render_error(@task.errors.full_messages)
@@ -39,6 +40,7 @@ class Api::V1::TasksController < ApplicationController
   # タスク更新
   def update
     if @task.update(task_params)
+      update_mission_progress(@task.mission) # ミッションの進捗率を再計算
       render json: @task, include: task_includes, status: :ok
     else
       render_error(@task.errors.full_messages)
@@ -47,7 +49,9 @@ class Api::V1::TasksController < ApplicationController
 
   # タスク削除
   def destroy
+    mission = @task.mission # 削除前に関連するミッションを取得
     @task.destroy
+    update_mission_progress(mission) # ミッションの進捗率を再計算
     render json: { message: 'タスクが削除されました。' }, status: :ok
   end
 
@@ -73,6 +77,13 @@ class Api::V1::TasksController < ApplicationController
       user: { only: [:id, :name, :email] },
       assigned_user: { only: [:id, :name] }
     }
+  end
+
+  # ミッション進捗率の更新
+  def update_mission_progress(mission)
+    return unless mission
+
+    mission.update(progress: mission.calculate_progress_rate) # ミッションの進捗率を再計算
   end
 
   # エラー応答のフォーマット

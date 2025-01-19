@@ -8,8 +8,6 @@ const NewMissionPage = () => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [deadline, setDeadline] = useState('');
-  const [isCompleted, setIsCompleted] = useState(false);
-  const [progress, setProgress] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
@@ -31,8 +29,6 @@ const NewMissionPage = () => {
           name,
           description,
           deadline,
-          is_completed: isCompleted,
-          progress,
         },
       });
       router.push('/missions/index');
@@ -87,27 +83,6 @@ const NewMissionPage = () => {
               id="team"
               placeholder="チームを選択してください"
               className="w-full border border-gray-600 bg-gray-700 p-2 rounded"
-            />
-          </div>
-          <div>
-          <label htmlFor="isCompleted">完了状態</label>
-          <input
-            type="checkbox"
-            id="isCompleted"
-            checked={isCompleted}
-            onChange={(e) => setIsCompleted(e.target.checked)}
-          />
-          </div>
-          <div>
-            <label htmlFor="progress" className="block mb-2">Progress</label>
-            <input
-              type="number"
-              id="progress"
-              value={progress}
-              onChange={(e) => setProgress(Number(e.target.value))}
-              className="w-full border border-gray-600 bg-gray-700 p-2 rounded"
-              min={0}
-              max={100}
             />
           </div>
           <div className="col-span-2 text-center mt-4">
