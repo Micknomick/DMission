@@ -38,7 +38,7 @@ const TeamsPage = () => {
     loadTeamDetails();
   }, [loadTeamDetails]);
 
-  const handlePageChange = (page: number) => {
+  const handlePageChange = useCallback((page: number) => {
     setCurrentPage(page);
     const startIndex = (page - 1) * missionsPerPage;
     const endIndex = startIndex + missionsPerPage;
@@ -46,7 +46,8 @@ const TeamsPage = () => {
     if (team?.missions) {
       setMissions(team.missions.slice(startIndex, endIndex));
     }
-  };
+  }, [team?.missions, missionsPerPage]);
+
 
   // ミッションの締切日をカレンダーにマーク
   const tileContent = ({ date }: { date: Date }) => {
