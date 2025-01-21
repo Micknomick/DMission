@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { fetchTeamById } from '@/utils/api';
 import { Team, Mission, User } from '@/lib/type';
@@ -18,27 +18,27 @@ const TeamsPage = () => {
   const [totalMissions, setTotalMissions] = useState(0);
   const missionsPerPage = 3;
 
-  const loadTeamDetails = useCallback(async () => {
-    if (!id) return;
-    try {
-      const response = await fetchTeamById(Number(id));
-      const fetchedTeam = response.data;
-
-      if (fetchedTeam) {
-        setTeam(fetchedTeam);
-        setMissions(fetchedTeam.missions?.slice(0, missionsPerPage) || []);
-        setTotalMissions(fetchedTeam.missions?.length || 0);
-      }
-    } catch (error) {
-      console.error('Failed to fetch team details:', error);
-    }
-  }, [id, missionsPerPage]);
-
   useEffect(() => {
-    loadTeamDetails();
-  }, [loadTeamDetails]);
+    const loadTeamDetails = async () => {
+      if (!id) return;
+      try {
+        const response = await fetchTeamById(Number(id));
+        const fetchedTeam = response.data;
 
-  const handlePageChange = useCallback((page: number) => {
+        if (fetchedTeam) {
+          setTeam(fetchedTeam);
+          setMissions(fetchedTeam.missions?.slice(0, missionsPerPage) || []);
+          setTotalMissions(fetchedTeam.missions?.length || 0);
+        }
+      } catch (error) {
+        console.error('Failed to fetch team details:', error);
+      }
+    };
+
+    loadTeamDetails();
+  }, [id]);
+
+  const handlePageChange = (page: number) => {
     setCurrentPage(page);
     const startIndex = (page - 1) * missionsPerPage;
     const endIndex = startIndex + missionsPerPage;
@@ -46,8 +46,7 @@ const TeamsPage = () => {
     if (team?.missions) {
       setMissions(team.missions.slice(startIndex, endIndex));
     }
-  }, [team?.missions, missionsPerPage]);
-
+  };
 
   // ミッションの締切日をカレンダーにマーク
   const tileContent = ({ date }: { date: Date }) => {

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { createMission, fetchTeams } from "@/utils/api";
+import { Team } from '@/lib/type';
 
 const NewMissionPage = () => {
   const [name, setName] = useState('');
@@ -101,7 +102,7 @@ const NewMissionPage = () => {
               className="w-full border border-gray-600 bg-gray-700 p-2 rounded"
             >
               <option value="">チームを選択してください</option>
-              {teams.map((team: any) => (
+              {teams.map((team: Team) => (
                 <option key={team.id} value={team.id}>
                   {team.name}
                 </option>

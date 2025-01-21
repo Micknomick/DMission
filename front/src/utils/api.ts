@@ -48,9 +48,7 @@ export const updateMission = async (missionId: number, data: Partial<Mission>) =
 
 //チーム関連
 export const fetchTeams = () => api.get("/teams");
-export const createTeam = async (data: TeamInput): Promise<void> => {
-  await api.post('/teams', data);
-};
+export const createTeam = (data: TeamInput) => api.post("/teams", data);
 export const fetchTeamById = (teamId: number) => api.get(`/teams/${teamId}`);
 
 
