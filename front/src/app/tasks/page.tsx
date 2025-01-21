@@ -3,13 +3,6 @@
 import { useEffect, useState } from "react";
 import { fetchTasks, updateTask } from "@/utils/api";
 import { Task } from "@/lib/type";
-import { FaEdit } from "react-icons/fa";
-import {
-  Card,
-  CardHeader,
-  CardContent,
-  CardFooter,
-} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -21,7 +14,7 @@ import {
 } from "@/components/ui/dialog";
 import { Switch } from "@/components/ui/switch";
 import ProgressSlider from "@/components/layout/tasks/ProgressSlider";
-import Link from "next/link";
+import TaskCards from "@/components/layout/tasks/TaskCards";
 import {
   Select,
   SelectItem,
@@ -111,7 +104,7 @@ export default function TasksPage() {
   });
 
   return (
-    <div className="bg-black min-h-screen flex flex-col">
+    <div className="bg-gray-900 min-h-screen flex flex-col">
       <h1 className=" text-white text-3xl font-bold mb-6 text-center">タスク一覧</h1>
 
       {/* Search Bar */}
@@ -242,42 +235,3 @@ export default function TasksPage() {
           </div>
         );
       }
-
-
-interface TaskCardsProps {
-  tasks: Task[]; // Task 型の配列
-  onEditClick: (task: Task) => void; // 編集用関数
-}
-
-function TaskCards({ tasks, onEditClick }: TaskCardsProps) {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {tasks.map((task) => (
-        <Card key={task.id} className="bg-white shadow-lg">
-          <CardHeader>
-            <h2 className="text-lg font-semibold">{task.title}</h2>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <p>{task.description || "説明なし"}</p>
-            <p className="text-sm text-gray-600">進捗率: {task.progress_rate || 0}%</p>
-            <p className="text-sm text-gray-600">優先度: {task.priority || "low"}</p>
-            <p className="text-sm text-gray-600">開始日: {task.start_date || "未設定"}</p>
-            <p className="text-sm text-gray-600">締切日: {task.deadline || "未設定"}</p>
-            <p className="text-sm text-gray-600">リマインダー: {task.reminder_at || "未設定"}</p>
-            <p className="text-sm text-gray-600">繰り返し: {task.recurring ? "あり" : "なし"}</p>
-            <p className="text-sm text-gray-600">作成者: {task.user.name || "不明"}</p>
-            <p className="text-sm text-gray-600">ミッション: {task.mission?.name || "未割り当て"}</p>
-          </CardContent>
-          <CardFooter className="flex justify-between">
-            <Button size="sm" onClick={() => onEditClick(task)}>
-              <FaEdit />
-            </Button>
-            <Link href={`/tasks/${task.id}`} className="text-primary hover:underline text-sm">
-              詳細へ
-            </Link>
-          </CardFooter>
-        </Card>
-      ))}
-    </div>
-  );
-}

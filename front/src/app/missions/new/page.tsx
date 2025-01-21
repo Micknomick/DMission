@@ -56,11 +56,14 @@ const NewMissionPage = () => {
   };
 
   return (
-    <div className="bg-primary text-white h-screen">
-      <div className="container mx-auto px-4 py-8">
+    <div className="bg-gray-900 text-white min-h-screen">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <h1 className="text-3xl font-bold mb-6 text-center">Missionを作成する</h1>
         {error && <div className="text-red-500 mb-4">{error}</div>}
-        <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-8">
+        <form
+          onSubmit={handleSubmit}
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8"
+        >
           <div>
             <label htmlFor="name" className="block mb-2">Mission Name</label>
             <input
@@ -109,10 +112,10 @@ const NewMissionPage = () => {
               ))}
             </select>
           </div>
-          <div className="col-span-2 text-center mt-4">
+          <div className="col-span-1 sm:col-span-2 text-center mt-4">
             <button
               type="submit"
-              className="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600"
+              className="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 w-full sm:w-auto"
             >
               Create
             </button>
