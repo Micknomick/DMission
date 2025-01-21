@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useParams, useRouter } from "next/navigation"; // useRouter をインポート
 import { Mission, Task } from "@/lib/type";
 import { fetchMissionById } from "@/utils/api";
@@ -13,7 +13,7 @@ const MissionDetailPage = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchMissionDetails = async () => {
+  const fetchMissionDetails = useCallback(async () => {
     try {
       if (!id) return;
       const response = await fetchMissionById(Number(id));
@@ -23,11 +23,11 @@ const MissionDetailPage = () => {
       console.error("Failed to fetch mission details:", err);
       setError("ミッションの詳細を取得できませんでした。");
     }
-  };
+  }, [id]);
 
   useEffect(() => {
     fetchMissionDetails();
-  }, [id]);
+  }, [fetchMissionDetails]);
 
   if (error) {
     return <div className="text-red-500">{error}</div>;

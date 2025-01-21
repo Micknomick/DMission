@@ -1,0 +1,52 @@
+/* カレンダー全体の背景 */
+.react-calendar {
+  background-color: #1e293b; // ダークグレー
+  color: #ffffff; // 白文字
+  border-radius: 8px;
+  border: none;
+  padding: 16px;
+
+  // 日付セルのスタイル
+  &__tile {
+    background: #334155; // ダークブルー
+    color: #f8fafc; // 明るい白
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.2s;
+
+    &:enabled:hover,
+    &:enabled:focus {
+      background: #6366f1; // 紫
+      color: #ffffff;
+      transform: scale(1.1);
+    }
+  }
+
+  // 今日の日付
+  &__tile--now {
+    background: #9333ea; // 濃い紫
+    color: #ffffff;
+  }
+
+  // 選択された日付
+  &__tile--active {
+    background: #4f46e5; // 青紫
+    color: #ffffff;
+  }
+
+  // ナビゲーションボタン
+  &__navigation {
+    button {
+      background: #4b5563; // グレー
+      color: #ffffff;
+      border-radius: 4px;
+      border: none;
+      margin: 2px;
+      font-size: 16px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background: #6366f1; // 紫
+      }
+    }
+  }
+}

@@ -82,7 +82,7 @@ module Api
       end
 
       def mission_params
-        params.require(:mission).permit(:name, :description, :is_completed, :deadline)
+        params.require(:mission).permit(:name, :description, :is_completed, :deadline, :team_id)
       end
 
       def render_not_found
