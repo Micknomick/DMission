@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { createTeam } from '@/utils/api'; // チーム作成用のAPI関数をインポート
-import { TeamInput } from '@/lib/type'; // TeamInput 型をインポート
+import { createTeam } from "@/utils/api"; // チーム作成用のAPI関数をインポート
+import { TeamInput } from '@/lib/type';
 
 const NewTeamPage = () => {
   const [name, setName] = useState('');
@@ -15,20 +15,15 @@ const NewTeamPage = () => {
     e.preventDefault();
 
     try {
-      // TeamInput 型のデータを作成
-      const data: TeamInput = { name, description };
-
-      // チーム作成 API 呼び出し
-      await createTeam(data);
-
-      // 成功時にチーム一覧ページへリダイレクト
+      const data: TeamInput = { name, description }; // 型を明示
+      await createTeam(data); // 型安全に呼び出し
       router.push('/teams');
     } catch (err) {
-      console.error(err);
-
-      // エラー発生時にメッセージを表示
+      console.error('Error creating team:', err);
       setError(
-        err instanceof Error ? err.message : 'チームの作成に失敗しました。'
+        err instanceof Error
+          ? err.message
+          : 'チームの作成に失敗しました。'
       );
     }
   };
