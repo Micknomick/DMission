@@ -1,39 +1,56 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { createMission } from "@/utils/api"; // API関数をインポート
+import { createMission, fetchTeams } from "@/utils/api";
+import { Team } from '@/lib/type';
 
 const NewMissionPage = () => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [deadline, setDeadline] = useState('');
+  const [teamId, setTeamId] = useState('');
+  const [teams, setTeams] = useState([]);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
+
+  // チームデータを取得
+  useEffect(() => {
+    const loadTeams = async () => {
+      try {
+        const response = await fetchTeams();
+        console.log("Fetched Teams:", response.data); // デバッグ
+        setTeams(response.data); // チームデータを状態に保存
+      } catch (err) {
+        console.error("Error fetching teams:", err);
+        setError('チームデータの取得に失敗しました。');
+      }
+    };
+
+    loadTeams();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const token = localStorage.getItem('access-token');
-    const client = localStorage.getItem('client');
-    const uid = localStorage.getItem('uid');
-
-    if (!token || !client || !uid) {
-      setError('認証情報が見つかりません。再ログインしてください。');
+    if (!teamId) {
+      setError('チームを選択してください。');
       return;
     }
 
     try {
-      await createMission({
+      const missionData = {
         mission: {
           name,
           description,
           deadline,
+          team_id: Number(teamId),
         },
-      });
+      };
+      await createMission(missionData);
       router.push('/missions/');
     } catch (err) {
-      console.error(err);
+      console.error("Mission creation failed:", err);
       setError('ミッションの作成に失敗しました。');
     }
   };
@@ -49,7 +66,7 @@ const NewMissionPage = () => {
             <input
               type="text"
               id="name"
-              placeholder="チーム名を入力してください"
+              placeholder="ミッション名を入力してください"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -78,12 +95,19 @@ const NewMissionPage = () => {
           </div>
           <div>
             <label htmlFor="team" className="block mb-2">Select Team</label>
-            <input
-              type="text"
+            <select
               id="team"
-              placeholder="チームを選択してください"
+              value={teamId}
+              onChange={(e) => setTeamId(e.target.value)}
               className="w-full border border-gray-600 bg-gray-700 p-2 rounded"
-            />
+            >
+              <option value="">チームを選択してください</option>
+              {teams.map((team: Team) => (
+                <option key={team.id} value={team.id}>
+                  {team.name}
+                </option>
+              ))}
+            </select>
           </div>
           <div className="col-span-2 text-center mt-4">
             <button

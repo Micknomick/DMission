@@ -5,7 +5,7 @@ import { Mission } from "@/lib/type";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { FaCircleInfo } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
-import { deleteMission, updateMission } from "@/utils/api"; // updateMission を追加
+import { deleteMission, updateMission } from "@/utils/api"; 
 
 type MissionTableProps = {
   missions: Mission[];
@@ -78,7 +78,7 @@ const MissionTable = ({ missions, onUpdate }: MissionTableProps) => {
             <tr key={mission.id} className="text-black border-t border-gray-200">
               <td className="px-4 py-2">{mission.name}</td>
               <td className="px-4 py-2">{mission.description}</td>
-              <td className="px-4 py-2">{mission.team}</td>
+              <td className="px-4 py-2">{mission.team?.name}</td>
               <td className="px-4 py-2">
                 <div className="flex items-center">
                   <span className="mr-2">{mission.progress_rate}%</span>
