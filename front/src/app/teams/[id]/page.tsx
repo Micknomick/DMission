@@ -32,11 +32,11 @@ const TeamsPage = () => {
     } catch (error) {
       console.error('Failed to fetch team details:', error);
     }
-  }, [id, missionsPerPage]); // `id` と `missionsPerPage` を依存関係として追加
+  }, [id, missionsPerPage]);
 
   useEffect(() => {
-    loadTeamDetails(); // メモ化された関数を呼び出す
-  }, [loadTeamDetails]); 
+    loadTeamDetails();
+  }, [loadTeamDetails]);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
