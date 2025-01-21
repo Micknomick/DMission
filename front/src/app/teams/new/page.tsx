@@ -4,12 +4,6 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createTeam } from "@/utils/api";
 
-// エラーの型定義
-interface ApiError {
-  message: string;
-  status?: number;
-}
-
 // createTeamの引数の型定義
 interface CreateTeamParams {
   name: string;
