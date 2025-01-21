@@ -19,7 +19,6 @@ export interface User {
   provider: string
   email: string
   name: string
-  nickname?: string
   image?: string
   allowPasswordChange: boolean
   created_at: Date
@@ -38,15 +37,15 @@ export type Task = {
   recurring: boolean | null;
   createdByUserId: number | null;
   assignedUserId: number | null;
-  teamId: number | null;
   createdAt: string;
   updatedAt: string;
   deadline: string;
   user: User;
   mission: Mission;
+  team: Team;
 };
 
-// タスク
+// タスクの入力
 export interface TaskInput {
   title: string;
   description: string;
@@ -56,35 +55,50 @@ export interface TaskInput {
   start_date: string;
   reminder_at: string;
   recurring: boolean;
-  mission_id: string;
-  team_id: string;
 }
 
 // ミッション
 export interface Mission {
-  id: number; // データベースから取得後に存在する
+  id: number;
   name: string;
   description?: string;
   progress_rate: number;
   deadline: string;
   deleted_at: string | null;
   ownerType: 'Personal' | 'Team';
-  user: number;
-  team: number;
+  user: User;
+  team: Team;
+  tasks: Task[];
   isCompleted: boolean;
   createdAt?: string; // Railsで自動生成されるためオプショナル
   updatedAt?: string; // Railsで自動生成されるためオプショナル
 }
 
+// ミッションの入力
 export interface MissionInput {
   mission: {
     name: string;
     description: string;
     deadline: string;
+    team_id: number;
   };
 };
 
+
+// チーム
 export interface Team {
   id: number;
   name: string;
+  description: string;
+  created_by_user_name: string;
+  members: User[];
+  missions: Mission[];
+  createdAt?: string;
+  updatedAt?: string;
+}
+
+// チームのインプット
+export interface TeamInput {
+    name: string;
+    description: string;
 }

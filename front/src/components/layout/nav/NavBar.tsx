@@ -14,12 +14,28 @@ const navItems = [
     href: '/dashboard',
   },
   {
-    title: 'Mission',
+    title: 'Team List',
+    href: '/teams'
+  },
+  {
+    title: 'Team Create',
+    href: '/teams/new'
+  },
+  {
+    title: 'Mission List',
     href: '/missions',
   },
   {
-    title: 'Tasks',
+    title: 'Mission Create',
+    href: '/missions/new',
+  },
+  {
+    title: 'Tasks List',
     href: '/tasks',
+  },
+  {
+    title: 'Tasks Create',
+    href: '/tasks/new',
   },
   {
     title: 'Contact',
