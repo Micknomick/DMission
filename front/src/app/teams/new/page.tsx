@@ -2,7 +2,19 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { createTeam } from "@/utils/api"; // チーム作成用のAPI関数をインポート
+import { createTeam } from "@/utils/api";
+
+// エラーの型定義
+interface ApiError {
+  message: string;
+  status?: number;
+}
+
+// createTeamの引数の型定義
+interface CreateTeamParams {
+  name: string;
+  description: string;
+}
 
 const NewTeamPage = () => {
   const [name, setName] = useState('');
@@ -17,11 +29,14 @@ const NewTeamPage = () => {
       await createTeam({
         name,
         description,
-      });
-      router.push('/teams'); // チーム一覧ページにリダイレクト
-    } catch (err) {
+      } as CreateTeamParams);
+      router.push('/teams');
+    } catch (err: unknown) {
       console.error(err);
-      setError('チームの作成に失敗しました。');
+      const errorMessage = err instanceof Error
+        ? err.message
+        : 'チームの作成に失敗しました。';
+      setError(errorMessage);
     }
   };
 
