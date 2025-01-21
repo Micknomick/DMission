@@ -35,7 +35,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-primary text-white h-screen flex items-center justify-center">
+    <div className="bg-gray-900 text-white h-screen flex items-center justify-center">
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-2xl font-bold mb-4">お問い合わせ</h1>
         <form onSubmit={handleSubmit} className="space-y-4">

@@ -26,13 +26,13 @@ const NewTeamPage = () => {
   };
 
   return (
-    <div className="bg-primary text-white h-screen">
+    <div className="bg-gray-900 text-white h-screen">
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-6 text-center">New Team</h1>
+        <h1 className="text-3xl font-bold mb-6 text-center">チームを作成する</h1>
         {error && <div className="text-red-500 mb-4">{error}</div>}
         <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-6">
           <div>
-            <label htmlFor="name" className="block mb-2">Team Name</label>
+            <label htmlFor="name" className="block mb-2">チーム名</label>
             <input
               type="text"
               id="name"
