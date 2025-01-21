@@ -1,4 +1,4 @@
-import { SignUpParams, MissionInput, TaskInput, Task, Mission, TeamInput, User } from "@/lib/type";
+import { SignUpParams, MissionInput, TaskInput, Task, Mission, TeamInput} from "@/lib/type";
 import axios from "axios";
 
 const api = axios.create({

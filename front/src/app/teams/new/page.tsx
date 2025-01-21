@@ -14,7 +14,7 @@ const NewTeamPage = () => {
     e.preventDefault();
 
     try {
-      const response = await createTeam({
+      await createTeam({
         name,
         description,
       });

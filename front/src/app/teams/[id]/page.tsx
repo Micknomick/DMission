@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'next/navigation';
 import { fetchTeamById } from '@/utils/api';
 import { Team, Mission, User } from '@/lib/type';
@@ -18,25 +18,25 @@ const TeamsPage = () => {
   const [totalMissions, setTotalMissions] = useState(0);
   const missionsPerPage = 3;
 
-  useEffect(() => {
-    const loadTeamDetails = async () => {
-      if (!id) return;
-      try {
-        const response = await fetchTeamById(Number(id));
-        const fetchedTeam = response.data;
+  const loadTeamDetails = useCallback(async () => {
+    if (!id) return;
+    try {
+      const response = await fetchTeamById(Number(id));
+      const fetchedTeam = response.data;
 
-        if (fetchedTeam) {
-          setTeam(fetchedTeam);
-          setMissions(fetchedTeam.missions?.slice(0, missionsPerPage) || []);
-          setTotalMissions(fetchedTeam.missions?.length || 0);
-        }
-      } catch (error) {
-        console.error('Failed to fetch team details:', error);
+      if (fetchedTeam) {
+        setTeam(fetchedTeam);
+        setMissions(fetchedTeam.missions?.slice(0, missionsPerPage) || []);
+        setTotalMissions(fetchedTeam.missions?.length || 0);
       }
-    };
+    } catch (error) {
+      console.error('Failed to fetch team details:', error);
+    }
+  }, [id, missionsPerPage]); // `id` と `missionsPerPage` を依存関係として追加
 
-    loadTeamDetails();
-  }, [id]);
+  useEffect(() => {
+    loadTeamDetails(); // メモ化された関数を呼び出す
+  }, [loadTeamDetails]); 
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
