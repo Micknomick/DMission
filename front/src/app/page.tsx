@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import MorphingText from "@/components/ui/morphing-text";
 
 export default function HomePage() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -48,9 +50,8 @@ export default function HomePage() {
     <div className="bg-gradient-to-b from-gray-900 to-black flex flex-col min-h-screen">
       {/* メインセクション */}
       <div className="flex flex-col justify-center items-center flex-grow text-center">
-        <h1 className="font-extrabold text-white text-8xl sm:text-8xl md:text-9xl lg:text-[14rem]">
-          DMission
-        </h1>
+
+          <MorphingText texts={["Do", "Mission", "Dmission"]} className="text-second" />
         <div className="mt-4">
           <p className="text-4xl font-light italic mb-2 text-white">Complete Your Tasks.</p>
           <p className="text-4xl font-light italic text-gray-400">Conquer Your Day.</p>
@@ -67,10 +68,18 @@ export default function HomePage() {
           ) : (
             <>
               <Link href="/signin">
-                <Button>Sign In</Button>
+                <InteractiveHoverButton
+                  className="bg-third text-black"
+                >
+                  Sign In
+                </InteractiveHoverButton>
               </Link>
               <Link href="/signup">
-                <Button>Sign Up</Button>
+              <InteractiveHoverButton
+                  className="bg-third text-black"
+                >
+                  Sign Up
+                </InteractiveHoverButton>
               </Link>
             </>
           )}

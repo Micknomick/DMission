@@ -76,140 +76,145 @@ export default function NewTaskPage() {
   };
 
   return (
-    <div className="max-w-lg mx-auto mt-10">
-      <h1 className="text-2xl font-bold mb-6">新しいタスクを作成</h1>
-      <form onSubmit={handleSubmit} className="space-y-6">
-        {/* タイトル */}
-        <div>
-          <Label htmlFor="title">タイトル</Label>
-          <Input
-            id="title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="タスクのタイトルを入力してください"
-            required
+    <div className="bg-gray-900 text-white min-h-screen py-10">
+      <div className="max-w-lg mx-auto mt-10">
+        <h1 className="text-2xl font-bold mb-6">新しいタスクを作成</h1>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* タイトル */}
+          <div>
+            <Label htmlFor="title">タイトル</Label>
+            <Input
+              id="title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="タスクのタイトルを入力してください"
+              required
+            />
+          </div>
+
+          {/* 説明 */}
+          <div>
+            <Label htmlFor="description">説明</Label>
+            <Textarea
+              id="description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              placeholder="タスクの詳細を入力してください"
+            />
+          </div>
+
+          {/* 優先度 */}
+          <div>
+            <Label htmlFor="priority">優先度</Label>
+            <Select onValueChange={(value) => setPriority(value)} defaultValue="low">
+              <SelectTrigger id="priority">
+                <SelectValue placeholder="優先度を選択してください" />
+              </SelectTrigger>
+              <SelectContent className="bg-white text-black">
+                <SelectItem value="low">Low</SelectItem>
+                <SelectItem value="medium">Medium</SelectItem>
+                <SelectItem value="high">High</SelectItem>
+                <SelectItem value="urgent">Urgent</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* 進捗率 */}
+          <ProgressSlider
+            progressRate={progressRate}
+            setProgressRate={setProgressRate}
           />
-        </div>
 
-        {/* 説明 */}
-        <div>
-          <Label htmlFor="description">説明</Label>
-          <Textarea
-            id="description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            placeholder="タスクの詳細を入力してください"
-          />
-        </div>
+          {/* ミッション */}
+          <div>
+            <Label htmlFor="mission">ミッション</Label>
+            <Select onValueChange={(value) => setMissionId(value)} defaultValue="">
+              <SelectTrigger id="mission">
+                <SelectValue placeholder="ミッションを選択してください" />
+              </SelectTrigger>
+              <SelectContent className="bg-white text-black">
+                {missions.length > 0 ? (
+                  missions.map((mission) => (
+                    <SelectItem key={mission.id} value={mission.id.toString()}>
+                      {mission.name}
+                    </SelectItem>
+                  ))
+                ) : (
+                  <p className="text-sm text-gray-500">ミッションがありません。</p>
+                )}
+              </SelectContent>
+            </Select>
+          </div>
 
-        {/* 優先度 */}
-        <div>
-          <Label htmlFor="priority">優先度</Label>
-          <Select onValueChange={(value) => setPriority(value)} defaultValue="low">
-            <SelectTrigger id="priority">
-              <SelectValue placeholder="優先度を選択してください" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="low">Low</SelectItem>
-              <SelectItem value="medium">Medium</SelectItem>
-              <SelectItem value="high">High</SelectItem>
-              <SelectItem value="urgent">Urgent</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
+          {/* チーム */}
+          <div>
+            <Label htmlFor="team">チーム</Label>
+            <Select onValueChange={(value) => setTeamId(value)} defaultValue="">
+              <SelectTrigger id="team">
+                <SelectValue placeholder="チームを選択してください" />
+              </SelectTrigger>
+              <SelectContent className="bg-white text-black">
+                {teams.length > 0 ? (
+                  teams.map((team) => (
+                    <SelectItem key={team.id} value={team.id.toString()}>
+                      {team.name}
+                    </SelectItem>
+                  ))
+                ) : (
+                  <p className="text-sm text-gray-500">チームがありません。</p>
+                )}
+              </SelectContent>
+            </Select>
+          </div>
 
-        {/* 進捗率 */}
-        <ProgressSlider
-          progressRate={progressRate}
-          setProgressRate={setProgressRate}
-        />
+          {/* 締切日 */}
+          <div>
+            <Label htmlFor="deadline">締切日</Label>
+            <Input
+              id="deadline"
+              type="date"
+              value={deadline}
+              onChange={(e) => setDeadline(e.target.value)}
+              className="text-black"
+            />
+          </div>
 
-        {/* ミッション */}
-        <div>
-          <Label htmlFor="mission">ミッション</Label>
-          <Select onValueChange={(value) => setMissionId(value)} defaultValue="">
-            <SelectTrigger id="mission">
-              <SelectValue placeholder="ミッションを選択してください" />
-            </SelectTrigger>
-            <SelectContent>
-              {missions.length > 0 ? (
-                missions.map((mission) => (
-                  <SelectItem key={mission.id} value={mission.id.toString()}>
-                    {mission.name}
-                  </SelectItem>
-                ))
-              ) : (
-                <p className="text-sm text-gray-500">ミッションがありません。</p>
-              )}
-            </SelectContent>
-          </Select>
-        </div>
+          {/* 開始日 */}
+          <div>
+            <Label htmlFor="start_date">開始日</Label>
+            <Input
+              id="start_date"
+              type="date"
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
+              className="text-black"
+            />
+          </div>
 
-        {/* チーム */}
-        <div>
-          <Label htmlFor="team">チーム</Label>
-          <Select onValueChange={(value) => setTeamId(value)} defaultValue="">
-            <SelectTrigger id="team">
-              <SelectValue placeholder="チームを選択してください" />
-            </SelectTrigger>
-            <SelectContent>
-              {teams.length > 0 ? (
-                teams.map((team) => (
-                  <SelectItem key={team.id} value={team.id.toString()}>
-                    {team.name}
-                  </SelectItem>
-                ))
-              ) : (
-                <p className="text-sm text-gray-500">チームがありません。</p>
-              )}
-            </SelectContent>
-          </Select>
-        </div>
+          {/* リマインダー */}
+          <div>
+            <Label htmlFor="reminder_at">リマインダー</Label>
+            <Input
+              id="reminder_at"
+              type="datetime-local"
+              value={reminderAt}
+              onChange={(e) => setReminderAt(e.target.value)}
+              className="text-black"
+            />
+          </div>
 
-        {/* 締切日 */}
-        <div>
-          <Label htmlFor="deadline">締切日</Label>
-          <Input
-            id="deadline"
-            type="date"
-            value={deadline}
-            onChange={(e) => setDeadline(e.target.value)}
-          />
-        </div>
+          {/* 繰り返しタスク */}
+          <div className="flex items-center space-x-4">
+            <Switch id="recurring" checked={recurring} onCheckedChange={setRecurring} />
+            <Label htmlFor="recurring">繰り返しタスク</Label>
+          </div>
 
-        {/* 開始日 */}
-        <div>
-          <Label htmlFor="start_date">開始日</Label>
-          <Input
-            id="start_date"
-            type="date"
-            value={startDate}
-            onChange={(e) => setStartDate(e.target.value)}
-          />
-        </div>
-
-        {/* リマインダー */}
-        <div>
-          <Label htmlFor="reminder_at">リマインダー</Label>
-          <Input
-            id="reminder_at"
-            type="datetime-local"
-            value={reminderAt}
-            onChange={(e) => setReminderAt(e.target.value)}
-          />
-        </div>
-
-        {/* 繰り返しタスク */}
-        <div className="flex items-center space-x-4">
-          <Switch id="recurring" checked={recurring} onCheckedChange={setRecurring} />
-          <Label htmlFor="recurring">繰り返しタスク</Label>
-        </div>
-
-        {/* 作成ボタン */}
-        <Button type="submit" className="w-full">
-          作成
-        </Button>
-      </form>
+          {/* 作成ボタン */}
+          <Button type="submit" className="w-full bg-blue-500">
+            作成
+          </Button>
+        </form>
+      </div>
     </div>
   );
 }
