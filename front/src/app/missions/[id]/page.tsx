@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useParams, useRouter } from "next/navigation"; // useRouter をインポート
 import { Mission, Task } from "@/lib/type";
 import { fetchMissionById } from "@/utils/api";
@@ -13,7 +13,7 @@ const MissionDetailPage = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchMissionDetails = async () => {
+  const fetchMissionDetails = useCallback(async () => {
     try {
       if (!id) return;
       const response = await fetchMissionById(Number(id));
@@ -23,11 +23,11 @@ const MissionDetailPage = () => {
       console.error("Failed to fetch mission details:", err);
       setError("ミッションの詳細を取得できませんでした。");
     }
-  };
+  }, [id]);
 
   useEffect(() => {
     fetchMissionDetails();
-  }, [id]);
+  }, [fetchMissionDetails]);
 
   if (error) {
     return <div className="text-red-500">{error}</div>;
@@ -38,10 +38,10 @@ const MissionDetailPage = () => {
   }
 
   return (
-    <div className="bg-black text-white min-h-screen p-8">
+    <div className="bg-gray-900 text-white min-h-screen p-8">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold mb-4">ミッション詳細</h1>
-        <div className="mb-8 bg-primary p-4 rounded-lg shadow">
+        <div className="mb-8 bg-second p-4 rounded-lg shadow">
           <h2 className="text-2xl font-semibold">{mission.name}</h2>
           <p className="text-gray-300 mt-2">{mission.description}</p>
           <p className="mt-2">
@@ -61,7 +61,7 @@ const MissionDetailPage = () => {
           </button>
           <button
             onClick={() => router.push("/missions/new")}
-            className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+            className="bg-second text-white px-4 py-2 rounded hover:bg-purple-700"
           >
             新規作成
           </button>
@@ -70,21 +70,21 @@ const MissionDetailPage = () => {
         <h2 className="text-2xl font-bold mb-4">タスク一覧</h2>
         <table className="table-auto w-full text-left text-sm bg-white rounded-lg overflow-hidden">
           <thead>
-            <tr className="bg-white text-black">
-              <th className="px-4 py-2">Title</th>
-              <th className="px-4 py-2">Description</th>
-              <th className="px-4 py-2">Progress</th>
-              <th className="px-4 py-2">Priority</th>
-              <th className="px-4 py-2">Start Date</th>
-              <th className="px-4 py-2">Reminder</th>
-              <th className="px-4 py-2">Recurring</th>
-              <th className="px-4 py-2">Deadline</th>
-              <th className="px-4 py-2">User</th>
+            <tr className="bg-second text-white">
+              <th className="px-4 py-2">タイトル</th>
+              <th className="px-4 py-2">説明</th>
+              <th className="px-4 py-2">進捗率</th>
+              <th className="px-4 py-2">優先度</th>
+              <th className="px-4 py-2">開始日</th>
+              <th className="px-4 py-2">リマインダー</th>
+              <th className="px-4 py-2">繰り返し</th>
+              <th className="px-4 py-2">締切日</th>
+              <th className="px-4 py-2">作成者</th>
             </tr>
           </thead>
           <tbody>
             {tasks.map((task) => (
-              <tr key={task.id} className="text-black border-t border-gray-200">
+              <tr key={task.id} className="text-black border-t border-gray-500">
                 <td className="px-4 py-2">{task.title}</td>
                 <td className="px-4 py-2">{task.description || "N/A"}</td>
                 <td className="px-4 py-2">{task.progress_rate}%</td>

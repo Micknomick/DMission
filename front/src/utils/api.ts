@@ -1,4 +1,4 @@
-import { SignUpParams, MissionInput, TaskInput, Task, Mission } from "@/lib/type";
+import { SignUpParams, MissionInput, TaskInput, Task, Mission, TeamInput} from "@/lib/type";
 import axios from "axios";
 
 const api = axios.create({
@@ -25,6 +25,8 @@ api.interceptors.request.use((config) => {
 });
 
 
+
+
 // API呼び出し関数を定義
 export const fetchSession = () => api.get("/auth/sessions");
 export const signUp = (data: SignUpParams) => api.post("/auth", data);
@@ -46,6 +48,9 @@ export const updateMission = async (missionId: number, data: Partial<Mission>) =
 
 //チーム関連
 export const fetchTeams = () => api.get("/teams");
+export const createTeam = (data: TeamInput) => api.post("/teams", data);
+export const fetchTeamById = (teamId: number) => api.get(`/teams/${teamId}`);
+
 
 //タスク関連
 export const createTask = (data:TaskInput) => api.post("/tasks", data);

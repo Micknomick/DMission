@@ -5,7 +5,7 @@ import { Mission } from "@/lib/type";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { FaCircleInfo } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
-import { deleteMission, updateMission } from "@/utils/api"; // updateMission を追加
+import { deleteMission, updateMission } from "@/utils/api";
 
 type MissionTableProps = {
   missions: Mission[];
@@ -64,27 +64,27 @@ const MissionTable = ({ missions, onUpdate }: MissionTableProps) => {
     <>
       <table className="table-auto w-full text-left text-sm bg-white rounded-lg overflow-hidden">
         <thead>
-          <tr className="bg-white text-black">
-            <th className="px-4 py-2">Title</th>
-            <th className="px-4 py-2">Content</th>
-            <th className="px-4 py-2">Team</th>
-            <th className="px-4 py-2">Progress</th>
-            <th className="px-4 py-2">Deadline</th>
-            <th className="px-4 py-2">Actions</th>
+          <tr className="bg-second text-white">
+            <th className="px-4 py-2">タイトル</th>
+            <th className="px-4 py-2">内容</th>
+            <th className="px-4 py-2">所属チーム</th>
+            <th className="px-4 py-2">進捗率</th>
+            <th className="px-4 py-2">締切期日</th>
+            <th className="px-4 py-2">アクション</th>
           </tr>
         </thead>
         <tbody>
           {missions.map((mission) => (
-            <tr key={mission.id} className="text-black border-t border-gray-200">
+            <tr key={mission.id} className="text-black border-t border-gray-500">
               <td className="px-4 py-2">{mission.name}</td>
               <td className="px-4 py-2">{mission.description}</td>
-              <td className="px-4 py-2">{mission.team}</td>
+              <td className="px-4 py-2">{mission.team?.name}</td>
               <td className="px-4 py-2">
                 <div className="flex items-center">
                   <span className="mr-2">{mission.progress_rate}%</span>
                   <div className="w-full bg-gray-600 rounded-full h-2">
                     <div
-                      className="bg-accent h-2 rounded-full"
+                      className="bg-blue-500 h-2 rounded-full"
                       style={{ width: `${mission.progress_rate}%` }}
                     />
                   </div>
@@ -94,13 +94,13 @@ const MissionTable = ({ missions, onUpdate }: MissionTableProps) => {
               <td className="px-4 py-2 flex space-x-2">
                 <button
                   onClick={() => handleViewDetails(mission.id)}
-                  className="text-primary px-2 py-1 rounded hover:bg-primary hover:text-white"
+                  className="text-blue-500 px-2 py-1 rounded hover:bg-third"
                 >
                   <FaCircleInfo />
                 </button>
                 <button
                   onClick={() => handleEdit(mission)} // 編集モーダルを開く
-                  className="text-primary px-2 py-1 rounded hover:bg-primary hover:text-white"
+                  className="text-black px-2 py-1 rounded hover:bg-third"
                 >
                   <FaEdit />
                 </button>
@@ -119,7 +119,7 @@ const MissionTable = ({ missions, onUpdate }: MissionTableProps) => {
       {/* 編集モーダル */}
       {isModalOpen && selectedMission && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-black p-6 rounded-lg w-1/3">
+          <div className="bg-second p-6 rounded-lg w-1/3">
             <h2 className="text-lg font-bold mb-4">Edit Mission</h2>
             <div className="mb-4">
               <label className="block text-sm font-medium">Title</label>
@@ -156,13 +156,13 @@ const MissionTable = ({ missions, onUpdate }: MissionTableProps) => {
             <div className="flex justify-end space-x-4">
               <button
                 onClick={handleModalClose}
-                className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700"
+                className="bg-black text-white px-4 py-2 rounded hover:bg-white hover:text-black"
               >
                 Cancel
               </button>
               <button
                 onClick={handleSave} // 編集内容を保存
-                className="bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark"
+                className="bg-third text-white px-4 py-2 rounded hover:bg-white hover:text-black"
               >
                 Save
               </button>
