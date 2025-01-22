@@ -25,6 +25,7 @@ export default function RequestResetPassword() {
         setMessage('エラーが発生しました');
       }
     } catch (error) {
+      console.error(error);
       setMessage('エラーが発生しました');
     }
   };
