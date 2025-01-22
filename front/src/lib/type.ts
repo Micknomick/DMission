@@ -12,6 +12,17 @@ export interface SignInParams {
   password: string
 }
 
+export interface ResetPasswordParams {
+  email: string;
+  redirect_url: string;
+}
+
+export interface UpdatePasswordParams {
+  reset_password_token: string;
+  password: string;
+  password_confirmation: string;
+}
+
 // ユーザー
 export interface User {
   id: number

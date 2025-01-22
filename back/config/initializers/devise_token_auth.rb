@@ -24,7 +24,7 @@ DeviseTokenAuth.setup do |config|
   # time. In this case, each request in the batch will need to share the same
   # auth token. This setting determines how far apart the requests can be while
   # still using the same auth token.
-  # config.batch_request_buffer_throttle = 5.seconds
+  config.batch_request_buffer_throttle = 5.seconds
 
   # This route will be the prefix for all oauth2 redirect callbacks. For
   # example, using the default '/omniauth', the github oauth2 provider will
@@ -60,10 +60,11 @@ DeviseTokenAuth.setup do |config|
   # By default, only Bearer Token authentication is implemented out of the box.
   # If, however, you wish to integrate with legacy Devise authentication, you can
   # do so by enabling this flag. NOTE: This feature is highly experimental!
-  # config.enable_standard_devise_support = false
+  config.enable_standard_devise_support = false
 
   # By default DeviseTokenAuth will not send confirmation email, even when including
   # devise confirmable module. If you want to use devise confirmable module and
   # send email, set it to true. (This is a setting for compatibility)
   # config.send_confirmation_email = true
+  config.default_password_reset_url = 'https://dmission-app.vercel.app/newpassword'
 end
