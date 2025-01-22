@@ -15,7 +15,7 @@ export default function SignIn() {
     setError(null);
 
     try {
-      const response = await fetch("http://localhost:3000/api/v1/auth/sign_in", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/auth/sign_in`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
