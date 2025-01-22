@@ -78,7 +78,7 @@ gem 'devise_token_auth'
 gem 'omniauth', '~> 1.9'
 
 #その他
-gem 'high_voltage'
+# gem 'high_voltage'
 
 #mail
 gem 'mail_form'
