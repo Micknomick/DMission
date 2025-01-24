@@ -54,9 +54,8 @@ const TeamsPage = () => {
 
   const handleInvite = async (userId: number) => {
   if (!team) return;
-
   try {
-    const response = await inviteUserToTeam(team.id, userId); // 招待処理
+    await inviteUserToTeam(team.id, userId); // 招待処理
     alert(`User ${userId} invited successfully.`);
 
     // 招待されたユーザーを新たに team.members に追加
@@ -75,14 +74,6 @@ const TeamsPage = () => {
     alert('Failed to invite user.');
   }
 };
-useEffect(() => {
-  const checkTeamData = async () => {
-    const response = await fetchTeamById(13); // チームIDを指定
-    console.log(response.data); // デバッグ用
-  };
-
-  checkTeamData();
-}, []);
 
 
   // ミッションの締切日をカレンダーにマーク
