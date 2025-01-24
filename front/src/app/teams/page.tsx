@@ -22,9 +22,9 @@ const TeamsGridWithSlider = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      <header className="bg-purple-600 text-center py-4">
-        <h1 className="text-3xl font-bold">所属チーム一覧</h1>
+    <div className="min-h-screen bg-black text-white">
+      <header className="text-center py-4">
+        <h1 className="text-3xl font-bold">Team</h1>
       </header>
       <div className="container mx-auto py-8 px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {teams.map((team) => (
@@ -58,7 +58,7 @@ const TeamCard = ({ team }: { team: Team }) => {
     setCurrentIndex((prev) => (prev - 1 + items.length) % items.length);
 
   return (
-    <div className="bg-gray-800 p-6 rounded-lg relative">
+    <div className="bg-primary p-6 rounded-lg relative">
       <motion.div
         key={currentIndex}
         initial={{ opacity: 0, x: 50 }}

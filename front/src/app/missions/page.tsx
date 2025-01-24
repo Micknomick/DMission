@@ -27,7 +27,10 @@ const MissionList = () => {
   const fetchMissions = async () => {
     try {
       const response = await api.get<MissionResponse>("/missions");
-      setMissions(response.data.personal_missions); // 初期値として個人ミッションを設定
+      const { personal_missions, team_missions } = response.data;
+
+      // 個人ミッションとチームミッションを1つの配列に統合してセット
+      setMissions([...personal_missions, ...team_missions]);
     } catch (err) {
       console.error("Failed to fetch missions:", err);
       setError("データの取得に失敗しました。");
@@ -65,7 +68,7 @@ const MissionList = () => {
   }
 
   return (
-    <div className="bg-gray-900 text-white h-screen p-8">
+    <div className="bg-black text-white min-h-screen p-8">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-2xl font-bold mb-6">Mission一覧</h1>
         {/* タブ切り替え */}

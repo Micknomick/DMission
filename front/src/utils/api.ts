@@ -63,4 +63,18 @@ export async function fetchTaskById(taskId: number) {
   return await api.get(`/tasks/${taskId}`);
 }
 
+// チーム招待関連API
+export const inviteUserToTeam = async (teamId: number, userId: number) => {
+  return api.post(`/teams/${teamId}/invite`, { user_id: userId });
+};
+export const acceptTeamInvitation = async (invitationId: number) => {
+  return api.post(`/team_invitations/${invitationId}/accept`);
+};
+export const rejectTeamInvitation = async (invitationId: number) => {
+  return api.post(`/team_invitations/${invitationId}/reject`);
+};
+export const fetchTeamInvitations = async () => {
+  return api.get("/team_invitations");
+};
+
 export default api;

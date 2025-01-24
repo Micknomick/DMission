@@ -91,7 +91,7 @@ export interface MissionInput {
     name: string;
     description: string;
     deadline: string;
-    team_id: number;
+    team_id?: number;
   };
 };
 
@@ -113,3 +113,10 @@ export interface TeamInput {
     name: string;
     description: string;
 }
+
+export type Invitation = {
+  id: number;
+  team: { name: string };
+  status: string;
+  token: string
+};

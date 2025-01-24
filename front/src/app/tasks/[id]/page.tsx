@@ -135,118 +135,121 @@ export default function TaskDetailPage() {
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 50 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
-      className="container mx-auto py-10 px-4 bg-white shadow-lg rounded-lg space-y-8"
-    >
-      <div className="space-y-4">
-        <Input
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          placeholder="タイトルを入力"
-          className="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
-        />
-        <Textarea
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          placeholder="説明を入力"
-          className="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
-        />
-      </div>
+    <div>
+      <h1 className="text-center bg-black text-white items-center text-2xl"> Task </h1>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 50 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        className="bg-black min-h-screen mx-auto py-10 px-4 space-y-8"
+      >
+        <div className="space-y-4">
+          <Input
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="タイトルを入力"
+            className="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
+          />
+          <Textarea
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            placeholder="説明を入力"
+            className="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
 
-      <div className="space-y-6">
-        <div className="flex items-center gap-6">
-          <div className="w-full">
-            <ProgressSlider progressRate={progressRate} setProgressRate={setProgressRate} />
+        <div className="space-y-6">
+          <div className="flex items-center gap-6">
+            <div className="w-full">
+              <ProgressSlider progressRate={progressRate} setProgressRate={setProgressRate} />
+            </div>
+            <div className="w-40">
+              <p className="text-sm font-medium text-white mb-1">優先度:</p>
+              <Select value={priority} onValueChange={setPriority}>
+                <SelectTrigger className="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 bg-white text-black">
+                  <SelectValue placeholder="優先度を選択" />
+                </SelectTrigger>
+                <SelectContent className="bg-white">
+                  <SelectItem value="low">Low</SelectItem>
+                  <SelectItem value="medium">Medium</SelectItem>
+                  <SelectItem value="high">High</SelectItem>
+                  <SelectItem value="urgent">Urgent</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
           </div>
-          <div className="w-40">
-            <p className="text-sm font-medium text-gray-600 mb-1">優先度:</p>
-            <Select value={priority} onValueChange={setPriority}>
-              <SelectTrigger className="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500">
-                <SelectValue placeholder="優先度を選択" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="low">Low</SelectItem>
-                <SelectItem value="medium">Medium</SelectItem>
-                <SelectItem value="high">High</SelectItem>
-                <SelectItem value="urgent">Urgent</SelectItem>
-              </SelectContent>
-            </Select>
+
+          <div className="grid grid-cols-2 gap-6">
+            <div>
+              <p className="text-sm font-medium text-white mb-1">開始日</p>
+              <Input
+                type="date"
+                value={startDate}
+                onChange={(e) => setStartDate(e.target.value)}
+                className="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+            <p className="text-sm font-medium text-white mb-1">締切日</p>
+              <Input
+                type="date"
+                value={deadline}
+                onChange={(e) => setDeadline(e.target.value)}
+                className="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-6">
-          <div>
-            <p className="text-sm font-medium text-gray-600 mb-1">開始日</p>
-            <Input
-              type="date"
-              value={startDate}
-              onChange={(e) => setStartDate(e.target.value)}
-              className="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-          <div>
-          <p className="text-sm font-medium text-gray-600 mb-1">締切日</p>
-            <Input
-              type="date"
-              value={deadline}
-              onChange={(e) => setDeadline(e.target.value)}
-              className="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
-            />
+        <div className="space-y-4">
+          <div className="grid grid-cols-2 gap-6">
+            <div>
+              <p className="text-sm font-medium text-white mb-1">締切日</p>
+              <Input
+                type="datetime-local"
+                value={reminderAt}
+                onChange={(e) => setReminderAt(e.target.value)}
+                placeholder="リマインダー"
+                className="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div className="flex items-center gap-4">
+              <Switch
+                checked={recurring}
+                onCheckedChange={setRecurring}
+              />
+              <label className="text-sm font-medium text-white">繰り返しタスク</label>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="space-y-4">
-        <div className="grid grid-cols-2 gap-6">
-          <div>
-            <p className="text-sm font-medium text-gray-600 mb-1">締切日</p>
-            <Input
-              type="datetime-local"
-              value={reminderAt}
-              onChange={(e) => setReminderAt(e.target.value)}
-              placeholder="リマインダー"
-              className="w-full border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
+        <div className="space-y-4">
           <div className="flex items-center gap-4">
-            <Switch
-              checked={recurring}
-              onCheckedChange={setRecurring}
-            />
-            <label className="text-sm font-medium text-gray-600">繰り返しタスク</label>
+            <Avatar className="bg-white">
+              <AvatarFallback>
+                {task.user.name ? task.user.name.charAt(0) : "?"}
+              </AvatarFallback>
+            </Avatar>
+            <p className="text-sm text-white">
+              作成者: {task.user.name || "不明"}
+            </p>
+          </div>
+
+          <div>
+            <p className="text-sm font-medium text-white">ミッション:</p>
+            <p className="text-sm text-white">
+              {task.mission?.name || "未割り当て"}
+            </p>
           </div>
         </div>
-      </div>
 
-      <div className="space-y-4">
-        <div className="flex items-center gap-4">
-          <Avatar>
-            <AvatarFallback>
-              {task.user.name ? task.user.name.charAt(0) : "?"}
-            </AvatarFallback>
-          </Avatar>
-          <p className="text-sm text-gray-600">
-            作成者: {task.user.name || "不明"}
-          </p>
+        <div className="flex justify-end">
+          <Button onClick={handleSave} className="bg-blue-500 text-white hover:bg-blue-600 rounded-lg shadow-md px-6 py-2">
+            保存して戻る
+          </Button>
         </div>
-
-        <div>
-          <p className="text-sm font-medium text-gray-600">ミッション:</p>
-          <p className="text-sm text-gray-800">
-            {task.mission?.name || "未割り当て"}
-          </p>
-        </div>
-      </div>
-
-      <div className="flex justify-end">
-        <Button onClick={handleSave} className="bg-blue-500 text-white hover:bg-blue-600 rounded-lg shadow-md px-6 py-2">
-          保存して戻る
-        </Button>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 }
