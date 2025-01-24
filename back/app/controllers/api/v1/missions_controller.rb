@@ -9,10 +9,22 @@ module Api
 
       # ミッション一覧
       def index
+        # 個人ミッションの取得
         personal_missions = current_api_v1_user.missions.personal.includes(:tasks).where(deleted_at: nil)
-        team_ids = current_api_v1_user.teams.pluck(:id)
-        team_missions = Mission.joins(:team).where(teams: { id: team_ids }).includes(:tasks).where(deleted_at: nil)
 
+        # チームミッションの取得
+        team_ids = current_api_v1_user.teams.pluck(:id)
+        if team_ids.any?
+          team_missions = Mission.where(team_id: team_ids, deleted_at: nil).includes(:tasks, :team)
+        else
+          team_missions = []
+        end
+
+        # デバッグ用ログ
+        # Rails.logger.debug("Personal Missions: #{personal_missions.map(&:attributes)}")
+        # Rails.logger.debug("Team Missions: #{team_missions.map(&:attributes)}")
+
+        # JSON レスポンス
         render json: {
           personal_missions: personal_missions.map { |mission| serialize_mission_with_progress(mission) },
           team_missions: team_missions.map { |mission| serialize_mission_with_progress(mission) }
@@ -95,6 +107,7 @@ module Api
           id: mission.id,
           name: mission.name,
           description: mission.description,
+          team: mission.team ? { id: mission.team.id, name: mission.team.name } : nil,
           deadline: mission.deadline,
           is_completed: mission.is_completed,
           progress_rate: mission.calculate_progress_rate, # サーバー側で進捗率を計算

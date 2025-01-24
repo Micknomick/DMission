@@ -9,7 +9,7 @@ interface ProgressSliderProps {
 const ProgressSlider: React.FC<ProgressSliderProps> = ({ progressRate, setProgressRate }) => {
   return (
     <div>
-      <label htmlFor="progress-slider" className="block mb-2">
+      <label htmlFor="progress-slider" className=" text-white block mb-2">
         進捗率: {progressRate}%
       </label>
       <Slider.Root

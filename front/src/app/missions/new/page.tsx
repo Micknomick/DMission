@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { createMission, fetchTeams } from "@/utils/api";
-import { Team } from '@/lib/type';
+import { Team, MissionInput } from '@/lib/type';
+import { ShimmerButton } from '@/components/ui/shimmer-button';
 
 const NewMissionPage = () => {
   const [name, setName] = useState('');
@@ -33,20 +34,17 @@ const NewMissionPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!teamId) {
-      setError('チームを選択してください。');
-      return;
-    }
-
     try {
-      const missionData = {
+      // MissionInput 型に対応する missionData を明確に定義
+      const missionData: MissionInput = {
         mission: {
           name,
           description,
           deadline,
-          team_id: Number(teamId),
+          ...(teamId ? { team_id: Number(teamId) } : 0),
         },
       };
+
       await createMission(missionData);
       router.push('/missions/');
     } catch (err) {
@@ -56,10 +54,10 @@ const NewMissionPage = () => {
   };
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen">
+    <div className="bg-black text-white min-h-screen">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="text-3xl font-bold mb-6 text-center">Missionを作成する</h1>
-        {error && <div className="text-red-500 mb-4">{error}</div>}
+        <h1 className="text-3xl font-bold mb-6 text-center">New Mission</h1>
+        {error && <div className="text-blue-500 mb-4">{error}</div>}
         <form
           onSubmit={handleSubmit}
           className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8"
@@ -73,7 +71,7 @@ const NewMissionPage = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
-              className="w-full border border-gray-600 bg-gray-700 p-2 rounded"
+              className="w-full border border-gray-600 bg-primary p-2 rounded"
             />
           </div>
           <div>
@@ -83,7 +81,7 @@ const NewMissionPage = () => {
               placeholder="説明文を入力してください"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="w-full border border-gray-600 bg-gray-700 p-2 rounded"
+              className="w-full border border-gray-600 bg-primary p-2 rounded"
             />
           </div>
           <div>
@@ -93,7 +91,7 @@ const NewMissionPage = () => {
               id="deadline"
               value={deadline}
               onChange={(e) => setDeadline(e.target.value)}
-              className="w-full border border-gray-700 bg-gray-700 p-2 rounded"
+              className="w-full border border-gray-700 bg-primary p-2 rounded"
             />
           </div>
           <div>
@@ -102,7 +100,7 @@ const NewMissionPage = () => {
               id="team"
               value={teamId}
               onChange={(e) => setTeamId(e.target.value)}
-              className="w-full border border-gray-600 bg-gray-700 p-2 rounded"
+              className="w-full border border-gray-600 bg-primary p-2 rounded"
             >
               <option value="">チームを選択してください</option>
               {teams.map((team: Team) => (
@@ -112,13 +110,13 @@ const NewMissionPage = () => {
               ))}
             </select>
           </div>
-          <div className="col-span-1 sm:col-span-2 text-center mt-4">
-            <button
+          <div className="flex justify-center col-span-1 sm:col-span-2 text-center mt-4">
+            <ShimmerButton
               type="submit"
-              className="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 w-full sm:w-auto"
+              className="px-6 py-2 rounded hover:bg-blue-500 w-full sm:w-auto"
             >
               Create
-            </button>
+            </ShimmerButton>
           </div>
         </form>
       </div>

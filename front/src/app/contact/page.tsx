@@ -2,6 +2,7 @@
 
 import { useState, ChangeEvent, FormEvent } from "react";
 import { SuccessModal } from "@/components/layout/contacts/FormModal";
+import { ShimmerButton } from "@/components/ui/shimmer-button";
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -35,7 +36,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-gray-900 text-white h-screen flex items-center justify-center">
+    <div className="bg-black text-white h-screen flex items-center justify-center">
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-2xl font-bold mb-4">お問い合わせ</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -46,7 +47,7 @@ export default function Contact() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full border px-4 py-2 text-black"
+              className="w-full border border-neutral-500 px-4 py-2 text-white bg-primary"
               required
             />
           </div>
@@ -57,7 +58,7 @@ export default function Contact() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full border px-4 py-2 text-black"
+              className="w-full border border-neutral-500 px-4 py-2 text-white bg-primary"
               required
             />
           </div>
@@ -67,16 +68,18 @@ export default function Contact() {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              className="w-full border px-4 py-2 text-black"
+              className="w-full border border-neutral-500 px-4 py-2 text-white bg-primary"
               required
             />
           </div>
-          <button
-            type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded"
-          >
-            送信
-          </button>
+          <div className="flex justify-center">
+            <ShimmerButton
+              type="submit"
+              className="bg-blue-500 text-white px-4 py-2 rounded"
+            >
+              送信
+            </ShimmerButton>
+          </div>
         </form>
       </div>
 

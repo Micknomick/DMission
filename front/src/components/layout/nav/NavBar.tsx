@@ -18,15 +18,15 @@ const navItems = [
     href: '/teams'
   },
   {
-    title: 'Team Create',
+    title: 'New Team',
     href: '/teams/new'
   },
   {
-    title: 'Mission List',
+    title: 'Missions List',
     href: '/missions',
   },
   {
-    title: 'Mission Create',
+    title: 'New Mission',
     href: '/missions/new',
   },
   {
@@ -34,7 +34,7 @@ const navItems = [
     href: '/tasks',
   },
   {
-    title: 'Tasks Create',
+    title: 'New Task',
     href: '/tasks/new',
   },
   {

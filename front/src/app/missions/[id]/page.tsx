@@ -38,10 +38,10 @@ const MissionDetailPage = () => {
   }
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen p-8">
+    <div className="bg-black text-white min-h-screen p-8">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold mb-4">ミッション詳細</h1>
-        <div className="mb-8 bg-second p-4 rounded-lg shadow">
+        <div className="mb-8 bg-primary p-4 rounded-lg shadow">
           <h2 className="text-2xl font-semibold">{mission.name}</h2>
           <p className="text-gray-300 mt-2">{mission.description}</p>
           <p className="mt-2">
@@ -55,13 +55,13 @@ const MissionDetailPage = () => {
         <div className="flex justify-between mb-4">
           <button
             onClick={() => router.push("/missions")}
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+            className="bg-white text-black px-4 py-2 rounded hover:bg-blue-500"
           >
             一覧に戻る
           </button>
           <button
             onClick={() => router.push("/missions/new")}
-            className="bg-second text-white px-4 py-2 rounded hover:bg-purple-700"
+            className="bg-white text-black px-4 py-2 rounded hover:bg-blue-500"
           >
             新規作成
           </button>
@@ -70,7 +70,7 @@ const MissionDetailPage = () => {
         <h2 className="text-2xl font-bold mb-4">タスク一覧</h2>
         <table className="table-auto w-full text-left text-sm bg-white rounded-lg overflow-hidden">
           <thead>
-            <tr className="bg-second text-white">
+            <tr className="bg-black border border-neutral-500 text-white">
               <th className="px-4 py-2">タイトル</th>
               <th className="px-4 py-2">説明</th>
               <th className="px-4 py-2">進捗率</th>
@@ -84,7 +84,7 @@ const MissionDetailPage = () => {
           </thead>
           <tbody>
             {tasks.map((task) => (
-              <tr key={task.id} className="text-black border-t border-gray-500">
+              <tr key={task.id} className="bg-black text-white border border-gray-500">
                 <td className="px-4 py-2">{task.title}</td>
                 <td className="px-4 py-2">{task.description || "N/A"}</td>
                 <td className="px-4 py-2">{task.progress_rate}%</td>

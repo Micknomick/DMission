@@ -91,7 +91,7 @@ export interface MissionInput {
     name: string;
     description: string;
     deadline: string;
-    team_id: number;
+    team_id?: number;
   };
 };
 

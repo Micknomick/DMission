@@ -54,15 +54,15 @@ const TeamsPage = () => {
       mission.deadline ? new Date(mission.deadline).toDateString() === date.toDateString() : false
     );
     return deadlineMatch ? (
-      <span className="bg-purple-500 text-white rounded-full px-2">
+      <span className="bg-blue-500 text-white rounded-full px-2">
         {deadlineMatch.name}
       </span>
     ) : null;
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      <header className="bg-purple-600 text-center py-4">
+    <div className="min-h-screen bg-black text-white">
+      <header className="text-center py-4">
         <h1 className="text-3xl font-bold">DMission</h1>
       </header>
       <div className="container mx-auto py-8 px-4 grid grid-cols-3 gap-8">
@@ -90,7 +90,7 @@ const TeamsPage = () => {
             {team?.members?.slice(0, 5).map((user: User) => (
               <div
                 key={user.id}
-                className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center"
+                className="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center"
               >
                 <span className="text-sm">{user.name[0]}</span>
               </div>
@@ -102,7 +102,7 @@ const TeamsPage = () => {
             {/* Dialog (Modal) */}
             <Dialog>
               <DialogTrigger asChild>
-                <Button className="ml-2 bg-yellow-500 hover:bg-yellow-600">+</Button>
+                <Button className="ml-2 bg-white text-black rounded-full hover:bg-gray-300">＋</Button>
               </DialogTrigger>
               <DialogContent className="bg-gray-800 text-white rounded-lg shadow-lg p-6 max-w-md">
                 <DialogHeader>
@@ -127,7 +127,7 @@ const TeamsPage = () => {
         {/* Calendar */}
         <div className="col-span-3 md:col-span-1">
           <h2 className="text-xl font-bold">Calendar</h2>
-          <div className="mt-4 bg-gray-800 p-4 rounded">
+          <div className="mt-4 bg-primary p-4 rounded">
             <Calendar
               tileContent={tileContent}
               className="react-calendar"
