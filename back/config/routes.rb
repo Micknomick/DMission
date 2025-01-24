@@ -7,20 +7,39 @@ Rails.application.routes.draw do
   #   passwords: 'users/passwords'
   # }
 
-
-  # API用のDevise Token Auth
-  namespace :api do
+   # API用のDevise Token Auth
+   namespace :api do
     namespace :v1 do
       resources :test, only: %i[index]
+
+      # Devise Token Auth
       mount_devise_token_auth_for 'User', at: 'auth',
       controllers: {
         sessions: 'api/v1/auth/sessions',
         registrations: 'api/v1/auth/registrations',
         passwords: 'api/v1/auth/passwords'
       }
+      # タスク関連
       resources :tasks, only: [:index, :show, :create, :update, :destroy]
+      # ミッション関連
       resources :missions, only: [:index, :show, :create, :update, :destroy]
-      resources :teams, only: [:index, :show, :create, :update, :destroy]
+      # チーム関連
+      resources :teams, only: [:index, :show, :create, :update, :destroy] do
+        member do
+          post :invite # チーム招待のエンドポイント
+        end
+      end
+      # チーム招待関連
+      resources :team_invitations, only: [] do
+        member do
+          post :accept  # 招待承認のエンドポイント
+          post :reject  # 招待拒否のエンドポイント
+        end
+        collection do
+          get :index    # 招待一覧（オプションで追加）
+        end
+      end
+      # 問い合わせ関連
       resources :contacts, only: [:create]
     end
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_01_21_152806) do
+ActiveRecord::Schema[7.0].define(version: 2025_01_24_023704) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -75,6 +75,17 @@ ActiveRecord::Schema[7.0].define(version: 2025_01_21_152806) do
     t.index ["start_date"], name: "index_tasks_on_start_date"
   end
 
+  create_table "team_invitations", force: :cascade do |t|
+    t.bigint "team_id", null: false
+    t.bigint "user_id", null: false
+    t.string "status", default: "pending"
+    t.string "token", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_team_invitations_on_team_id"
+    t.index ["user_id"], name: "index_team_invitations_on_user_id"
+  end
+
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -122,6 +133,8 @@ ActiveRecord::Schema[7.0].define(version: 2025_01_21_152806) do
   add_foreign_key "missions", "users"
   add_foreign_key "task_approval_histories", "tasks"
   add_foreign_key "tasks", "missions"
+  add_foreign_key "team_invitations", "teams"
+  add_foreign_key "team_invitations", "users"
   add_foreign_key "user_team_relations", "teams"
   add_foreign_key "user_team_relations", "users"
 end

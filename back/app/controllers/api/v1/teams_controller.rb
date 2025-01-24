@@ -45,13 +45,6 @@ module Api
         end
       end
 
-
-      # ユーザーが所属するチーム一覧を取得
-      def my_teams
-        teams = current_api_v1_user.teams # ログインユーザーが所属しているチームを取得
-        render json: teams, status: :ok
-      end
-
       # チームを作成
       def create
         team = Team.new(team_params.merge(created_by_user_id: current_api_v1_user.id)) # 作成者IDを直接マージ
@@ -66,6 +59,53 @@ module Api
           render json: { errors: team.errors.full_messages }, status: :unprocessable_entity
         end
       end
+
+      # ユーザーが所属するチーム一覧を取得
+      def my_teams
+        teams = current_api_v1_user.teams # ログインユーザーが所属しているチームを取得
+        render json: teams, status: :ok
+      end
+
+      # チームに招待
+      def invite
+        # `params[:id]` を使用してチームを取得（ルート定義に基づく）
+        team = current_api_v1_user.teams.find_by(id: params[:id])
+        unless team
+          return render json: { error: 'Team not found or you do not have permission to invite members to this team' }, status: :not_found
+        end
+
+        # 招待するユーザーを取得
+        user = User.find_by(id: params[:user_id])
+        unless user
+          return render json: { error: 'User not found' }, status: :not_found
+        end
+
+        # ユーザーが既にチームメンバーであるかチェック
+        if team.users.include?(user)
+          return render json: { error: "#{user.name} is already a member of this team" }, status: :unprocessable_entity
+        end
+
+        # 招待がすでに存在しているかチェック
+        if TeamInvitation.exists?(team: team, user: user)
+          return render json: { error: 'This user is already invited to the team' }, status: :unprocessable_entity
+        end
+
+        # 招待を作成
+        invitation = TeamInvitation.create!(
+          team: team,
+          user: user,
+          token: SecureRandom.hex(16),
+          status: 'pending'
+        )
+
+        render json: { message: "Invitation sent to #{user.email}", invitation: invitation }, status: :ok
+      rescue ActiveRecord::RecordInvalid => e
+        render json: { error: e.message }, status: :unprocessable_entity
+      rescue => e
+        Rails.logger.error "Unexpected error in TeamsController#invite: #{e.message}"
+        render json: { error: 'Internal Server Error' }, status: :internal_server_error
+      end
+
 
       private
 
