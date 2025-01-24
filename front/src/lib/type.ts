@@ -113,3 +113,10 @@ export interface TeamInput {
     name: string;
     description: string;
 }
+
+export type Invitation = {
+  id: number;
+  team: { name: string };
+  status: string;
+  token: string
+};

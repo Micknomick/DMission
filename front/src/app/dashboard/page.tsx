@@ -8,6 +8,7 @@ import { User } from "../../lib/type";
 
 import TaskList from "@/components/layout/dashboard/TaskList";
 import ProgressCircle from "../../components/layout/dashboard/ProgressCircle";
+import InvitationsPage from "@/components/layout/teams/InvitationsPage";
 
 export default function Dashboard() {
   const [user, setUser] = useState<User | null>(null);
@@ -63,7 +64,7 @@ export default function Dashboard() {
         <div className="flex-1">
           <TaskList tasks={tasks} userName={user?.name || "User"} />
         </div>
-
+        <InvitationsPage/>
         {/* 進捗円 */}
         <div className="flex justify-center md:justify-start">
           <ProgressCircle completedTasks={completedTasks} totalTasks={totalTasks} />
