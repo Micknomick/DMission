@@ -30,7 +30,7 @@ export default function NewTaskPage() {
   useEffect(() => {
     async function fetchOptions() {
       try {
-        const [missionsResponse, teamsResponse] = await Promise.all([
+        const [missionsResponse] = await Promise.all([
           fetchMissions(),
           fetchTeams(),
         ]);
