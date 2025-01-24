@@ -62,9 +62,9 @@ const MissionTable = ({ missions, onUpdate }: MissionTableProps) => {
 
   return (
     <>
-      <table className="table-auto w-full text-left text-sm bg-white rounded-lg overflow-hidden">
+      <table className="table-auto w-full text-left text-sm bg-black rounded-lg overflow-hidden">
         <thead>
-          <tr className="bg-second text-white">
+          <tr className="bg-black border border-neutral-500 text-white">
             <th className="px-4 py-2">タイトル</th>
             <th className="px-4 py-2">内容</th>
             <th className="px-4 py-2">所属チーム</th>
@@ -75,7 +75,7 @@ const MissionTable = ({ missions, onUpdate }: MissionTableProps) => {
         </thead>
         <tbody>
           {missions.map((mission) => (
-            <tr key={mission.id} className="text-black border-t border-gray-500">
+            <tr key={mission.id} className="text-white border border-neutral-700">
               <td className="px-4 py-2">{mission.name}</td>
               <td className="px-4 py-2">{mission.description}</td>
               <td className="px-4 py-2">{mission.team?.name}</td>
@@ -94,19 +94,19 @@ const MissionTable = ({ missions, onUpdate }: MissionTableProps) => {
               <td className="px-4 py-2 flex space-x-2">
                 <button
                   onClick={() => handleViewDetails(mission.id)}
-                  className="text-blue-500 px-2 py-1 rounded hover:bg-third"
+                  className="text-white px-2 py-1 rounded hover:text-blue-500"
                 >
                   <FaCircleInfo />
                 </button>
                 <button
                   onClick={() => handleEdit(mission)} // 編集モーダルを開く
-                  className="text-black px-2 py-1 rounded hover:bg-third"
+                  className="text-white px-2 py-1 rounded hover:text-blue-500"
                 >
                   <FaEdit />
                 </button>
                 <button
                   onClick={() => handleDelete(mission)}
-                  className="text-accent px-2 py-1 rounded hover:bg-accent hover:text-white"
+                  className="text-white px-2 py-1 rounded hover:text-accent"
                 >
                   <FaTrash />
                 </button>

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { fetchMissions, fetchTeams, createTask } from "@/utils/api";
-import { Mission, Team } from "@/lib/type";
+import { Mission} from "@/lib/type";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -22,17 +22,15 @@ export default function NewTaskPage() {
   const [reminderAt, setReminderAt] = useState("");
   const [recurring, setRecurring] = useState(false);
   const [missionId, setMissionId] = useState("");
-  const [teamId, setTeamId] = useState("");
 
   const [missions, setMissions] = useState<Mission[]>([]);
-  const [teams, setTeams] = useState<Team[]>([]);
 
   const router = useRouter();
 
   useEffect(() => {
     async function fetchOptions() {
       try {
-        const [missionsResponse, teamsResponse] = await Promise.all([
+        const [missionsResponse] = await Promise.all([
           fetchMissions(),
           fetchTeams(),
         ]);
@@ -43,7 +41,6 @@ export default function NewTaskPage() {
         ];
 
         setMissions(allMissions);
-        setTeams(teamsResponse.data || []);
       } catch (error) {
         console.error("ミッションまたはチームの取得に失敗しました。", error);
       }
@@ -63,7 +60,6 @@ export default function NewTaskPage() {
       reminder_at: reminderAt,
       recurring,
       mission_id: missionId,
-      team_id: teamId,
     };
 
     try {
@@ -76,7 +72,7 @@ export default function NewTaskPage() {
   };
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen py-10">
+    <div className="bg-black text-white min-h-screen py-10">
       <div className="max-w-lg mx-auto mt-10">
         <h1 className="text-2xl font-bold mb-6">新しいタスクを作成</h1>
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -89,6 +85,7 @@ export default function NewTaskPage() {
               onChange={(e) => setTitle(e.target.value)}
               placeholder="タスクのタイトルを入力してください"
               required
+              className="text-black"
             />
           </div>
 
@@ -100,6 +97,7 @@ export default function NewTaskPage() {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="タスクの詳細を入力してください"
+              className="text-black"
             />
           </div>
 
@@ -141,27 +139,6 @@ export default function NewTaskPage() {
                   ))
                 ) : (
                   <p className="text-sm text-gray-500">ミッションがありません。</p>
-                )}
-              </SelectContent>
-            </Select>
-          </div>
-
-          {/* チーム */}
-          <div>
-            <Label htmlFor="team">チーム</Label>
-            <Select onValueChange={(value) => setTeamId(value)} defaultValue="">
-              <SelectTrigger id="team">
-                <SelectValue placeholder="チームを選択してください" />
-              </SelectTrigger>
-              <SelectContent className="bg-white text-black">
-                {teams.length > 0 ? (
-                  teams.map((team) => (
-                    <SelectItem key={team.id} value={team.id.toString()}>
-                      {team.name}
-                    </SelectItem>
-                  ))
-                ) : (
-                  <p className="text-sm text-gray-500">チームがありません。</p>
                 )}
               </SelectContent>
             </Select>

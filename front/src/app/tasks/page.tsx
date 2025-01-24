@@ -104,8 +104,8 @@ export default function TasksPage() {
   });
 
   return (
-    <div className="bg-gray-900 min-h-screen flex flex-col">
-      <h1 className=" text-white text-3xl font-bold mb-6 text-center">タスク一覧</h1>
+    <div className="bg-black min-h-screen flex flex-col">
+      <h1 className=" text-white text-3xl font-bold mb-6 text-center">Tasks</h1>
 
       {/* Search Bar */}
       <div className="mb-6 max-w-md mx-auto">
@@ -225,7 +225,7 @@ export default function TasksPage() {
                       />
                       <label>繰り返しタスク</label>
                     </div>
-                    <Button onClick={handleSave} className="w-full">
+                    <Button onClick={handleSave} className="w-full bg-blue-500 text-white">
                       保存
                     </Button>
                   </div>
