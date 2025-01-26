@@ -1,4 +1,9 @@
 class User < ApplicationRecord
+
+validates :name, presence: true
+validates :email, presence: true, uniqueness: true
+validates :password, length: { minimum: 6 }, if: :password_required?
+
 # Devise モジュールを設定
 devise :database_authenticatable, :registerable,
        :recoverable, :rememberable, :validatable
